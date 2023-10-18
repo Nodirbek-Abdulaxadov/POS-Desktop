@@ -1,29 +1,33 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 namespace POS.Application.Common.Models;
+
 public class PagedList<T>
 {
-    public IReadOnlyCollection<T> Items { get; }
-    public int PageNumber { get; }
-    public int TotalPages { get; }
-    public int TotalCount { get; }
+    public int CurrentPage { get; private set; }
+    public int TotalPages { get; private set; }
+    public int PageSize { get; private set; }
+    public int TotalCount { get; private set; }
 
-    public PagedList(IReadOnlyCollection<T> items, int count, int pageNumber, int pageSize)
+    public bool HasPrevious => CurrentPage > 1;
+    public bool HasNext => CurrentPage < TotalPages;
+    public List<T> Data { get; set; }
+
+    public PagedList(List<T> items, int count, int pageNumber, int pageSize)
     {
-        PageNumber = pageNumber;
-        TotalPages = (int)Math.Ceiling(count / (double)pageSize);
         TotalCount = count;
-        Items = items;
+        PageSize = pageSize;
+        CurrentPage = pageNumber;
+        TotalPages = (int)Math.Ceiling(count / (double)pageSize);
+
+        Data = new List<T>(items);
     }
 
-    public bool HasPreviousPage => PageNumber > 1;
-
-    public bool HasNextPage => PageNumber < TotalPages;
-
-    public static async Task<PagedList<T>> CreateAsync(IQueryable<T> source, int pageNumber, int pageSize)
+    public PagedList<T> ToPagedList(IEnumerable<T> source, int pageSize, int pageNumber)
     {
-        var count = await source.CountAsync();
-        var items = await source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
+        var count = source.Count();
+        var items = source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+        Data = items;
 
         return new PagedList<T>(items, count, pageNumber, pageSize);
     }

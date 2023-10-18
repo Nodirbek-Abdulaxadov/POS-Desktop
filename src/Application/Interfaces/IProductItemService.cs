@@ -1,4 +1,5 @@
 ﻿using BLL.Dtos.WarehouseItemDtos;
+using POS.Application.Common.DataTransferObjects.WarehouseItemDtos;
 using POS.Application.Common.Models;
 
 namespace POS.Application.Interfaces;

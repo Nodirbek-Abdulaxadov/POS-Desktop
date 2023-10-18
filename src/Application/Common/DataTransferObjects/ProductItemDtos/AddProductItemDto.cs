@@ -2,7 +2,7 @@
 using POS.Application.Common.Models;
 using POS.Domain.Entities;
 
-namespace BLL.Dtos.WarehouseItemDtos;
+namespace POS.Application.Common.DataTransferObjects.WarehouseItemDtos;
 
 public class AddProductItemDto
 {
