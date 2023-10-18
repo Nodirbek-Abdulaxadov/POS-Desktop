@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using IdentityModels;
 using POS.Domain.Common;
 
 namespace POS.Domain.Entities.Selling;
@@ -13,6 +14,8 @@ public class Receipt : BaseEntity
 
     [Required]
     public string SellerId { get; set; } = string.Empty;
+    [Required]
+    public User Seller = new();
 
     public IEnumerable<Transaction> Transactions = new List<Transaction>();
 }

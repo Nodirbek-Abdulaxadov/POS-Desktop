@@ -27,7 +27,14 @@ public class ApplicationContext : IdentityDbContext<User>
         builder.Entity<Category>()
                .HasMany(p => p.Products)
                .WithOne(c => c.Category)
-               .HasForeignKey(p => p.CategoryId);
+               .HasForeignKey(p => p.CategoryId)
+               .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<Product>()
+               .HasMany(p => p.ProductItems)
+               .WithOne(p => p.Product)
+               .HasForeignKey(p => p.ProductId)
+               .OnDelete(DeleteBehavior.NoAction);
 
         base.OnModelCreating(builder);
     }

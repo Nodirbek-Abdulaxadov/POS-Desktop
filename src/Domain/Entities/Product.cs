@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using POS.Domain.Common;
+using POS.Domain.Entities.Selling;
 using POS.Domain.Enums;
 
 namespace POS.Domain.Entities;
@@ -21,4 +22,6 @@ public class Product : BaseEntity
     [Required]
     public int CategoryId { get; set; }
     public Category Category = new();
+
+    public IEnumerable<ProductItem> ProductItems = new List<ProductItem>();
 }

@@ -7,5 +7,6 @@ public interface IUnitOfWork : IDisposable
     IReceiptInterface Receipts { get; }
     ITransactionInterface Transactions { get; }
     ICategoryInterface Categories { get; }
+    IProductItemInterface ProductItems { get; }
     Task SaveAsync();
 }
