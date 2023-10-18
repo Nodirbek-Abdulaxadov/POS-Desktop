@@ -5,7 +5,7 @@ using POS.Application.Common.DataTransferObjects.TransactionDtos;
 using POS.Application.Interfaces;
 using POS.Domain.Interfaces;
 
-namespace BLL.Services;
+namespace POS.Application.Services;
 
 public class ReceiptService : IReceiptService
 {

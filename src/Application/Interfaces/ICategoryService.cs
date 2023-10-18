@@ -7,7 +7,7 @@ public interface ICategoryService
 {
     Task<PagedList<CategoryDto>> GetCategoriesAsync(int pageSize, int pageNumber);
     Task<PagedList<CategoryDto>> GetArchivedCategoriesAsync(int pageSize, int pageNumber);
-    Task<IEnumerable<CategoryDto>> GetAllAsync();
+    Task<List<CategoryDto>> GetAllAsync();
 
     Task<CategoryDto> GetByIdAsync(int id);
     Task<CategoryDto> AddAsync(AddCategoryDto dto);

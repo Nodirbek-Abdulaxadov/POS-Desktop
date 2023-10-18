@@ -6,7 +6,7 @@ using POS.Application.Interfaces;
 using POS.Domain.Entities;
 using POS.Domain.Interfaces;
 
-namespace BLL.Services;
+namespace POS.Application.Services;
 
 public class ProductItemService : IProductItemService
 {

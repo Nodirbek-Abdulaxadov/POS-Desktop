@@ -72,12 +72,12 @@ public class CategoryService : ICategoryService
         return (CategoryDto)model;
     }
 
-    public async Task<IEnumerable<CategoryDto>> GetAllAsync()
+    public async Task<List<CategoryDto>> GetAllAsync()
     {
         var list = await _unitOfWork.Categories.GetAllAsync();
 
         var dtoList = list.Select(x => (CategoryDto)x);
-        return dtoList;
+        return dtoList.ToList();
     }
 
     public async Task<PagedList<CategoryDto>> GetArchivedCategoriesAsync(int pageSize, int pageNumber)

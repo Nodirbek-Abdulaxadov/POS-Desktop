@@ -19,9 +19,6 @@ public class ApplicationContext : IdentityDbContext<User>
     public DbSet<Receipt> Receipts { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=PosDB;");
-
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.Entity<Category>()
