@@ -40,7 +40,7 @@ partial class Login
         label2 = new Label();
         guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
         guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
-        guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+        linkLabel1 = new LinkLabel();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         SuspendLayout();
         // 
@@ -151,17 +151,18 @@ partial class Login
         guna2CheckBox1.UncheckedState.BorderThickness = 0;
         guna2CheckBox1.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
         // 
-        // guna2HtmlLabel1
+        // linkLabel1
         // 
-        guna2HtmlLabel1.Anchor = AnchorStyles.None;
-        guna2HtmlLabel1.BackColor = Color.Transparent;
-        guna2HtmlLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-        guna2HtmlLabel1.ForeColor = Color.FromArgb(0, 0, 192);
-        guna2HtmlLabel1.Location = new Point(242, 420);
-        guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-        guna2HtmlLabel1.Size = new Size(115, 23);
-        guna2HtmlLabel1.TabIndex = 7;
-        guna2HtmlLabel1.Text = "Parolni unutdim";
+        linkLabel1.Anchor = AnchorStyles.None;
+        linkLabel1.AutoSize = true;
+        linkLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        linkLabel1.LinkColor = Color.FromArgb(0, 0, 192);
+        linkLabel1.Location = new Point(236, 424);
+        linkLabel1.Name = "linkLabel1";
+        linkLabel1.Size = new Size(121, 21);
+        linkLabel1.TabIndex = 8;
+        linkLabel1.TabStop = true;
+        linkLabel1.Text = "Parolni unutdim";
         // 
         // Login
         // 
@@ -169,7 +170,7 @@ partial class Login
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.White;
         ClientSize = new Size(419, 548);
-        Controls.Add(guna2HtmlLabel1);
+        Controls.Add(linkLabel1);
         Controls.Add(guna2CheckBox1);
         Controls.Add(guna2Button1);
         Controls.Add(label2);
@@ -195,4 +196,5 @@ partial class Login
     private Guna.UI2.WinForms.Guna2Button guna2Button1;
     private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
     private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+    private LinkLabel linkLabel1;
 }

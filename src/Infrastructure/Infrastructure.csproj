@@ -10,7 +10,6 @@
 
 
     <ItemGroup>
-        <ProjectReference Include="..\..\IdentityModels\IdentityModels.csproj" />
         <ProjectReference Include="..\Application\Application.csproj" />
     </ItemGroup>
 

@@ -231,6 +231,7 @@ partial class StartForm
         Name = "StartForm";
         StartPosition = FormStartPosition.CenterScreen;
         Text = "Biller";
+        WindowState = FormWindowState.Maximized;
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         guna2ShadowPanel1.ResumeLayout(false);
         guna2ShadowPanel1.PerformLayout();

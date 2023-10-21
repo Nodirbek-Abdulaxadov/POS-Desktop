@@ -12,7 +12,8 @@ public class UnitOfWork : IUnitOfWork
                        IReceiptInterface receiptInterface,
                        ITransactionInterface transactionInterface,
                        ICategoryInterface categories,
-                       IProductItemInterface productItemInterface)
+                       IProductItemInterface productItemInterface,
+                       IUserInterface userInterface)
     {
         _dbContext = dbContext;
         Products = productInterface;
@@ -20,6 +21,7 @@ public class UnitOfWork : IUnitOfWork
         Transactions = transactionInterface;
         Categories = categories;
         ProductItems = productItemInterface;
+        Users = userInterface;
     }
 
     public IProductInterface Products { get; }
@@ -31,6 +33,8 @@ public class UnitOfWork : IUnitOfWork
     public ICategoryInterface Categories { get; }
 
     public IProductItemInterface ProductItems { get; }
+
+    public IUserInterface Users { get; }
 
     public void Dispose()
             => GC.SuppressFinalize(this);

@@ -8,5 +8,6 @@ public interface IUnitOfWork : IDisposable
     ITransactionInterface Transactions { get; }
     ICategoryInterface Categories { get; }
     IProductItemInterface ProductItems { get; }
+    IUserInterface Users { get; }
     Task SaveAsync();
 }

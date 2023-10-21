@@ -28,11 +28,11 @@ internal static class Program
 
     private static void ConfigureServices(ServiceCollection services)
     {
-        const string ConnectionString = "Server=(localdb)\\mssqllocaldb;Database=PosDB;";
+        const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=PosDB;";
         services.AddScoped<StartForm>();
-        services.AddDbContext<POS.Domain.DataContext.ApplicationContext>(options => {
-            options.UseSqlServer(ConnectionString);
-        });
+        services.AddDbContext<POS.Domain.DataContext.ApplicationContext>(options => 
+            options.UseSqlServer(connectionString));
+
         services.AddScoped<ICategoryInterface, CategoryRepository>();
         services.AddScoped<IProductInterface, ProductRepository>();
         services.AddScoped<IProductItemInterface, ProductItemRepository>();

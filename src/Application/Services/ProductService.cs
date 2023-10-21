@@ -1,6 +1,4 @@
-﻿using IdentityModels;
-using Microsoft.AspNetCore.Identity;
-using POS.Application.Common.DataTransferObjects.ProductDtos;
+﻿using POS.Application.Common.DataTransferObjects.ProductDtos;
 using POS.Application.Common.Models;
 using POS.Application.Common.Validators;
 using POS.Application.Interfaces;
@@ -12,12 +10,10 @@ namespace POS.Application.Services;
 public class ProductService : IProductService
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly UserManager<User> _userManager;
 
-    public ProductService(IUnitOfWork unitOfWork, UserManager<User> userManager)
+    public ProductService(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
-        _userManager = userManager;
     }
 
     public async Task ActionAsync(int id, ActionType action)

@@ -1,16 +1,12 @@
-﻿using System.Security.Cryptography.Xml;
-using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using POS.Domain.Entities.Selling;
 using POS.Domain.Entities;
-using IdentityModels;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using POS.Domain.Entities.Auth;
 
 namespace POS.Domain.DataContext;
 
-public class ApplicationContext : IdentityDbContext<User>
+public class ApplicationContext : DbContext
 {
-    public ApplicationContext() { }
     public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options) { }
 
@@ -18,6 +14,7 @@ public class ApplicationContext : IdentityDbContext<User>
     public DbSet<Product> Products { get; set; }
     public DbSet<Receipt> Receipts { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
+    public DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -32,6 +29,21 @@ public class ApplicationContext : IdentityDbContext<User>
                .WithOne(p => p.Product)
                .HasForeignKey(p => p.ProductId)
                .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<User>()
+               .HasData(new List<User>()
+               {
+                   new User()
+                   {
+                       Id = 1,
+                       FirstName = "Super",
+                       LastName = "Admin",
+                       PhoneNumber = "998901234567",
+                       IsDeleted = false,
+                       LastModifiedDate = DateTime.Now,
+                       PasswordHash = "QWRtaW4uMTIzJA=="
+                   }
+               });
 
         base.OnModelCreating(builder);
     }

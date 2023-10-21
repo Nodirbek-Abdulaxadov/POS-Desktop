@@ -16,9 +16,9 @@ public partial class StartForm : Form
     /// <param name="e"></param>
     private void guna2Button1_Click(object sender, EventArgs e)
     {
-        Login Login = new Login();
+        Login login = new();
         Hide();
-        Login.ShowDialog();
+        login.ShowDialog();
         Close();
     }
 

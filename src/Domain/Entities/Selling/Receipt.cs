@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using IdentityModels;
 using POS.Domain.Common;
+using POS.Domain.Entities.Auth;
 
 namespace POS.Domain.Entities.Selling;
 public class Receipt : BaseEntity

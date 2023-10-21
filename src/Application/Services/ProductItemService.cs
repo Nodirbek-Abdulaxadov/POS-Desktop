@@ -1,6 +1,4 @@
-﻿using IdentityModels;
-using Microsoft.AspNetCore.Identity;
-using POS.Application.Common.DataTransferObjects.WarehouseItemDtos;
+﻿using POS.Application.Common.DataTransferObjects.WarehouseItemDtos;
 using POS.Application.Common.Models;
 using POS.Application.Interfaces;
 using POS.Domain.Entities;
@@ -11,13 +9,10 @@ namespace POS.Application.Services;
 public class ProductItemService : IProductItemService
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly UserManager<User> _userManager;
 
-    public ProductItemService(IUnitOfWork unitOfWork,
-                                UserManager<User> userManager)
+    public ProductItemService(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
-        _userManager = userManager;
     }
 
     public async Task ActionAsync(int id, ActionType action)

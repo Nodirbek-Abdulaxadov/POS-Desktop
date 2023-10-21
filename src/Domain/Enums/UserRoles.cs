@@ -1,4 +1,4 @@
-﻿namespace IdentityModels;
+﻿namespace POS.Domain.Enums;
 
 public enum Role
 {

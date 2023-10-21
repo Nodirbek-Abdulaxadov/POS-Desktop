@@ -1,5 +1,5 @@
-﻿using IdentityModels;
-using POS.Application.Common.Models;
+﻿using POS.Application.Common.Models;
+using POS.Domain.Entities.Auth;
 using POS.Domain.Entities.Selling;
 
 namespace POS.Application.Common.DataTransferObjects.ReceiptDtos;

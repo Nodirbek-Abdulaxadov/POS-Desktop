@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using POS.Domain.Common;
 
-namespace IdentityModels;
+namespace POS.Domain.Entities.Auth;
 
 public class User : BaseEntity
 {
