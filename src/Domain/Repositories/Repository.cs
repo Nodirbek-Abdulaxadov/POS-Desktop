@@ -8,9 +8,9 @@ namespace DataLayer.Repositories;
 public class Repository<TEntity>
         : IRepository<TEntity> where TEntity : BaseEntity
 {
-    private readonly ApplicationContext _dbContext;
+    private readonly ApplicationDbContext _dbContext;
 
-    public Repository(ApplicationContext dbContext)
+    public Repository(ApplicationDbContext dbContext)
     {
         _dbContext = dbContext;
     }
@@ -27,7 +27,7 @@ public class Repository<TEntity>
 
     public async Task<TEntity?> GetByIdAsync(int id)
         => await _dbContext.Set<TEntity>()
-                           .AsNoTracking() 
+                           .AsNoTracking()
                            .FirstOrDefaultAsync(x => x.Id == id);
 
     public Task RemoveAsync(TEntity entity)

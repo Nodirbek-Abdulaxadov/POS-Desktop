@@ -6,7 +6,7 @@ namespace DataLayer.Repositories;
 
 public class CategoryRepository : Repository<Category>, ICategoryInterface
 {
-    public CategoryRepository(ApplicationContext dbContext) : base(dbContext)
+    public CategoryRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
     }
 }

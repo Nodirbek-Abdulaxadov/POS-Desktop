@@ -6,7 +6,7 @@ namespace DataLayer.Repositories;
 
 public class TransactionRepository : Repository<Transaction>, ITransactionInterface
 {
-    public TransactionRepository(ApplicationContext dbContext) : base(dbContext)
+    public TransactionRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
     }
 }

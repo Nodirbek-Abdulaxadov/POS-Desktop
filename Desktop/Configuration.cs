@@ -1,38 +1,28 @@
-using DataLayer.Repositories;
+﻿using DataLayer.Repositories;
 using Desktop.Auth;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using POS.Application.Interfaces;
 using POS.Application.Services;
-using POS.Domain.DataContext;
 using POS.Domain.Interfaces;
 using POS.Domain.Repositories;
 
 namespace Desktop;
-
-internal static class Program
+public static class Configuration
 {
-    [STAThread]
-    static void Main()
+    public static IServiceProvider GetServiceProvider()
     {
-        Application.SetHighDpiMode(HighDpiMode.SystemAware);
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-
         var services = new ServiceCollection();
 
         ConfigureServices(services);
 
-        var serviceProvider = services.BuildServiceProvider();
-
-        var form1 = serviceProvider.GetRequiredService<StartForm>();
-        Application.Run(form1);
+        return services.BuildServiceProvider();
     }
 
     private static void ConfigureServices(ServiceCollection services)
     {
         const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=PosDB;";
-        services.AddDbContext<ApplicationDbContext>(options =>
+        services.AddDbContext<POS.Domain.DataContext.ApplicationDbContext>(options =>
             options.UseSqlServer(connectionString, o => o.EnableRetryOnFailure()), ServiceLifetime.Transient, ServiceLifetime.Transient);
 
         services.AddTransient<ICategoryInterface, CategoryRepository>();
@@ -51,5 +41,4 @@ internal static class Program
         services.AddScoped<StartForm>();
         services.AddScoped<Login>();
     }
-
 }

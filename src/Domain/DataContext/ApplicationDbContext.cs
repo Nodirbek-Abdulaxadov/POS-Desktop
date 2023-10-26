@@ -5,10 +5,13 @@ using POS.Domain.Entities.Auth;
 
 namespace POS.Domain.DataContext;
 
-public class ApplicationContext : DbContext
+public class ApplicationDbContext : DbContext
 {
-    public ApplicationContext(DbContextOptions<ApplicationContext> options)
-        : base(options) { }
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options) 
+    {
+        Database.EnsureCreated();
+    }
 
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }
@@ -41,7 +44,8 @@ public class ApplicationContext : DbContext
                        PhoneNumber = "998901234567",
                        IsDeleted = false,
                        LastModifiedDate = DateTime.Now,
-                       PasswordHash = "QWRtaW4uMTIzJA=="
+                       PasswordHash = "QWRtaW4uMTIzJA==",
+                       Role = Enums.Role.SuperAdmin
                    }
                });
 

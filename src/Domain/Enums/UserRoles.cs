@@ -2,6 +2,7 @@
 
 public enum Role
 {
+    Unknown,
     SuperAdmin,
     Admin,
     Seller

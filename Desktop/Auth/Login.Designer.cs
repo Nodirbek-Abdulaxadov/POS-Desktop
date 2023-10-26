@@ -29,18 +29,21 @@ partial class Login
     private void InitializeComponent()
     {
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         pictureBox1 = new PictureBox();
         label1 = new Label();
-        maskedTextBox1 = new MaskedTextBox();
-        guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+        phoneNumber = new MaskedTextBox();
+        password = new Guna.UI2.WinForms.Guna2TextBox();
         label2 = new Label();
         guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
         guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
         linkLabel1 = new LinkLabel();
+        guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         SuspendLayout();
         // 
@@ -67,38 +70,38 @@ partial class Login
         label1.TabIndex = 1;
         label1.Text = "Telefon raqamingiz:";
         // 
-        // maskedTextBox1
+        // phoneNumber
         // 
-        maskedTextBox1.Anchor = AnchorStyles.None;
-        maskedTextBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        maskedTextBox1.Location = new Point(57, 280);
-        maskedTextBox1.Mask = "+000 00 000 0000";
-        maskedTextBox1.Name = "maskedTextBox1";
-        maskedTextBox1.Size = new Size(300, 33);
-        maskedTextBox1.TabIndex = 2;
-        maskedTextBox1.Text = "998";
+        phoneNumber.Anchor = AnchorStyles.None;
+        phoneNumber.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        phoneNumber.Location = new Point(57, 280);
+        phoneNumber.Mask = "+000 00 000 0000";
+        phoneNumber.Name = "phoneNumber";
+        phoneNumber.Size = new Size(300, 33);
+        phoneNumber.TabIndex = 2;
+        phoneNumber.Text = "998";
         // 
-        // guna2TextBox1
+        // password
         // 
-        guna2TextBox1.Anchor = AnchorStyles.None;
-        guna2TextBox1.CustomizableEdges = customizableEdges1;
-        guna2TextBox1.DefaultText = "";
-        guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-        guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-        guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-        guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-        guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-        guna2TextBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        guna2TextBox1.Location = new Point(57, 373);
-        guna2TextBox1.Margin = new Padding(5);
-        guna2TextBox1.Name = "guna2TextBox1";
-        guna2TextBox1.PasswordChar = '\0';
-        guna2TextBox1.PlaceholderText = "";
-        guna2TextBox1.SelectedText = "";
-        guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-        guna2TextBox1.Size = new Size(300, 33);
-        guna2TextBox1.TabIndex = 3;
+        password.Anchor = AnchorStyles.None;
+        password.CustomizableEdges = customizableEdges7;
+        password.DefaultText = "";
+        password.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+        password.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+        password.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+        password.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+        password.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+        password.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        password.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+        password.Location = new Point(57, 373);
+        password.Margin = new Padding(5);
+        password.Name = "password";
+        password.PasswordChar = '\0';
+        password.PlaceholderText = "";
+        password.SelectedText = "";
+        password.ShadowDecoration.CustomizableEdges = customizableEdges8;
+        password.Size = new Size(300, 33);
+        password.TabIndex = 3;
         // 
         // label2
         // 
@@ -117,7 +120,7 @@ partial class Login
         guna2Button1.Anchor = AnchorStyles.None;
         guna2Button1.BorderRadius = 23;
         guna2Button1.Cursor = Cursors.Hand;
-        guna2Button1.CustomizableEdges = customizableEdges3;
+        guna2Button1.CustomizableEdges = customizableEdges9;
         guna2Button1.DisabledState.BorderColor = Color.DarkGray;
         guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
         guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -125,12 +128,13 @@ partial class Login
         guna2Button1.FillColor = Color.FromArgb(71, 202, 193);
         guna2Button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         guna2Button1.ForeColor = Color.White;
-        guna2Button1.Location = new Point(139, 476);
+        guna2Button1.Location = new Point(221, 473);
         guna2Button1.Name = "guna2Button1";
-        guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-        guna2Button1.Size = new Size(149, 47);
+        guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+        guna2Button1.Size = new Size(136, 47);
         guna2Button1.TabIndex = 5;
         guna2Button1.Text = "Kirish";
+        guna2Button1.Click += guna2Button1_Click;
         // 
         // guna2CheckBox1
         // 
@@ -164,18 +168,40 @@ partial class Login
         linkLabel1.TabStop = true;
         linkLabel1.Text = "Parolni unutdim";
         // 
+        // guna2Button2
+        // 
+        guna2Button2.Anchor = AnchorStyles.None;
+        guna2Button2.BorderRadius = 23;
+        guna2Button2.Cursor = Cursors.Hand;
+        guna2Button2.CustomizableEdges = customizableEdges11;
+        guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+        guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+        guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        guna2Button2.FillColor = Color.Gray;
+        guna2Button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        guna2Button2.ForeColor = Color.White;
+        guna2Button2.Location = new Point(53, 473);
+        guna2Button2.Name = "guna2Button2";
+        guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges12;
+        guna2Button2.Size = new Size(136, 47);
+        guna2Button2.TabIndex = 9;
+        guna2Button2.Text = "Orqaga";
+        guna2Button2.Click += guna2Button2_Click;
+        // 
         // Login
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.White;
         ClientSize = new Size(419, 548);
+        Controls.Add(guna2Button2);
         Controls.Add(linkLabel1);
         Controls.Add(guna2CheckBox1);
         Controls.Add(guna2Button1);
         Controls.Add(label2);
-        Controls.Add(guna2TextBox1);
-        Controls.Add(maskedTextBox1);
+        Controls.Add(password);
+        Controls.Add(phoneNumber);
         Controls.Add(label1);
         Controls.Add(pictureBox1);
         Name = "Login";
@@ -190,11 +216,12 @@ partial class Login
 
     private PictureBox pictureBox1;
     private Label label1;
-    private MaskedTextBox maskedTextBox1;
-    private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+    private MaskedTextBox phoneNumber;
+    private Guna.UI2.WinForms.Guna2TextBox password;
     private Label label2;
     private Guna.UI2.WinForms.Guna2Button guna2Button1;
     private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
     private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     private LinkLabel linkLabel1;
+    private Guna.UI2.WinForms.Guna2Button guna2Button2;
 }

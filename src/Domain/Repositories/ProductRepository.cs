@@ -6,7 +6,7 @@ namespace DataLayer.Repositories;
 
 public class ProductRepository : Repository<Product>, IProductInterface
 {
-    public ProductRepository(ApplicationContext dbContext) : base(dbContext)
+    public ProductRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
     }
 }

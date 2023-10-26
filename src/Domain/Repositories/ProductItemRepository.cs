@@ -6,7 +6,7 @@ using POS.Domain.Interfaces;
 namespace POS.Domain.Repositories;
 public class ProductItemRepository : Repository<ProductItem>, IProductItemInterface
 {
-    public ProductItemRepository(ApplicationContext dbContext) : base(dbContext)
+    public ProductItemRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
     }
 }

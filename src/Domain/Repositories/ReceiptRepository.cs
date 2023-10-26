@@ -6,7 +6,7 @@ namespace DataLayer.Repositories;
 
 public class ReceiptRepository : Repository<Receipt>, IReceiptInterface
 {
-    public ReceiptRepository(ApplicationContext dbContext) 
+    public ReceiptRepository(ApplicationDbContext dbContext) 
         : base(dbContext)
     {
     }
