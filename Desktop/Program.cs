@@ -1,4 +1,5 @@
 using DataLayer.Repositories;
+using Desktop.Admin;
 using Desktop.Auth;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -50,6 +51,7 @@ internal static class Program
 
         services.AddScoped<StartForm>();
         services.AddScoped<Login>();
+        services.AddScoped<AdminForm>();
     }
 
 }

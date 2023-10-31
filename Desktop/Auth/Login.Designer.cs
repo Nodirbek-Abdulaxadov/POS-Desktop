@@ -44,6 +44,7 @@ partial class Login
         guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
         linkLabel1 = new LinkLabel();
         guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+        checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         SuspendLayout();
         // 
@@ -96,12 +97,13 @@ partial class Login
         password.Location = new Point(57, 373);
         password.Margin = new Padding(5);
         password.Name = "password";
-        password.PasswordChar = '\0';
+        password.PasswordChar = '●';
         password.PlaceholderText = "";
         password.SelectedText = "";
         password.ShadowDecoration.CustomizableEdges = customizableEdges8;
         password.Size = new Size(300, 33);
         password.TabIndex = 3;
+        password.UseSystemPasswordChar = true;
         // 
         // label2
         // 
@@ -144,10 +146,10 @@ partial class Login
         guna2CheckBox1.CheckedState.BorderRadius = 0;
         guna2CheckBox1.CheckedState.BorderThickness = 0;
         guna2CheckBox1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-        guna2CheckBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        guna2CheckBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
         guna2CheckBox1.Location = new Point(57, 420);
         guna2CheckBox1.Name = "guna2CheckBox1";
-        guna2CheckBox1.Size = new Size(111, 25);
+        guna2CheckBox1.Size = new Size(97, 21);
         guna2CheckBox1.TabIndex = 6;
         guna2CheckBox1.Text = "Eslab qolish";
         guna2CheckBox1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -161,7 +163,7 @@ partial class Login
         linkLabel1.AutoSize = true;
         linkLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         linkLabel1.LinkColor = Color.FromArgb(0, 0, 192);
-        linkLabel1.Location = new Point(236, 424);
+        linkLabel1.Location = new Point(236, 420);
         linkLabel1.Name = "linkLabel1";
         linkLabel1.Size = new Size(121, 21);
         linkLabel1.TabIndex = 8;
@@ -189,12 +191,34 @@ partial class Login
         guna2Button2.Text = "Orqaga";
         guna2Button2.Click += guna2Button2_Click;
         // 
+        // checkbox
+        // 
+        checkbox.Anchor = AnchorStyles.None;
+        checkbox.AutoSize = true;
+        checkbox.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+        checkbox.CheckedState.BorderRadius = 0;
+        checkbox.CheckedState.BorderThickness = 0;
+        checkbox.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+        checkbox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+        checkbox.ImageAlign = ContentAlignment.MiddleRight;
+        checkbox.Location = new Point(239, 351);
+        checkbox.Name = "checkbox";
+        checkbox.Size = new Size(126, 21);
+        checkbox.TabIndex = 10;
+        checkbox.Text = "Parolni ko'rsatish";
+        checkbox.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+        checkbox.UncheckedState.BorderRadius = 0;
+        checkbox.UncheckedState.BorderThickness = 0;
+        checkbox.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+        checkbox.CheckedChanged += guna2CheckBox2_CheckedChanged;
+        // 
         // Login
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.White;
         ClientSize = new Size(419, 548);
+        Controls.Add(checkbox);
         Controls.Add(guna2Button2);
         Controls.Add(linkLabel1);
         Controls.Add(guna2CheckBox1);
@@ -224,4 +248,5 @@ partial class Login
     private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     private LinkLabel linkLabel1;
     private Guna.UI2.WinForms.Guna2Button guna2Button2;
+    private Guna.UI2.WinForms.Guna2CheckBox checkbox;
 }

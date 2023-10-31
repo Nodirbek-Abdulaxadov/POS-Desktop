@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Desktop.Admin;
+using Microsoft.Extensions.DependencyInjection;
 using POS.Application.Common.Enums;
 using POS.Application.Interfaces;
 
@@ -12,8 +13,12 @@ public partial class Login : Form
     {
         InitializeComponent();
         _role = role;
-        _authInterface = Configuration.GetServiceProvider()
-                                      .GetRequiredService<IAuthInterface>();
+        Task.Run(() =>
+        {
+
+            _authInterface = Configuration.GetServiceProvider()
+                                          .GetRequiredService<IAuthInterface>();
+        });
     }
 
     /// <summary>
@@ -40,11 +45,50 @@ public partial class Login : Form
         var result = await _authInterface.LoginAsync(phone, password.Text, _role);
         if (result.IsSuccess)
         {
-            MessageBox.Show("");
+            switch (_role)
+            {
+                case UserRoles.Admin:
+                    {
+                        AdminForm admin = new();
+                        Hide();
+                        admin.ShowDialog();
+                        Close();
+                    } break;
+                case UserRoles.SuperAdmin:
+                    {
+                        AdminForm admin = new();
+                        Hide();
+                        admin.ShowDialog();
+                        Close();
+                    }
+                    break;
+                case UserRoles.Seller:
+                    {
+                        AdminForm admin = new();
+                        Hide();
+                        admin.ShowDialog();
+                        Close();
+                    }
+                    break;
+            }
         }
         else
         {
             MessageBox.Show(result.ErrorMessage);
+        }
+    }
+
+    private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
+    {
+        if (checkbox.Checked)
+        {
+            password.UseSystemPasswordChar = false;
+            password.PasswordChar = '\0';
+        }
+        else
+        {
+            password.UseSystemPasswordChar = true;
+            password.PasswordChar = '\u25CF';
         }
     }
 }

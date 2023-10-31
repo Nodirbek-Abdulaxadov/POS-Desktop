@@ -26,12 +26,12 @@ public class AuthService : IAuthInterface
 
         if (CheckPassword(user, password))
         {
-            if (!IsInRole(user, role))
+            if (IsInRole(user, role) || role == UserRoles.SuperAdmin)
             {
-                return new Result(false, ErrorMessages.ACCESS_DENIED);
+                return new Result();
             }
-
-            return new Result();
+            
+            return new Result(false, ErrorMessages.ACCESS_DENIED);
         }
 
         return new Result(false, ErrorMessages.LOGIN_FAILED);
