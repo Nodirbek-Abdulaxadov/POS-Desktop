@@ -1,5 +1,6 @@
 using DataLayer.Repositories;
 using Desktop.Admin;
+using Desktop.Admin.CategoryForms;
 using Desktop.Auth;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,7 +27,7 @@ internal static class Program
 
         var serviceProvider = services.BuildServiceProvider();
 
-        var form1 = serviceProvider.GetRequiredService<StartForm>();
+        var form1 = serviceProvider.GetRequiredService<AdminForm>();
         Application.Run(form1);
     }
 
@@ -47,11 +48,13 @@ internal static class Program
         services.AddTransient<IProductItemService, ProductItemService>();
         services.AddTransient<IReceiptService, ReceiptService>();
         services.AddTransient<IUserInterface, UserRepository>();
-        services.AddTransient<IAuthInterface, AuthService>();
+        services.AddTransient<IAuthService, AuthService>();
+        services.AddTransient<IBusinessUnit, BusinessUnit>();
 
         services.AddScoped<StartForm>();
         services.AddScoped<Login>();
         services.AddScoped<AdminForm>();
+        services.AddScoped<AddCategoryForm>();
     }
 
 }

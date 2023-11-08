@@ -36,7 +36,8 @@ public static class Configuration
         services.AddTransient<IProductItemService, ProductItemService>();
         services.AddTransient<IReceiptService, ReceiptService>();
         services.AddTransient<IUserInterface, UserRepository>();
-        services.AddTransient<IAuthInterface, AuthService>();
+        services.AddTransient<IAuthService, AuthService>();
+        services.AddTransient<IBusinessUnit, BusinessUnit>();
 
         services.AddScoped<StartForm>();
         services.AddScoped<Login>();

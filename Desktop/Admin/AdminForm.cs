@@ -1,13 +1,18 @@
-﻿using Desktop.Properties;
+﻿using Desktop.Admin.CategoryForms;
+using Desktop.Properties;
 using Guna.UI2.WinForms;
+using POS.Application.Interfaces;
 using Timer = System.Windows.Forms.Timer;
 
 namespace Desktop.Admin;
 public partial class AdminForm : Form
 {
-    public AdminForm()
+    private readonly IBusinessUnit _businessUnit;
+
+    public AdminForm(IBusinessUnit businessUnit)
     {
         InitializeComponent();
+        _businessUnit = businessUnit;
     }
 
     #region Sidebar
@@ -49,7 +54,7 @@ public partial class AdminForm : Form
         }
 
         collapseAnimationTimer = new Timer();
-        collapseAnimationTimer.Interval = 10; // Adjust this interval as needed for smoother animation.
+        collapseAnimationTimer.Interval = 5; // Adjust this interval as needed for smoother animation.
         collapseAnimationTimer.Tick += (sender, e) =>
         {
             if (sidebar.Width > targetCollapsedSidebarWidth && sidebar.Width > 0)
@@ -80,7 +85,7 @@ public partial class AdminForm : Form
         }
 
         expandAnimationTimer = new Timer();
-        expandAnimationTimer.Interval = 10; // Adjust this interval as needed for smoother animation.
+        expandAnimationTimer.Interval = 5; // Adjust this interval as needed for smoother animation.
         expandAnimationTimer.Tick += (sender, e) =>
         {
             if (sidebar.Width < targetExpandedSidebarWidth)
@@ -105,6 +110,7 @@ public partial class AdminForm : Form
     private void reportBtn_Click(object sender, EventArgs e)
     {
         EnableButton((Guna2Button)sender);
+        OpenCategoriesTable();
     }
 
     private void DisableAll()
@@ -221,4 +227,17 @@ public partial class AdminForm : Form
         }
     }
     #endregion
+
+    private void AdminForm_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    private void OpenCategoriesTable()
+    {
+        CategoryTable table = new(_businessUnit);
+        table.Dock = DockStyle.Fill;
+        main.Controls.Clear();
+        main.Controls.Add(table);
+    }
 }

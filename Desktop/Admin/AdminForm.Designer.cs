@@ -59,8 +59,8 @@ partial class AdminForm
         itemsBtn = new Guna.UI2.WinForms.Guna2Button();
         productBtn = new Guna.UI2.WinForms.Guna2Button();
         categoryBtn = new Guna.UI2.WinForms.Guna2Button();
-        flowLayoutPanel1 = new FlowLayoutPanel();
         guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
+        main = new Panel();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         guna2ShadowPanel1.SuspendLayout();
         panel1.SuspendLayout();
@@ -90,6 +90,7 @@ partial class AdminForm
         reportBtn.TabIndex = 6;
         reportBtn.Text = "Hisobotlar";
         reportBtn.TextAlign = HorizontalAlignment.Left;
+        reportBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
         reportBtn.Click += reportBtn_Click;
         // 
         // pictureBox1
@@ -321,26 +322,27 @@ partial class AdminForm
         categoryBtn.TextAlign = HorizontalAlignment.Left;
         categoryBtn.Click += reportBtn_Click;
         // 
-        // flowLayoutPanel1
-        // 
-        flowLayoutPanel1.Dock = DockStyle.Fill;
-        flowLayoutPanel1.Location = new Point(267, 84);
-        flowLayoutPanel1.Margin = new Padding(10);
-        flowLayoutPanel1.Name = "flowLayoutPanel1";
-        flowLayoutPanel1.Padding = new Padding(10);
-        flowLayoutPanel1.Size = new Size(733, 466);
-        flowLayoutPanel1.TabIndex = 8;
-        // 
         // guna2ShadowForm1
         // 
         guna2ShadowForm1.TargetForm = this;
+        // 
+        // main
+        // 
+        main.BackColor = Color.FromArgb(220, 229, 253);
+        main.Dock = DockStyle.Fill;
+        main.Location = new Point(267, 84);
+        main.Name = "main";
+        main.Padding = new Padding(30, 5, 30, 15);
+        main.Size = new Size(733, 466);
+        main.TabIndex = 8;
         // 
         // AdminForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
+        BackColor = Color.FromArgb(220, 229, 253);
         ClientSize = new Size(1000, 550);
-        Controls.Add(flowLayoutPanel1);
+        Controls.Add(main);
         Controls.Add(sidebar);
         Controls.Add(guna2ShadowPanel1);
         FormBorderStyle = FormBorderStyle.None;
@@ -349,6 +351,7 @@ partial class AdminForm
         StartPosition = FormStartPosition.WindowsDefaultBounds;
         Text = "AdminForm";
         WindowState = FormWindowState.Maximized;
+        Load += AdminForm_Load;
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         guna2ShadowPanel1.ResumeLayout(false);
         guna2ShadowPanel1.PerformLayout();
@@ -367,10 +370,10 @@ partial class AdminForm
     private Guna.UI2.WinForms.Guna2Button itemsBtn;
     private Guna.UI2.WinForms.Guna2Button productBtn;
     private Guna.UI2.WinForms.Guna2Button categoryBtn;
-    private FlowLayoutPanel flowLayoutPanel1;
     private Panel panel1;
     private Guna.UI2.WinForms.Guna2Button guna2Button1;
     private Guna.UI2.WinForms.Guna2Button guna2Button4;
     private Guna.UI2.WinForms.Guna2Button guna2Button3;
     private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+    private Panel main;
 }

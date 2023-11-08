@@ -3,37 +3,42 @@ public partial class Toastr : Form
 {
     public Toastr()
     {
-        Screen primaryScreen = Screen.PrimaryScreen;
-
-        // Calculate the top-right location
-        int topRightX = primaryScreen.Bounds.Right;
-        int topRightY = primaryScreen.Bounds.Top;
-        Point topRightLocation = new Point(800, 800);
-        this.Location = topRightLocation;
         InitializeComponent();
-    }
-
-    bool opened = false;
-
-    private void Toastr_Load(object sender, EventArgs e)
-    {
-        toastTimer.Start();
-    }
-
-    private void toastTimer_Tick(object sender, EventArgs e)
-    {
-        if (opened)
+        this.StartPosition = FormStartPosition.Manual;
+        foreach (var scrn in Screen.AllScreens)
         {
-            Hide();
-        }
-        else
-        {
-            opened = true;
+            if (scrn.Bounds.Contains(this.Location))
+            {
+                this.Location = new Point(scrn.Bounds.Right - this.Width - 20, scrn.Bounds.Top + 20);
+                return;
+            }
         }
     }
 
-    private void button1_Click(object sender, EventArgs e)
+    private void close_Click(object sender, EventArgs e)
     {
-        Hide();
+        Close();
+    }
+
+    public void ShowSuccess()
+    {
+        icon.Image = Properties.Resources.success_icon;
+        message.Text = "Muvoffaqqiyatli saqlandi!";
+        BackColor = Color.FromArgb(113, 179, 113);
+        Show();
+    }
+
+    public void ShowError()
+    {
+        icon.Image = Properties.Resources.error_icon;
+        message.Text = "Xatolik yuz berdi!";
+        BackColor = Color.FromArgb(202, 94, 88);
+        Show();
+    }
+
+    private async void Toastr_Load(object sender, EventArgs e)
+    {
+        await Task.Delay(3000);
+        Close();
     }
 }

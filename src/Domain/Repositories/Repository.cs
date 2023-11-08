@@ -16,8 +16,9 @@ public class Repository<TEntity>
     }
     public async Task<TEntity> AddAsync(TEntity entity)
     {
-        await _dbContext.Set<TEntity>().AddAsync(entity);
-        return entity;
+        var model = await _dbContext.Set<TEntity>().AddAsync(entity);
+        await _dbContext.SaveChangesAsync();
+        return model.Entity;
     }
 
     public virtual async Task<IEnumerable<TEntity>> GetAllAsync()

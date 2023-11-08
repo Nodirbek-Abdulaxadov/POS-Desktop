@@ -72,6 +72,9 @@ public class CategoryService : ICategoryService
         return (CategoryDto)model;
     }
 
+    public void Dispose()
+        => GC.SuppressFinalize(this);
+
     public async Task<List<CategoryDto>> GetAllAsync()
     {
         var list = await _unitOfWork.Categories.GetAllAsync();

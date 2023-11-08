@@ -29,76 +29,84 @@ partial class Toastr
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        button1 = new Button();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        icon = new PictureBox();
         message = new Label();
-        title = new Label();
-        toastTimer = new System.Windows.Forms.Timer(components);
+        close = new Guna.UI2.WinForms.Guna2Button();
+        guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
+        ((System.ComponentModel.ISupportInitialize)icon).BeginInit();
         SuspendLayout();
         // 
-        // button1
+        // icon
         // 
-        button1.FlatAppearance.BorderSize = 0;
-        button1.FlatAppearance.MouseOverBackColor = Color.Gray;
-        button1.FlatStyle = FlatStyle.Popup;
-        button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        button1.ForeColor = Color.White;
-        button1.Location = new Point(224, -1);
-        button1.Name = "button1";
-        button1.Size = new Size(35, 23);
-        button1.TabIndex = 5;
-        button1.Text = "X";
-        button1.UseVisualStyleBackColor = true;
-        button1.Click += button1_Click;
+        icon.Image = Properties.Resources.success_icon;
+        icon.Location = new Point(10, 8);
+        icon.Name = "icon";
+        icon.Size = new Size(50, 50);
+        icon.TabIndex = 0;
+        icon.TabStop = false;
         // 
         // message
         // 
         message.AutoSize = true;
         message.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         message.ForeColor = Color.White;
-        message.Location = new Point(4, 42);
+        message.Location = new Point(66, 23);
         message.Name = "message";
-        message.Size = new Size(117, 21);
-        message.TabIndex = 4;
-        message.Text = "Error message";
+        message.Size = new Size(208, 21);
+        message.TabIndex = 1;
+        message.Text = "Muvoffaqqiyatli saqlandi!";
         // 
-        // title
+        // close
         // 
-        title.AutoSize = true;
-        title.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-        title.ForeColor = Color.White;
-        title.Location = new Point(3, 4);
-        title.Name = "title";
-        title.Size = new Size(50, 25);
-        title.TabIndex = 3;
-        title.Text = "Title";
+        close.BackgroundImageLayout = ImageLayout.Zoom;
+        close.BorderColor = Color.LightGray;
+        close.BorderRadius = 5;
+        close.Cursor = Cursors.Hand;
+        close.CustomizableEdges = customizableEdges1;
+        close.DisabledState.BorderColor = Color.DarkGray;
+        close.DisabledState.CustomBorderColor = Color.DarkGray;
+        close.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        close.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        close.FillColor = Color.Transparent;
+        close.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+        close.ForeColor = Color.White;
+        close.Image = Properties.Resources.x_icon_light;
+        close.ImageSize = new Size(15, 15);
+        close.Location = new Point(361, -1);
+        close.Name = "close";
+        close.ShadowDecoration.CustomizableEdges = customizableEdges2;
+        close.Size = new Size(30, 30);
+        close.TabIndex = 5;
+        close.Click += close_Click;
         // 
-        // toastTimer
+        // guna2ShadowForm1
         // 
-        toastTimer.Enabled = true;
-        toastTimer.Interval = 3000;
-        toastTimer.Tick += toastTimer_Tick;
+        guna2ShadowForm1.BorderRadius = 15;
+        guna2ShadowForm1.TargetForm = this;
         // 
         // Toastr
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        BackColor = Color.FromArgb(192, 0, 0);
-        ClientSize = new Size(258, 73);
-        Controls.Add(button1);
+        BackColor = Color.FromArgb(113, 179, 113);
+        ClientSize = new Size(391, 66);
+        Controls.Add(close);
         Controls.Add(message);
-        Controls.Add(title);
+        Controls.Add(icon);
         FormBorderStyle = FormBorderStyle.None;
         Name = "Toastr";
-        Text = "Toastr";
         Load += Toastr_Load;
+        ((System.ComponentModel.ISupportInitialize)icon).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
 
     #endregion
 
-    private Button button1;
+    private PictureBox icon;
     private Label message;
-    private Label title;
-    private System.Windows.Forms.Timer toastTimer;
+    private Guna.UI2.WinForms.Guna2Button close;
+    private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
 }

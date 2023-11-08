@@ -5,7 +5,7 @@ using POS.Domain.Entities.Auth;
 using POS.Domain.Interfaces;
 
 namespace POS.Application.Services;
-public class AuthService : IAuthInterface
+public class AuthService : IAuthService
 {
     private readonly IUnitOfWork _unitOfWork;
 

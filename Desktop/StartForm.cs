@@ -9,9 +9,12 @@ namespace Desktop;
 
 public partial class StartForm : Form
 {
-    public StartForm()
+    private readonly IBusinessUnit _businessUnit;
+
+    public StartForm(IBusinessUnit businessUnit)
     {
         InitializeComponent();
+        _businessUnit = businessUnit;
     }
 
     /// <summary>
@@ -46,7 +49,7 @@ public partial class StartForm : Form
 
     private void OpenLoginForm(UserRoles role)
     {
-        Login login = new(role);
+        Login login = new(role, _businessUnit);
         Hide();
         login.ShowDialog();
         Close();

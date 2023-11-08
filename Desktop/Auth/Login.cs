@@ -7,18 +7,13 @@ namespace Desktop.Auth;
 public partial class Login : Form
 {
     public UserRoles _role;
-    public IAuthInterface _authInterface;
+    private readonly IBusinessUnit _businessUnit;
 
-    public Login(UserRoles role)
+    public Login(UserRoles role, IBusinessUnit businessUnit)
     {
         InitializeComponent();
         _role = role;
-        Task.Run(() =>
-        {
-
-            _authInterface = Configuration.GetServiceProvider()
-                                          .GetRequiredService<IAuthInterface>();
-        });
+        _businessUnit = businessUnit;
     }
 
     /// <summary>
@@ -28,7 +23,7 @@ public partial class Login : Form
     /// <param name="e"></param>
     private void guna2Button2_Click(object sender, EventArgs e)
     {
-        StartForm start = new();
+        StartForm start = new(_businessUnit);
         this.Hide();
         start.ShowDialog();
         this.Close();
@@ -42,21 +37,22 @@ public partial class Login : Form
     private async void guna2Button1_Click(object sender, EventArgs e)
     {
         string phone = phoneNumber.Text.Replace("+", "").Replace("-", "").Replace(" ", "");
-        var result = await _authInterface.LoginAsync(phone, password.Text, _role);
+        var result = await _businessUnit.AuthService.LoginAsync(phone, password.Text, _role);
         if (result.IsSuccess)
         {
             switch (_role)
             {
                 case UserRoles.Admin:
                     {
-                        AdminForm admin = new();
+                        AdminForm admin = new(_businessUnit);
                         Hide();
                         admin.ShowDialog();
                         Close();
-                    } break;
+                    }
+                    break;
                 case UserRoles.SuperAdmin:
                     {
-                        AdminForm admin = new();
+                        AdminForm admin = new(_businessUnit);
                         Hide();
                         admin.ShowDialog();
                         Close();
@@ -64,7 +60,7 @@ public partial class Login : Form
                     break;
                 case UserRoles.Seller:
                     {
-                        AdminForm admin = new();
+                        AdminForm admin = new(_businessUnit);
                         Hide();
                         admin.ShowDialog();
                         Close();
