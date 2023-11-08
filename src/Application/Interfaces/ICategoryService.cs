@@ -11,7 +11,7 @@ public interface ICategoryService : IDisposable
 
     Task<CategoryDto> GetByIdAsync(int id);
     Task<CategoryDto> AddAsync(AddCategoryDto dto);
-
+    Task DeleteAsync(int id);
     Task<CategoryDto> UpdateAsync(UpdateCategoryDto dto);
     Task ActionAsync(int id, ActionType action);
 }

@@ -46,8 +46,6 @@ public class ProductService : IProductService
                 }
                 break;
         }
-
-        await _unitOfWork.SaveAsync();
     }
 
     /// <summary>
@@ -74,7 +72,6 @@ public class ProductService : IProductService
         }
 
         var model = await _unitOfWork.Products.AddAsync((Product)dto);
-        await _unitOfWork.SaveAsync();
 
         return (ProductDto)model;
     }

@@ -121,6 +121,7 @@ partial class CategoryTable
         table.ThemeStyle.RowsStyle.Height = 25;
         table.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
         table.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+        table.CellClick += table_CellClick;
         // 
         // panel1
         // 

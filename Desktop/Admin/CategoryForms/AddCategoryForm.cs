@@ -38,6 +38,11 @@ public partial class AddCategoryForm : Form
         Close();
     }
 
+    /// <summary>
+    /// Save button click event - save new category
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private async void guna2Button1_Click(object sender, EventArgs e)
     {                              
         try

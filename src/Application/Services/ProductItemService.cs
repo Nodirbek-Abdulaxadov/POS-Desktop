@@ -45,8 +45,6 @@ public class ProductItemService : IProductItemService
                 }
                 break;
         }
-
-        await _unitOfWork.SaveAsync();
     }
 
     /// <summary>
@@ -77,8 +75,6 @@ public class ProductItemService : IProductItemService
             foreach (var item in existProductItems)
             {
                 var price = dto.SellingPrice > item.SellingPrice ? dto.SellingPrice : item.SellingPrice;
-                //_unitOfWork.ProductItems.MultipleUpdatePrice(item.ProductId, dto.WarehouseId, price);
-                await _unitOfWork.SaveAsync();
             }
         }
         var product = await _unitOfWork.Products.GetByIdAsync(dto.ProductId);
@@ -92,7 +88,6 @@ public class ProductItemService : IProductItemService
                                 .Sum(p => p.Amount) + dto.Amount;
         await _unitOfWork.Products.UpdateAsync(product);
         var model = await _unitOfWork.ProductItems.AddAsync((ProductItem)dto);
-        await _unitOfWork.SaveAsync();
         return (ProductItemDto)model;
     }
 

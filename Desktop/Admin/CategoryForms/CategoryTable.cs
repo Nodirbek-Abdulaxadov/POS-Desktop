@@ -7,6 +7,7 @@ public partial class CategoryTable : UserControl
 {
     private readonly List<CategoryDto> _categories = new();
     private readonly IBusinessUnit _businessUnit;
+    private int selectedId = 0;
 
     public CategoryTable(IBusinessUnit businessUnit)
     {
@@ -61,9 +62,23 @@ public partial class CategoryTable : UserControl
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void editbtn_Click(object sender, EventArgs e)
+    private async void editbtn_Click(object sender, EventArgs e)
     {
-
+        if (selectedId != 0)
+        {
+            EditCategoryForm form = new(selectedId, _businessUnit);
+            var result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                new Toastr().ShowSuccess("O'zgarishlar saqlandi!");
+                await Task.Run(FillCategories);
+                selectedId = 0;
+            }
+        }
+        else
+        {
+            new Toastr().ShowWarning("Kategoriyalardan birini tanlang!");
+        }
     }
 
     /// <summary>
@@ -71,8 +86,32 @@ public partial class CategoryTable : UserControl
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void deletebtn_Click(object sender, EventArgs e)
+    private async void deletebtn_Click(object sender, EventArgs e)
     {
+        if (selectedId != 0)
+        {
+            var result = new Modal().ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                await _businessUnit.CategoryService.DeleteAsync(selectedId);
+                new Toastr().ShowSuccess("Muvoffaqqiyatli o'chirildi");
+                await Task.Run(FillCategories);
+                selectedId = 0;
+            }
+        }
+        else
+        {
+            new Toastr().ShowWarning("Kategoriyalardan birini tanlang!");
+        }
+    }
 
+    /// <summary>
+    /// select category id
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void table_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        selectedId = int.Parse(table.SelectedRows[0].Cells[0].Value.ToString());
     }
 }

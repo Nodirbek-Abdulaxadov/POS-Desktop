@@ -38,7 +38,4 @@ public class UnitOfWork : IUnitOfWork
 
     public void Dispose()
             => GC.SuppressFinalize(this);
-
-    public async Task SaveAsync()
-        => await _dbContext.SaveChangesAsync();
 }

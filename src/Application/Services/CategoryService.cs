@@ -44,8 +44,6 @@ public class CategoryService : ICategoryService
                 }
                 break;
         }
-
-        await _unitOfWork.SaveAsync();
     }
 
     public async Task<CategoryDto> AddAsync(AddCategoryDto dto)
@@ -67,9 +65,14 @@ public class CategoryService : ICategoryService
         }
 
         var model = await _unitOfWork.Categories.AddAsync((Category)dto);
-        await _unitOfWork.SaveAsync();
 
         return (CategoryDto)model;
+    }
+
+    public async Task DeleteAsync(int id)
+    {
+        var category = await _unitOfWork.Categories.GetByIdAsync(id);
+        await _unitOfWork.Categories.RemoveAsync(category);
     }
 
     public void Dispose()
@@ -163,7 +166,6 @@ public class CategoryService : ICategoryService
 
         model = (Category)dto;
         await _unitOfWork.Categories.UpdateAsync(model);
-        await _unitOfWork.SaveAsync();
 
         var res = await GetByIdAsync(dto.Id);
         return res;

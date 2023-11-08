@@ -31,15 +31,15 @@ public class Repository<TEntity>
                            .AsNoTracking()
                            .FirstOrDefaultAsync(x => x.Id == id);
 
-    public Task RemoveAsync(TEntity entity)
+    public async Task RemoveAsync(TEntity entity)
     {
         _dbContext.Set<TEntity>().Remove(entity);
-        return Task.CompletedTask;
+        await _dbContext.SaveChangesAsync();
     }
 
-    public Task UpdateAsync(TEntity entity)
+    public async Task UpdateAsync(TEntity entity)
     {
         _dbContext.Set<TEntity>().Update(entity);
-        return Task.FromResult(entity);
+        await _dbContext.SaveChangesAsync();
     }
 }
