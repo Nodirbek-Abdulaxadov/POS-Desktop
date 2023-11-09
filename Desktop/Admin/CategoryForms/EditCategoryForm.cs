@@ -1,5 +1,6 @@
 ﻿using Desktop.Extended;
 using POS.Application.Common.DataTransferObjects.CategoryDtos;
+using POS.Application.Common.Exceptions;
 using POS.Application.Interfaces;
 
 namespace Desktop.Admin.CategoryForms;
@@ -60,6 +61,10 @@ public partial class EditCategoryForm : Form
             });
             DialogResult = DialogResult.OK;
             Close();
+        }
+        catch (MarketException ex)
+        {
+            new Toastr().ShowError(ex.ErrorMessage);
         }
         catch (Exception)
         {

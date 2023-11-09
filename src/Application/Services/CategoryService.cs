@@ -1,4 +1,5 @@
 ﻿using POS.Application.Common.DataTransferObjects.CategoryDtos;
+using POS.Application.Common.Exceptions;
 using POS.Application.Common.Models;
 using POS.Application.Interfaces;
 using POS.Domain.Entities;
@@ -55,13 +56,13 @@ public class CategoryService : ICategoryService
 
         if (string.IsNullOrEmpty(dto.Name))
         {
-            throw new ArgumentNullException(nameof(dto.Name));
+            throw new MarketException("Kategoriya nomi bo'sh bo'lmasligi kerak!");
         }
 
         var list = await GetAllAsync();
         if (list.Any(x => x.Name == dto.Name))
         {
-            throw new Exception("This category name is already exist!");
+            throw new MarketException("Bu kategoriya allaqachon mavjud!");
         }
 
         var model = await _unitOfWork.Categories.AddAsync((Category)dto);
@@ -154,14 +155,20 @@ public class CategoryService : ICategoryService
 
         if (string.IsNullOrEmpty(dto.Name))
         {
-            throw new ArgumentNullException(nameof(dto.Name));
+            throw new MarketException("Kategoriya nomi bo'sh bo'lmasligi kerak!");
+        }
+
+        var list = await GetAllAsync();
+        if (list.Any(x => x.Name == dto.Name))
+        {
+            throw new MarketException("Bu kategoriya allaqachon mavjud!");
         }
 
         var model = await _unitOfWork.Categories.GetByIdAsync(dto.Id);
 
         if (model == null)
         {
-            throw new Exception("Category is not found!");
+            throw new MarketException("Kategoriya topilmadi!");
         }
 
         model = (Category)dto;
