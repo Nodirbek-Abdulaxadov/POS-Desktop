@@ -32,17 +32,15 @@ partial class AddCategoryForm
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         name_textbox = new Guna.UI2.WinForms.Guna2TextBox();
         label1 = new Label();
         label2 = new Label();
         guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-        guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
         SuspendLayout();
         // 
         // name_textbox
         // 
+        name_textbox.Anchor = AnchorStyles.None;
         name_textbox.CustomizableEdges = customizableEdges1;
         name_textbox.DefaultText = "";
         name_textbox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -65,6 +63,7 @@ partial class AddCategoryForm
         // 
         // label1
         // 
+        label1.Anchor = AnchorStyles.None;
         label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         label1.Location = new Point(32, 124);
@@ -75,6 +74,7 @@ partial class AddCategoryForm
         // 
         // label2
         // 
+        label2.Anchor = AnchorStyles.None;
         label2.AutoSize = true;
         label2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
         label2.Location = new Point(12, 12);
@@ -85,6 +85,7 @@ partial class AddCategoryForm
         // 
         // guna2Button1
         // 
+        guna2Button1.Anchor = AnchorStyles.None;
         guna2Button1.BorderRadius = 7;
         guna2Button1.Cursor = Cursors.Hand;
         guna2Button1.CustomizableEdges = customizableEdges3;
@@ -103,41 +104,17 @@ partial class AddCategoryForm
         guna2Button1.Text = "Saqlash";
         guna2Button1.Click += guna2Button1_Click;
         // 
-        // guna2Button2
-        // 
-        guna2Button2.BackgroundImageLayout = ImageLayout.Zoom;
-        guna2Button2.BorderColor = Color.LightGray;
-        guna2Button2.BorderRadius = 5;
-        guna2Button2.BorderThickness = 1;
-        guna2Button2.Cursor = Cursors.Hand;
-        guna2Button2.CustomizableEdges = customizableEdges5;
-        guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-        guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-        guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-        guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-        guna2Button2.FillColor = Color.Transparent;
-        guna2Button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-        guna2Button2.ForeColor = Color.White;
-        guna2Button2.Image = Properties.Resources.x;
-        guna2Button2.Location = new Point(335, 9);
-        guna2Button2.Name = "guna2Button2";
-        guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-        guna2Button2.Size = new Size(40, 40);
-        guna2Button2.TabIndex = 4;
-        guna2Button2.Click += guna2Button2_Click;
-        // 
         // AddCategoryForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(220, 229, 253);
         ClientSize = new Size(384, 315);
-        Controls.Add(guna2Button2);
         Controls.Add(guna2Button1);
         Controls.Add(label2);
         Controls.Add(label1);
         Controls.Add(name_textbox);
-        FormBorderStyle = FormBorderStyle.None;
+        FormBorderStyle = FormBorderStyle.FixedToolWindow;
         Name = "AddCategoryForm";
         StartPosition = FormStartPosition.CenterScreen;
         Text = "AddCategoryForm";
@@ -151,5 +128,4 @@ partial class AddCategoryForm
     private Label label1;
     private Label label2;
     private Guna.UI2.WinForms.Guna2Button guna2Button1;
-    private Guna.UI2.WinForms.Guna2Button guna2Button2;
 }

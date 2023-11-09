@@ -8,7 +8,7 @@ namespace DataLayer.Repositories;
 public class Repository<TEntity>
         : IRepository<TEntity> where TEntity : BaseEntity
 {
-    private readonly ApplicationDbContext _dbContext;
+    protected readonly ApplicationDbContext _dbContext;
 
     public Repository(ApplicationDbContext dbContext)
     {

@@ -9,7 +9,6 @@ public class AddProductDto
     public decimal WarningAmount { get; set; }
     public string Description { get; set; } = string.Empty;
     public string Barcode { get; set; } = string.Empty;
-    public decimal Amount { get; set; }
     public MeasurmentType MeasurmentType { get; set; }
     public int CategoryId { get; set; }
 
@@ -20,9 +19,14 @@ public class AddProductDto
             WarningAmount = dto.WarningAmount,
             Description = dto.Description,
             Barcode = dto.Barcode,
-            Amount = dto.Amount,
-            MeasurmentType = dto.MeasurmentType,
+            Amount = 0,
+            MeasurmentType = dto.MeasurmentType switch
+            {
+                MeasurmentType.Dona => MeasurmentType.Dona,
+
+            },
             CategoryId = dto.CategoryId,
-            LastModifiedDate = LocalTime.GetUtc5Time()
+            LastModifiedDate = LocalTime.GetUtc5Time(),
+            Category = null
         };
 }

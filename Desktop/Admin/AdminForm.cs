@@ -1,4 +1,5 @@
 ﻿using Desktop.Admin.CategoryForms;
+using Desktop.Admin.ProductForms;
 using Desktop.Properties;
 using Guna.UI2.WinForms;
 using POS.Application.Interfaces;
@@ -108,6 +109,18 @@ public partial class AdminForm : Form
     }
 
     private void reportBtn_Click(object sender, EventArgs e)
+    {
+        EnableButton((Guna2Button)sender);
+        OpenCategoriesTable();
+    }
+
+    private void productBtn_Click(object sender, EventArgs e)
+    {
+        EnableButton((Guna2Button)sender);
+        OpenProductsTable();
+    }
+
+    private void productItemBtn_Click(object sender, EventArgs e)
     {
         EnableButton((Guna2Button)sender);
         OpenCategoriesTable();
@@ -236,6 +249,14 @@ public partial class AdminForm : Form
     private void OpenCategoriesTable()
     {
         CategoryTable table = new(_businessUnit);
+        table.Dock = DockStyle.Fill;
+        main.Controls.Clear();
+        main.Controls.Add(table);
+    }
+
+    private void OpenProductsTable()
+    {
+        ProductTable table = new(_businessUnit);
         table.Dock = DockStyle.Fill;
         main.Controls.Clear();
         main.Controls.Add(table);

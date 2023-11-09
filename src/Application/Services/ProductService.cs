@@ -90,9 +90,10 @@ public class ProductService : IProductService
         return randomBarcode.ToString();
     }
 
-    public Task<IEnumerable<ProductDto>> GetAllAsync()
+    public async Task<IEnumerable<ProductDto>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var list = await _unitOfWork.Products.GetAllWithCategories();
+        return list.Select(p => (ProductDto)p);
     }
 
     public Task<PagedList<ProductDto>> GetArchivedProductsAsync(int pageSize, int pageNumber)

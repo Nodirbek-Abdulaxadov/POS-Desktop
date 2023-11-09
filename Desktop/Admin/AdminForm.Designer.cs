@@ -270,7 +270,7 @@ partial class AdminForm
         itemsBtn.TabIndex = 9;
         itemsBtn.Text = "Kirimlar";
         itemsBtn.TextAlign = HorizontalAlignment.Left;
-        itemsBtn.Click += reportBtn_Click;
+        itemsBtn.Click += productItemBtn_Click;
         // 
         // productBtn
         // 
@@ -295,7 +295,7 @@ partial class AdminForm
         productBtn.TabIndex = 8;
         productBtn.Text = "Mahsulotlar";
         productBtn.TextAlign = HorizontalAlignment.Left;
-        productBtn.Click += reportBtn_Click;
+        productBtn.Click += productBtn_Click;
         // 
         // categoryBtn
         // 
