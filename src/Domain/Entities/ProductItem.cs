@@ -7,7 +7,7 @@ public class ProductItem : BaseEntity
     public decimal BuyingPrice { get; set; }
     public decimal SellingPrice { get; set; }
     public decimal Amount { get; set; }
-
+    public DateTime ExpirationDate { get; set; }
     public int ProductId { get; set; }
     public Product Product = new();
 

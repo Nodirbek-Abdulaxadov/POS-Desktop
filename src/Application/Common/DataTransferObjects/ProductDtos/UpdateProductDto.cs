@@ -23,7 +23,6 @@ public class UpdateProductDto : BaseModel
              WarningAmount = product.WarningAmount,
              Description = product.Description,
              Barcode = product.Barcode,
-             ExpirationDate = product.ExpirationDate,
              Amount = product.Amount,
              MeasurmentType = product.MeasurmentType,
              CategoryId = product.CategoryId

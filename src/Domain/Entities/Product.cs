@@ -15,7 +15,6 @@ public class Product : BaseEntity
     public string Description { get; set; } = string.Empty;
     [StringLength(20)]
     public string Barcode { get; set; } = string.Empty;
-    public DateTime ExpirationDate { get; set; }
     public decimal Amount { get; set; }
     [Required]
     public MeasurmentType MeasurmentType { get; set; }
