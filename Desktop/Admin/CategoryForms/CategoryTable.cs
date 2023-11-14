@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using POS.Application.Common.DataTransferObjects.CategoryDtos;
+using POS.Application.Common.Models;
 using POS.Application.Interfaces;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Desktop.Admin.CategoryForms;
 public partial class CategoryTable : UserControl
@@ -135,4 +137,64 @@ public partial class CategoryTable : UserControl
     {
         selectedId = int.Parse(table.SelectedRows[0].Cells[0].Value.ToString());
     }
+    //public async Task<List<CategoryDto>> SearchCategoryAsync(string txt)
+    //{
+    //    return await Task.Run(() =>
+    //    {
+    //        if (_categories != null)
+    //        {
+    //            var result = _categories.Where(i => i.Name.ToLower().Contains(txt.ToLower())).Select(i =>
+    //            new { Id = i.Id, Nomi = i.Name }).ToList();
+    //            return result;
+    //        }
+    //        return new List<CategoryDto>();
+    //    });
+    //}
+
+    private void search_textbox_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            if (!string.IsNullOrEmpty(search_textbox.Text))
+            {
+                var searchResult = _categories.Where(i => i.Name.ToLower()
+                                              .Contains(search_textbox.Text.ToLower()))
+                                              .Select(i => new { Id = i.Id, Nomi = i.Name })
+                                              .ToList();
+                if (searchResult != null && searchResult.Any())
+                {
+                    table.DataSource = searchResult;
+                }
+                else
+                {
+                    table.DataSource = new List<CategoryDto>();
+                    new Toastr().ShowError("Bunday kategoriya mavjud emas");
+                }
+            }
+            else
+            {
+                table.DataSource = _categories ?? new List<CategoryDto>();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+        }
+        catch (Exception)
+        {
+            new Toastr().ShowError("Xatolik yuz berdi");
+        }
+    }
+
+
 }

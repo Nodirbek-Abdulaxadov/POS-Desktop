@@ -38,12 +38,15 @@ partial class CategoryTable
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         table = new Guna.UI2.WinForms.Guna2DataGridView();
         panel1 = new Panel();
         deletebtn = new Guna.UI2.WinForms.Guna2Button();
         editbtn = new Guna.UI2.WinForms.Guna2Button();
         addbtn = new Guna.UI2.WinForms.Guna2Button();
         panel2 = new Panel();
+        search_textbox = new Guna.UI2.WinForms.Guna2TextBox();
         label1 = new Label();
         panel3 = new Panel();
         ((System.ComponentModel.ISupportInitialize)table).BeginInit();
@@ -202,12 +205,37 @@ partial class CategoryTable
         // 
         // panel2
         // 
+        panel2.Controls.Add(search_textbox);
         panel2.Controls.Add(label1);
         panel2.Dock = DockStyle.Top;
         panel2.Location = new Point(0, 0);
         panel2.Name = "panel2";
         panel2.Size = new Size(750, 50);
         panel2.TabIndex = 2;
+        // 
+        // search_textbox
+        // 
+        search_textbox.Anchor = AnchorStyles.Right;
+        search_textbox.BorderRadius = 7;
+        search_textbox.CustomizableEdges = customizableEdges7;
+        search_textbox.DefaultText = "";
+        search_textbox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+        search_textbox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+        search_textbox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+        search_textbox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+        search_textbox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+        search_textbox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+        search_textbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+        search_textbox.Location = new Point(537, 9);
+        search_textbox.Margin = new Padding(3, 4, 3, 4);
+        search_textbox.Name = "search_textbox";
+        search_textbox.PasswordChar = '\0';
+        search_textbox.PlaceholderText = "Kategoriyani kiriting";
+        search_textbox.SelectedText = "";
+        search_textbox.ShadowDecoration.CustomizableEdges = customizableEdges8;
+        search_textbox.Size = new Size(184, 34);
+        search_textbox.TabIndex = 4;
+        search_textbox.TextChanged += search_textbox_TextChanged;
         // 
         // label1
         // 
@@ -258,4 +286,5 @@ partial class CategoryTable
     private Panel panel2;
     private Label label1;
     private Panel panel3;
+    private Guna.UI2.WinForms.Guna2TextBox search_textbox;
 }
