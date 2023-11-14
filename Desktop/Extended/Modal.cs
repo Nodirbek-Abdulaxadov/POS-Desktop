@@ -1,9 +1,10 @@
 ﻿namespace Desktop.Extended;
 public partial class Modal : Form
 {
-    public Modal()
+    public Modal(string message = "Ishonchingiz komilmi?")
     {
         InitializeComponent();
+        messageLabel.Text = message;
     }
 
     /// <summary>

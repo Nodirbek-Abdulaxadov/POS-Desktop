@@ -1,4 +1,6 @@
 ﻿using Desktop.Extended;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using POS.Application.Common.DataTransferObjects.CategoryDtos;
 using POS.Application.Interfaces;
 
@@ -6,7 +8,7 @@ namespace Desktop.Admin.CategoryForms;
 public partial class CategoryTable : UserControl
 {
     private readonly List<CategoryDto> _categories = new();
-    private readonly IBusinessUnit _businessUnit;
+    private IBusinessUnit _businessUnit;
     private int selectedId = 0;
 
     public CategoryTable(IBusinessUnit businessUnit)
@@ -22,6 +24,8 @@ public partial class CategoryTable : UserControl
     /// <param name="e"></param>
     private async void CategoryTable_Load(object sender, EventArgs e)
     {
+        _businessUnit = Configuration.GetServiceProvider()
+                                     .GetRequiredService<IBusinessUnit>();
         await Task.Run(FillCategories);
     }
 
@@ -32,13 +36,16 @@ public partial class CategoryTable : UserControl
     private async Task FillCategories()
     {
         var list = await _businessUnit.CategoryService.GetAllAsync();
-        table.BeginInvoke(() =>
+        if (IsHandleCreated)
         {
-            table.DataSource = list.Select(i =>
-            new { Id = i.Id, Nomi = i.Name })
-            .ToList();
-            _categories.AddRange(list);
-        });
+            table.BeginInvoke(() =>
+            {
+                table.DataSource = list.Select(i =>
+                new { Id = i.Id, Nomi = i.Name })
+                .ToList();
+                _categories.AddRange(list);
+            });
+        }
     }
 
     /// <summary>
@@ -93,10 +100,24 @@ public partial class CategoryTable : UserControl
             var result = new Modal().ShowDialog();
             if (result == DialogResult.OK)
             {
-                await _businessUnit.CategoryService.DeleteAsync(selectedId);
-                new Toastr().ShowSuccess("Muvoffaqqiyatli o'chirildi");
-                await Task.Run(FillCategories);
-                selectedId = 0;
+                try
+                {
+                    await _businessUnit.CategoryService.DeleteAsync(selectedId);
+                    new Toastr().ShowSuccess("Muvoffaqqiyatli o'chirildi");
+                }
+                catch (DbUpdateException)
+                {
+                    new Toastr().ShowError("Kategoriyaga tegishli mahsulotlar mavjud!");
+                }
+                catch (Exception)
+                {
+                    new Toastr().ShowError("Xatolik yuz berdi!");
+                }
+                finally
+                {
+                    await Task.Run(FillCategories);
+                    selectedId = 0;
+                }
             }
         }
         else

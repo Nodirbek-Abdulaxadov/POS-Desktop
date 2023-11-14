@@ -23,7 +23,10 @@ public class AddProductDto
             MeasurmentType = dto.MeasurmentType switch
             {
                 MeasurmentType.Dona => MeasurmentType.Dona,
-
+                MeasurmentType.Kilogram => MeasurmentType.Kilogram,
+                MeasurmentType.Litr => MeasurmentType.Litr,
+                MeasurmentType.Metr => MeasurmentType.Metr,
+                MeasurmentType.Boshqa => MeasurmentType.Boshqa
             },
             CategoryId = dto.CategoryId,
             LastModifiedDate = LocalTime.GetUtc5Time(),

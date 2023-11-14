@@ -1,4 +1,5 @@
 ﻿using POS.Application.Common.DataTransferObjects.ProductDtos;
+using POS.Application.Common.Exceptions;
 using POS.Application.Common.Models;
 using POS.Application.Common.Validators;
 using POS.Application.Interfaces;
@@ -58,7 +59,7 @@ public class ProductService : IProductService
     {
         if (!dto.IsValid())
         {
-            throw new Exception("All fields must be non empty value!");
+            throw new MarketException("Mahsulot nomini ko'rsating!");
         }
 
         var products = await _unitOfWork.Products.GetAllAsync();
@@ -66,14 +67,25 @@ public class ProductService : IProductService
         var exist = products.Where(x => x.Name == dto.Name)
                             .Any(p => p.IsEqual(dto));
 
-        if (exist || barcodes.Any(b => b == dto.Barcode))
+        if (exist)
         {
-            throw new Exception("This product is already exist!");
+            throw new MarketException("Bu mahsulot omborda mavjud!");
+        }
+
+        if (barcodes.Any(b => b == dto.Barcode) &&
+            !string.IsNullOrEmpty(dto.Barcode))
+        {
+            throw new MarketException("Bu barcode avval ro'yxatga olingan!");
         }
 
         var model = await _unitOfWork.Products.AddAsync((Product)dto);
 
         return (ProductDto)model;
+    }
+
+    public Task DeleteAsync(int selectedId)
+    {
+        throw new NotImplementedException();
     }
 
     public async Task<string> GenerateBarcodeAsync()

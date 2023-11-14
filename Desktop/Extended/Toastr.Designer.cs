@@ -49,14 +49,14 @@ partial class Toastr
         // 
         // message
         // 
-        message.AutoSize = true;
         message.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         message.ForeColor = Color.White;
-        message.Location = new Point(66, 23);
+        message.Location = new Point(66, 9);
         message.Name = "message";
-        message.Size = new Size(208, 21);
+        message.Size = new Size(300, 48);
         message.TabIndex = 1;
         message.Text = "Muvoffaqqiyatli saqlandi!";
+        message.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // close
         // 
@@ -100,7 +100,6 @@ partial class Toastr
         Load += Toastr_Load;
         ((System.ComponentModel.ISupportInitialize)icon).EndInit();
         ResumeLayout(false);
-        PerformLayout();
     }
 
     #endregion

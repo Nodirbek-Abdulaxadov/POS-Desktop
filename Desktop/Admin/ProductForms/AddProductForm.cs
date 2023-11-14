@@ -23,8 +23,10 @@ public partial class AddProductForm : Form
         AddProductDto productDto = new()
         {
             Name = name_textbox.Text,
-            Barcode = barcode.Text,
-            WarningAmount = int.Parse(warningAmount.Text),
+            Barcode = barcode.Text.Trim()??"000000000000",
+            WarningAmount = int.Parse(
+                            string.IsNullOrEmpty(warningAmount.Text.Trim())?
+                            "0": warningAmount.Text.Trim()),
             CategoryId = _categories.FirstOrDefault(x => x.Name == category.Text).Id,
             MeasurmentType = (MeasurmentType)mtype.SelectedItem,
             Description = description.Text
@@ -44,9 +46,9 @@ public partial class AddProductForm : Form
         {
             new Toastr().ShowError(ex.ErrorMessage);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            new Toastr().ShowError();
+            new Toastr().ShowError(ex.Message);
         }
     }
 

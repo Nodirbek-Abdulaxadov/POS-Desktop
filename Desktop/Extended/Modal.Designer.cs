@@ -41,7 +41,7 @@ partial class Modal
         guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
         guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
         guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-        label2 = new Label();
+        messageLabel = new Label();
         panel1 = new Panel();
         guna2ShadowPanel1.SuspendLayout();
         SuspendLayout();
@@ -138,16 +138,16 @@ partial class Modal
         guna2Button2.Text = "Ha";
         guna2Button2.Click += guna2Button2_Click;
         // 
-        // label2
+        // messageLabel
         // 
-        label2.AutoSize = true;
-        label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-        label2.ForeColor = Color.Black;
-        label2.Location = new Point(72, 86);
-        label2.Name = "label2";
-        label2.Size = new Size(235, 30);
-        label2.TabIndex = 7;
-        label2.Text = "Ishonchingiz komilmi?";
+        messageLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+        messageLabel.ForeColor = Color.Black;
+        messageLabel.Location = new Point(10, 92);
+        messageLabel.Name = "messageLabel";
+        messageLabel.Size = new Size(361, 21);
+        messageLabel.TabIndex = 7;
+        messageLabel.Text = "Ishonchingiz komilmi?";
+        messageLabel.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // panel1
         // 
@@ -164,7 +164,7 @@ partial class Modal
         BackColor = Color.FromArgb(220, 229, 253);
         ClientSize = new Size(380, 230);
         Controls.Add(panel1);
-        Controls.Add(label2);
+        Controls.Add(messageLabel);
         Controls.Add(guna2Button2);
         Controls.Add(guna2Button1);
         Controls.Add(guna2ShadowPanel1);
@@ -175,7 +175,6 @@ partial class Modal
         guna2ShadowPanel1.ResumeLayout(false);
         guna2ShadowPanel1.PerformLayout();
         ResumeLayout(false);
-        PerformLayout();
     }
 
     #endregion
@@ -186,6 +185,6 @@ partial class Modal
     private Guna.UI2.WinForms.Guna2Button guna2Button2;
     private Guna.UI2.WinForms.Guna2Button guna2Button3;
     private Panel panel1;
-    private Label label2;
+    private Label messageLabel;
     private Label label1;
 }

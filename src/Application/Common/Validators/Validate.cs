@@ -16,15 +16,13 @@ public static class Validate
 
         return dto.Name == product.Name &&
                dto.Description == product.Description &&
-               dto.CategoryId == product.CategoryId &&
-               dto.Barcode == product.Barcode;
+               dto.CategoryId == product.CategoryId;
     }
 
     // product validation
     public static bool IsValid(this AddProductDto dto)
         => dto != null
-            && !dto.Name.IsNullOrEmpty()
-            && !dto.Barcode.IsNullOrEmpty();
+            && !dto.Name.IsNullOrEmpty();
 
     public static bool IsValid(this UpdateProductDto dto)
        => dto != null

@@ -9,7 +9,7 @@ public partial class Toastr : Form
         {
             if (scrn.Bounds.Contains(Location))
             {
-                Location = new Point((scrn.Bounds.Right - Width )/2, scrn.Bounds.Top + 20);
+                Location = new Point((scrn.Bounds.Right - Width) / 2, scrn.Bounds.Top + 20);
                 return;
             }
         }

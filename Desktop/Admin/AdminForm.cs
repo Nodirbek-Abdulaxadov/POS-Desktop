@@ -9,11 +9,15 @@ namespace Desktop.Admin;
 public partial class AdminForm : Form
 {
     private readonly IBusinessUnit _businessUnit;
+    private CategoryTable _categoryTable;
+    private ProductTable _productTable;
 
     public AdminForm(IBusinessUnit businessUnit)
     {
         InitializeComponent();
         _businessUnit = businessUnit;
+        _categoryTable = new(_businessUnit);
+        _productTable = new(_businessUnit);
     }
 
     #region Sidebar
@@ -128,6 +132,8 @@ public partial class AdminForm : Form
 
     private void DisableAll()
     {
+        _productTable.Dispose();
+        _categoryTable.Dispose();
         reportBtn.FillColor = Color.White;
         reportBtn.ForeColor = dark;
         reportBtn.Image = Resources.home_dark;
@@ -248,17 +254,17 @@ public partial class AdminForm : Form
 
     private void OpenCategoriesTable()
     {
-        CategoryTable table = new(_businessUnit);
-        table.Dock = DockStyle.Fill;
+        _categoryTable = new(_businessUnit);
+        _categoryTable.Dock = DockStyle.Fill;
         main.Controls.Clear();
-        main.Controls.Add(table);
+        main.Controls.Add(_categoryTable);
     }
 
     private void OpenProductsTable()
     {
-        ProductTable table = new(_businessUnit);
-        table.Dock = DockStyle.Fill;
+        _productTable = new(_businessUnit);
+        _productTable.Dock = DockStyle.Fill;
         main.Controls.Clear();
-        main.Controls.Add(table);
+        main.Controls.Add(_productTable);
     }
 }
