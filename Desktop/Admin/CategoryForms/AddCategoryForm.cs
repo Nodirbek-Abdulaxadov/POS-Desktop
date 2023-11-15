@@ -67,4 +67,9 @@ public partial class AddCategoryForm : Form
             guna2Button1.Enabled = true;
         }
     }
+
+    private void CanselBtn_Click(object sender, EventArgs e)
+    {
+        this.Close();
+    }
 }

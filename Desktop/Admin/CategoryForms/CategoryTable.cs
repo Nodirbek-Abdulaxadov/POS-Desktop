@@ -43,9 +43,9 @@ public partial class CategoryTable : UserControl
                                      .GetRequiredService<IBusinessUnit>();
         var list = selected switch
         {
-            State.Active => await _businessUnit.CategoryService.GetAllActivesAsync(), 
-            State.Archive => await _businessUnit.CategoryService.GetAllArchivesAsync(), 
-            _ => await _businessUnit.CategoryService.GetAllAsync() 
+            State.Active => await _businessUnit.CategoryService.GetAllActivesAsync(),
+            State.Archive => await _businessUnit.CategoryService.GetAllArchivesAsync(),
+            _ => await _businessUnit.CategoryService.GetAllAsync()
         };
 
         if (IsHandleCreated)
@@ -181,22 +181,50 @@ public partial class CategoryTable : UserControl
         }
     }
 
+
+
+    /// <summary>
+    /// Categoriyani arxivga solish 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    /// 
     private async void ArchiveBtn_Click(object sender, EventArgs e)
+
     {
         if (selectedId != 0)
         {
             try
             {
-                var result = new Modal("Rostdan ham arxivlamoqchimisiz?").ShowDialog();
-                if (result == DialogResult.OK)
+                if (selected == State.Active || selected == State.All)
                 {
-                    await _businessUnit.CategoryService.ActionAsync(selectedId, ActionType.Archive);
-                    await Task.Run(() => FillCategories(selected));
-                    new Toastr().ShowSuccess("Muvoffaqqiyatli arxivelandi");
+
+                    ArchiveBtn.Text = "Arxivlash";
+                    var result = new Modal("Rostdan ham arxivlamoqchimisiz?").ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        await _businessUnit.CategoryService.ActionAsync(selectedId, ActionType.Archive);
+                        await Task.Run(() => FillCategories(selected));
+                        new Toastr().ShowSuccess("Muvoffaqqiyatli arxivelandi");
+                    }
                 }
                 else
                 {
-                    // Handle cancel or other cases if needed
+                    if(selectedId != 0)
+                    {
+                        ArchiveBtn.Text = "Faollashtirish";
+                        var result = new Modal("Rostdan ham arxivdan chiqarmoqchimisan?").ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            await _businessUnit.CategoryService.ActionAsync(selectedId, ActionType.Recover);
+                            await Task.Run(() => FillCategories(selected));
+                            new Toastr().ShowSuccess("Muvoffaqqiyatli arxivdan chiqarildi");
+                        }
+                    }
+                    else
+                    {
+                        new Toastr().ShowWarning("Foallashtirish uchun bironta kategoriyani tanlang");
+                    }
                 }
             }
             catch (Exception)
@@ -206,9 +234,47 @@ public partial class CategoryTable : UserControl
         }
         else
         {
-            new Toastr().ShowError("Arxivelash uchun kategoriyalardan birini tanlang!");
+            if(InfoCategory.Text== "Arxivlangan")
+            {
+                new Toastr().ShowWarning("Faollashtirish uchun kategoriyalardan birini tanlang!");
+
+            }
+            else
+            {
+                new Toastr().ShowWarning("Arxivelash uchun kategoriyalardan birini tanlang!");
+
+            }
         }
     }
+
+    /// <summary>
+    /// ComboBoxni textsini o'zgartirish va selectedId ni 0 ga tenglash 
+    /// </summary>
+    private void UpdateArchiveButton()
+    {
+        if (InfoCategory.Text == "Arxivlangan")
+        {
+            ArchiveBtn.Text = "Faollashtirish";
+            ArchiveBtn.Visible = true;
+            selectedId = 0;
+
+        }
+        else if (InfoCategory.Text == "Aktiv")
+        {
+            ArchiveBtn.Text = "Arxivlash";
+            ArchiveBtn.Visible = true;
+            selectedId = 0;
+
+        }
+        else
+        {
+            ArchiveBtn.Visible = false;
+            
+        }
+    }
+
+
+
 
     private async void InfoCategory_SelectedIndexChangedAsync(object sender, EventArgs e)
     {
@@ -219,5 +285,6 @@ public partial class CategoryTable : UserControl
             _ => State.All
         };
         await Task.Run(() => FillCategories(selected));
+        UpdateArchiveButton();
     }
 }

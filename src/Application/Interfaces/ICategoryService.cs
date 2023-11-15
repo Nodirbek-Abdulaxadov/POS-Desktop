@@ -12,6 +12,7 @@ public interface ICategoryService : IDisposable
     Task<List<CategoryDto>> GetAllArchivesAsync();
     Task<List<CategoryDto>> GetAllActivesAsync();
     Task<List<CategoryDto>> FilterByNameAsync(string text, State state);
+    
 
     Task<CategoryDto> GetByIdAsync(int id);
     Task<CategoryDto> AddAsync(AddCategoryDto dto);

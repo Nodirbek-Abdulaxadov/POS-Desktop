@@ -23,10 +23,10 @@ public partial class AddProductForm : Form
         AddProductDto productDto = new()
         {
             Name = name_textbox.Text,
-            Barcode = barcode.Text.Trim()??"000000000000",
+            Barcode = barcode.Text.Trim() ?? "000000000000",
             WarningAmount = int.Parse(
-                            string.IsNullOrEmpty(warningAmount.Text.Trim())?
-                            "0": warningAmount.Text.Trim()),
+                            string.IsNullOrEmpty(warningAmount.Text.Trim()) ?
+                            "0" : warningAmount.Text.Trim()),
             CategoryId = _categories.FirstOrDefault(x => x.Name == category.Text).Id,
             MeasurmentType = (MeasurmentType)mtype.SelectedItem,
             Description = description.Text
@@ -59,5 +59,10 @@ public partial class AddProductForm : Form
         category.DataSource = _categories.Select(x => x.Name)
                                          .ToArray();
         mtype.DataSource = Enum.GetValues(typeof(MeasurmentType));
+    }
+
+    private void CanselBtn_Click(object sender, EventArgs e)
+    {
+        this.Close();
     }
 }
