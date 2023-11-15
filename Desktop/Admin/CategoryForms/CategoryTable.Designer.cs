@@ -258,6 +258,7 @@ partial class CategoryTable
         InfoCategory.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         InfoCategory.ForeColor = Color.FromArgb(68, 88, 112);
         InfoCategory.ItemHeight = 30;
+        InfoCategory.Items.AddRange(new object[] { "Barchasi", "Aktiv", "Arxivlangan" });
         InfoCategory.Location = new Point(319, 8);
         InfoCategory.Name = "InfoCategory";
         InfoCategory.ShadowDecoration.CustomizableEdges = customizableEdges10;

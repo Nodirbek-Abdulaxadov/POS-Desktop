@@ -1,31 +1,24 @@
-﻿using System.Windows.Forms;
-using Desktop.Extended;
+﻿using Desktop.Extended;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using POS.Application.Common.DataTransferObjects.CategoryDtos;
+using POS.Application.Common.Enums;
 using POS.Application.Common.Models;
 using POS.Application.Interfaces;
-using POS.Domain.Entities;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Desktop.Admin.CategoryForms;
 public partial class CategoryTable : UserControl
 {
     private readonly List<CategoryDto> _categories = new();
     private IBusinessUnit _businessUnit;
-    private int SelectInfoCategory = 0;
-    private List<string> infCt = new()
-    {  
-        "Barchasi",
-        "Activlar",
-        "Arxivlar"
-    };
     private int selectedId = 0;
+    private State selected = State.All;
 
     public CategoryTable(IBusinessUnit businessUnit)
     {
         InitializeComponent();
         _businessUnit = businessUnit;
+        InfoCategory.SelectedIndex = 0;
     }
 
     /// <summary>
@@ -37,46 +30,24 @@ public partial class CategoryTable : UserControl
     {
         _businessUnit = Configuration.GetServiceProvider()
                                      .GetRequiredService<IBusinessUnit>();
-        InfoCategory.DataSource = infCt.ToArray();
+        await Task.Run(() => FillCategories(selected));
     }
 
     /// <summary>
     /// Fill table with categories
     /// </summary>
     /// <returns></returns>
-    private async Task FillCategoriesForActive()
+    private async Task FillCategories(State selected)
     {
-        var list = await _businessUnit.CategoryService.GetAllAsync();
-        if (IsHandleCreated)
+        _businessUnit = Configuration.GetServiceProvider()
+                                     .GetRequiredService<IBusinessUnit>();
+        var list = selected switch
         {
-            table.BeginInvoke(() =>
-            {
-                table.DataSource = list.Where(i => i.IsDeleted == false).Select(i =>
-                new { Id = i.Id, Nomi = i.Name })
-                .ToList();
-                _categories.AddRange(list);
-            });
-        }
-    }
+            State.Active => await _businessUnit.CategoryService.GetAllActivesAsync(), 
+            State.Archive => await _businessUnit.CategoryService.GetAllArchivesAsync(), 
+            _ => await _businessUnit.CategoryService.GetAllAsync() 
+        };
 
-    private async Task FillCategoriesForArchives()
-    {
-        var list = await _businessUnit.CategoryService.GetAllAsync();
-        if (IsHandleCreated)
-        {
-            table.BeginInvoke(() =>
-            {
-                table.DataSource = list.Where(i => i.IsDeleted == true).Select(i =>
-                new { Id = i.Id, Nomi = i.Name })
-                .ToList();
-                _categories.AddRange(list);
-            });
-        }
-    }
-
-    private async Task FillCategories()
-    {
-        var list = await _businessUnit.CategoryService.GetAllAsync();
         if (IsHandleCreated)
         {
             table.BeginInvoke(() =>
@@ -101,7 +72,7 @@ public partial class CategoryTable : UserControl
         if (result == DialogResult.OK)
         {
             new Toastr().ShowSuccess();
-            await Task.Run(FillCategories);
+            await Task.Run(() => FillCategories(selected));
         }
     }
 
@@ -119,7 +90,7 @@ public partial class CategoryTable : UserControl
             if (result == DialogResult.OK)
             {
                 new Toastr().ShowSuccess("O'zgarishlar saqlandi!");
-                await Task.Run(FillCategories);
+                await Task.Run(() => FillCategories(selected));
                 selectedId = 0;
             }
         }
@@ -156,7 +127,7 @@ public partial class CategoryTable : UserControl
                 }
                 finally
                 {
-                    await Task.Run(FillCategories);
+                    await Task.Run(() => FillCategories(selected));
                     selectedId = 0;
                 }
             }
@@ -178,16 +149,16 @@ public partial class CategoryTable : UserControl
     }
 
 
-    private void search_textbox_TextChanged(object sender, EventArgs e)
+    private async void search_textbox_TextChanged(object sender, EventArgs e)
     {
         try
         {
             if (!string.IsNullOrEmpty(search_textbox.Text))
             {
-                var searchResult = _categories.Where(i => i.Name.ToLower()
-                                              .Contains(search_textbox.Text.ToLower()))
-                                              .Select(i => new { Id = i.Id, Nomi = i.Name })
-                                              .ToList();
+                var filter = await _businessUnit.CategoryService
+                                                .FilterByNameAsync(search_textbox.Text, selected);
+                var searchResult = filter.Select(i => new { Id = i.Id, Nomi = i.Name })
+                                         .ToList();
 
                 if (searchResult != null && searchResult.Any())
                 {
@@ -196,12 +167,12 @@ public partial class CategoryTable : UserControl
                 else
                 {
                     table.DataSource = new List<CategoryDto>();
-                    new Toastr().ShowError("Bunday kategoriya mavjud emas");
+                    new Toastr().ShowWarning("Bunday kategoriya mavjud emas");
                 }
             }
             else
             {
-                table.DataSource = _categories ?? new List<CategoryDto>();
+                await Task.Run(() => FillCategories(selected));
             }
         }
         catch (Exception)
@@ -220,7 +191,7 @@ public partial class CategoryTable : UserControl
                 if (result == DialogResult.OK)
                 {
                     await _businessUnit.CategoryService.ActionAsync(selectedId, ActionType.Archive);
-                    await Task.Run(FillCategories);
+                    await Task.Run(() => FillCategories(selected));
                     new Toastr().ShowSuccess("Muvoffaqqiyatli arxivelandi");
                 }
                 else
@@ -241,27 +212,12 @@ public partial class CategoryTable : UserControl
 
     private async void InfoCategory_SelectedIndexChangedAsync(object sender, EventArgs e)
     {
-        var tmp = InfoCategory.Text.ToString();
-        if (tmp == "Activlar")
+        selected = InfoCategory.Text switch
         {
-            SelectInfoCategory = 0;
-            table.DataSource = FillCategoriesForActive();
-            //await Task.Run(FillCategoriesForActive);
-        }
-
-        else if (tmp == "Arxivlar")
-        {
-            SelectInfoCategory = 1;
-            table.DataSource = FillCategoriesForArchives();
-            //await Task.Run(FillCategoriesForArchives);
-        }
-
-        else
-        {
-            SelectInfoCategory = 2;
-            table.DataSource = FillCategoriesForArchives();
-            //await Task.Run(FillCategories);
-        }
+            "Aktiv" => State.Active,
+            "Arxivlangan" => State.Archive,
+            _ => State.All
+        };
+        await Task.Run(() => FillCategories(selected));
     }
-
 }

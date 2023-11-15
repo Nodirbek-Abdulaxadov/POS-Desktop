@@ -36,6 +36,7 @@ partial class AddCategoryForm
         label1 = new Label();
         label2 = new Label();
         guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+        errorMessage = new Label();
         SuspendLayout();
         // 
         // name_textbox
@@ -51,7 +52,7 @@ partial class AddCategoryForm
         name_textbox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         name_textbox.ForeColor = Color.Black;
         name_textbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        name_textbox.Location = new Point(32, 153);
+        name_textbox.Location = new Point(31, 135);
         name_textbox.Margin = new Padding(4);
         name_textbox.Name = "name_textbox";
         name_textbox.PasswordChar = '\0';
@@ -60,13 +61,14 @@ partial class AddCategoryForm
         name_textbox.ShadowDecoration.CustomizableEdges = customizableEdges2;
         name_textbox.Size = new Size(314, 49);
         name_textbox.TabIndex = 0;
+        name_textbox.TextChanged += name_textbox_TextChanged;
         // 
         // label1
         // 
         label1.Anchor = AnchorStyles.None;
         label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        label1.Location = new Point(32, 124);
+        label1.Location = new Point(31, 106);
         label1.Name = "label1";
         label1.Size = new Size(58, 25);
         label1.TabIndex = 1;
@@ -104,12 +106,26 @@ partial class AddCategoryForm
         guna2Button1.Text = "Saqlash";
         guna2Button1.Click += guna2Button1_Click;
         // 
+        // errorMessage
+        // 
+        errorMessage.Anchor = AnchorStyles.None;
+        errorMessage.AutoSize = true;
+        errorMessage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        errorMessage.ForeColor = Color.Red;
+        errorMessage.Location = new Point(31, 188);
+        errorMessage.Name = "errorMessage";
+        errorMessage.Size = new Size(58, 25);
+        errorMessage.TabIndex = 4;
+        errorMessage.Text = "Nomi";
+        errorMessage.Visible = false;
+        // 
         // AddCategoryForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(220, 229, 253);
         ClientSize = new Size(384, 315);
+        Controls.Add(errorMessage);
         Controls.Add(guna2Button1);
         Controls.Add(label2);
         Controls.Add(label1);
@@ -128,4 +144,5 @@ partial class AddCategoryForm
     private Label label1;
     private Label label2;
     private Guna.UI2.WinForms.Guna2Button guna2Button1;
+    private Label errorMessage;
 }

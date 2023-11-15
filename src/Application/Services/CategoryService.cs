@@ -1,4 +1,5 @@
 ﻿using POS.Application.Common.DataTransferObjects.CategoryDtos;
+using POS.Application.Common.Enums;
 using POS.Application.Common.Exceptions;
 using POS.Application.Common.Models;
 using POS.Application.Interfaces;
@@ -79,6 +80,52 @@ public class CategoryService : ICategoryService
     public void Dispose()
         => GC.SuppressFinalize(this);
 
+    public async Task<List<CategoryDto>> FilterByNameAsync(string text, State state)
+    {
+        var list = state switch
+        {
+            State.Active => await GetAllActivesAsync(),
+            State.Archive => await GetAllArchivesAsync(),
+            _ => await GetAllAsync(),
+        };
+
+        return list.Where(x => x.Name.ToLower()
+                                     .Contains(text.ToLower()))
+                   .ToList();
+    }
+
+
+    /// <summary>
+    /// Barcha aktiv kategoriyalarni olish
+    /// </summary>
+    /// <returns>Aktiv kategoriyalar listi</returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public async Task<List<CategoryDto>> GetAllActivesAsync()
+    {
+        var list = await _unitOfWork.Categories.GetAllAsync();
+
+        var dtoList = list.Where(c => c.IsDeleted == false)
+                          .Select(x => (CategoryDto)x);
+        return dtoList.ToList();
+    }
+
+    /// <summary>
+    /// Barcha arxivlangan kategoriyalarni olish
+    /// </summary>
+    /// <returns>Arxivlangan kategoriyalar list</returns>
+    public async Task<List<CategoryDto>> GetAllArchivesAsync()
+    {
+        var list = await _unitOfWork.Categories.GetAllAsync();
+
+        var dtoList = list.Where(c => c.IsDeleted == true)
+                          .Select(x => (CategoryDto)x);
+        return dtoList.ToList();
+    }
+
+    /// <summary>
+    /// Barcha aktiv kategoriyalarni olish
+    /// </summary>
+    /// <returns></returns>
     public async Task<List<CategoryDto>> GetAllAsync()
     {
         var list = await _unitOfWork.Categories.GetAllAsync();
