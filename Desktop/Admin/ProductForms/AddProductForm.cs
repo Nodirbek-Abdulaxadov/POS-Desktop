@@ -65,4 +65,5 @@ public partial class AddProductForm : Form
     {
         this.Close();
     }
+
 }

@@ -134,6 +134,8 @@ public class CategoryService : ICategoryService
         return dtoList.ToList();
     }
 
+
+
     public async Task<PagedList<CategoryDto>> GetArchivedCategoriesAsync(int pageSize, int pageNumber)
     {
         var dtoList = (await _unitOfWork.Categories.GetAllAsync())
