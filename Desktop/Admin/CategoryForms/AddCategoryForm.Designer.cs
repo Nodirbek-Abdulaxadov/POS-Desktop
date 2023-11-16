@@ -32,10 +32,14 @@ partial class AddCategoryForm
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         name_textbox = new Guna.UI2.WinForms.Guna2TextBox();
         label1 = new Label();
         label2 = new Label();
         guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+        errorMessage = new Label();
+        CanselBtn = new Guna.UI2.WinForms.Guna2Button();
         SuspendLayout();
         // 
         // name_textbox
@@ -51,7 +55,7 @@ partial class AddCategoryForm
         name_textbox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         name_textbox.ForeColor = Color.Black;
         name_textbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        name_textbox.Location = new Point(32, 153);
+        name_textbox.Location = new Point(31, 102);
         name_textbox.Margin = new Padding(4);
         name_textbox.Name = "name_textbox";
         name_textbox.PasswordChar = '\0';
@@ -60,13 +64,14 @@ partial class AddCategoryForm
         name_textbox.ShadowDecoration.CustomizableEdges = customizableEdges2;
         name_textbox.Size = new Size(314, 49);
         name_textbox.TabIndex = 0;
+        name_textbox.TextChanged += name_textbox_TextChanged;
         // 
         // label1
         // 
         label1.Anchor = AnchorStyles.None;
         label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        label1.Location = new Point(32, 124);
+        label1.Location = new Point(31, 73);
         label1.Name = "label1";
         label1.Size = new Size(58, 25);
         label1.TabIndex = 1;
@@ -77,7 +82,7 @@ partial class AddCategoryForm
         label2.Anchor = AnchorStyles.None;
         label2.AutoSize = true;
         label2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-        label2.Location = new Point(12, 12);
+        label2.Location = new Point(12, 14);
         label2.Name = "label2";
         label2.Size = new Size(253, 30);
         label2.TabIndex = 2;
@@ -94,22 +99,58 @@ partial class AddCategoryForm
         guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
         guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
         guna2Button1.FillColor = Color.FromArgb(75, 73, 172);
-        guna2Button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        guna2Button1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
         guna2Button1.ForeColor = Color.White;
-        guna2Button1.Location = new Point(98, 233);
+        guna2Button1.Location = new Point(213, 210);
         guna2Button1.Name = "guna2Button1";
         guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-        guna2Button1.Size = new Size(179, 50);
+        guna2Button1.Size = new Size(132, 36);
         guna2Button1.TabIndex = 3;
         guna2Button1.Text = "Saqlash";
         guna2Button1.Click += guna2Button1_Click;
+        // 
+        // errorMessage
+        // 
+        errorMessage.Anchor = AnchorStyles.None;
+        errorMessage.AutoSize = true;
+        errorMessage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        errorMessage.ForeColor = Color.Red;
+        errorMessage.Location = new Point(31, 155);
+        errorMessage.Name = "errorMessage";
+        errorMessage.Size = new Size(58, 25);
+        errorMessage.TabIndex = 4;
+        errorMessage.Text = "Nomi";
+        errorMessage.Visible = false;
+        // 
+        // CanselBtn
+        // 
+        CanselBtn.Anchor = AnchorStyles.None;
+        CanselBtn.BorderRadius = 7;
+        CanselBtn.Cursor = Cursors.Hand;
+        CanselBtn.CustomizableEdges = customizableEdges5;
+        CanselBtn.DisabledState.BorderColor = Color.DarkGray;
+        CanselBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+        CanselBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        CanselBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        CanselBtn.FillColor = Color.FromArgb(192, 0, 0);
+        CanselBtn.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+        CanselBtn.ForeColor = Color.White;
+        CanselBtn.Location = new Point(37, 210);
+        CanselBtn.Name = "CanselBtn";
+        CanselBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+        CanselBtn.Size = new Size(133, 36);
+        CanselBtn.TabIndex = 5;
+        CanselBtn.Text = "Bekor qilish";
+        CanselBtn.Click += CanselBtn_Click;
         // 
         // AddCategoryForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(220, 229, 253);
-        ClientSize = new Size(384, 315);
+        ClientSize = new Size(384, 283);
+        Controls.Add(CanselBtn);
+        Controls.Add(errorMessage);
         Controls.Add(guna2Button1);
         Controls.Add(label2);
         Controls.Add(label1);
@@ -128,4 +169,6 @@ partial class AddCategoryForm
     private Label label1;
     private Label label2;
     private Guna.UI2.WinForms.Guna2Button guna2Button1;
+    private Label errorMessage;
+    private Guna.UI2.WinForms.Guna2Button CanselBtn;
 }

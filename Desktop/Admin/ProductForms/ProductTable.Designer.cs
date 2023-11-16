@@ -28,22 +28,35 @@ partial class ProductTable
     /// </summary>
     private void InitializeComponent()
     {
-        DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductTable));
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         table = new Guna.UI2.WinForms.Guna2DataGridView();
         panel1 = new Panel();
+        ArchiveBtn = new Guna.UI2.WinForms.Guna2Button();
         deletebtn = new Guna.UI2.WinForms.Guna2Button();
         editbtn = new Guna.UI2.WinForms.Guna2Button();
         addbtn = new Guna.UI2.WinForms.Guna2Button();
         panel2 = new Panel();
+        ProductCategoryComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+        search_textbox = new Guna.UI2.WinForms.Guna2TextBox();
+        FilterComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
         label1 = new Label();
         panel3 = new Panel();
         ((System.ComponentModel.ISupportInitialize)table).BeginInit();
@@ -56,31 +69,31 @@ partial class ProductTable
         table.AllowUserToAddRows = false;
         table.AllowUserToDeleteRows = false;
         table.AllowUserToResizeRows = false;
-        dataGridViewCellStyle5.BackColor = Color.White;
-        dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-        dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(231, 229, 255);
-        dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(71, 69, 94);
-        table.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+        dataGridViewCellStyle1.BackColor = Color.White;
+        dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+        dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(231, 229, 255);
+        dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
+        table.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
         table.BorderStyle = BorderStyle.Fixed3D;
-        dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        dataGridViewCellStyle6.BackColor = Color.FromArgb(75, 73, 172);
-        dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-        dataGridViewCellStyle6.ForeColor = Color.White;
-        dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(75, 73, 172);
-        dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-        table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+        dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        dataGridViewCellStyle2.BackColor = Color.FromArgb(75, 73, 172);
+        dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+        dataGridViewCellStyle2.ForeColor = Color.White;
+        dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(75, 73, 172);
+        dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+        table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
         table.ColumnHeadersHeight = 28;
         table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-        dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        dataGridViewCellStyle7.BackColor = Color.White;
-        dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
-        dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(231, 229, 255);
-        dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
-        dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-        table.DefaultCellStyle = dataGridViewCellStyle7;
+        dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        dataGridViewCellStyle3.BackColor = Color.White;
+        dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+        dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+        dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+        table.DefaultCellStyle = dataGridViewCellStyle3;
         table.Dock = DockStyle.Fill;
         table.GridColor = Color.FromArgb(231, 229, 255);
         table.Location = new Point(0, 50);
@@ -88,14 +101,14 @@ partial class ProductTable
         table.Name = "table";
         table.ReadOnly = true;
         table.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-        dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        dataGridViewCellStyle8.BackColor = Color.White;
-        dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-        dataGridViewCellStyle8.SelectionBackColor = Color.White;
-        dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-        table.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+        dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        dataGridViewCellStyle4.BackColor = Color.White;
+        dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle4.SelectionBackColor = Color.White;
+        dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+        table.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
         table.RowHeadersVisible = false;
         table.RowTemplate.Height = 25;
         table.Size = new Size(750, 295);
@@ -125,6 +138,7 @@ partial class ProductTable
         // 
         // panel1
         // 
+        panel1.Controls.Add(ArchiveBtn);
         panel1.Controls.Add(deletebtn);
         panel1.Controls.Add(editbtn);
         panel1.Controls.Add(addbtn);
@@ -134,12 +148,35 @@ partial class ProductTable
         panel1.Size = new Size(750, 91);
         panel1.TabIndex = 1;
         // 
+        // ArchiveBtn
+        // 
+        ArchiveBtn.Anchor = AnchorStyles.None;
+        ArchiveBtn.BorderRadius = 5;
+        ArchiveBtn.Cursor = Cursors.Hand;
+        ArchiveBtn.CustomizableEdges = customizableEdges1;
+        ArchiveBtn.DisabledState.BorderColor = Color.DarkGray;
+        ArchiveBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+        ArchiveBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        ArchiveBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        ArchiveBtn.FillColor = Color.FromArgb(243, 182, 100);
+        ArchiveBtn.Font = new Font("Segoe UI", 11.5F, FontStyle.Bold, GraphicsUnit.Point);
+        ArchiveBtn.ForeColor = Color.White;
+        ArchiveBtn.Image = (Image)resources.GetObject("ArchiveBtn.Image");
+        ArchiveBtn.ImageSize = new Size(24, 24);
+        ArchiveBtn.Location = new Point(564, 21);
+        ArchiveBtn.Name = "ArchiveBtn";
+        ArchiveBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+        ArchiveBtn.Size = new Size(145, 42);
+        ArchiveBtn.TabIndex = 4;
+        ArchiveBtn.Text = "Archivlash";
+        ArchiveBtn.Click += ArchiveBtn_Click;
+        // 
         // deletebtn
         // 
         deletebtn.Anchor = AnchorStyles.None;
         deletebtn.BorderRadius = 5;
         deletebtn.Cursor = Cursors.Hand;
-        deletebtn.CustomizableEdges = customizableEdges7;
+        deletebtn.CustomizableEdges = customizableEdges3;
         deletebtn.DisabledState.BorderColor = Color.DarkGray;
         deletebtn.DisabledState.CustomBorderColor = Color.DarkGray;
         deletebtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -148,10 +185,10 @@ partial class ProductTable
         deletebtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         deletebtn.ForeColor = Color.White;
         deletebtn.Image = Properties.Resources.trash;
-        deletebtn.Location = new Point(525, 21);
+        deletebtn.Location = new Point(396, 21);
         deletebtn.Name = "deletebtn";
-        deletebtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
-        deletebtn.Size = new Size(168, 45);
+        deletebtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
+        deletebtn.Size = new Size(145, 42);
         deletebtn.TabIndex = 2;
         deletebtn.Text = "O'chirish";
         deletebtn.Click += deletebtn_Click;
@@ -161,7 +198,7 @@ partial class ProductTable
         editbtn.Anchor = AnchorStyles.None;
         editbtn.BorderRadius = 5;
         editbtn.Cursor = Cursors.Hand;
-        editbtn.CustomizableEdges = customizableEdges9;
+        editbtn.CustomizableEdges = customizableEdges5;
         editbtn.DisabledState.BorderColor = Color.DarkGray;
         editbtn.DisabledState.CustomBorderColor = Color.DarkGray;
         editbtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -170,10 +207,10 @@ partial class ProductTable
         editbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         editbtn.ForeColor = Color.White;
         editbtn.Image = Properties.Resources.edit;
-        editbtn.Location = new Point(288, 21);
+        editbtn.Location = new Point(228, 21);
         editbtn.Name = "editbtn";
-        editbtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
-        editbtn.Size = new Size(168, 45);
+        editbtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+        editbtn.Size = new Size(145, 42);
         editbtn.TabIndex = 1;
         editbtn.Text = "Tahrirlash";
         editbtn.Click += editbtn_Click;
@@ -183,7 +220,7 @@ partial class ProductTable
         addbtn.Anchor = AnchorStyles.None;
         addbtn.BorderRadius = 5;
         addbtn.Cursor = Cursors.Hand;
-        addbtn.CustomizableEdges = customizableEdges11;
+        addbtn.CustomizableEdges = customizableEdges7;
         addbtn.DisabledState.BorderColor = Color.DarkGray;
         addbtn.DisabledState.CustomBorderColor = Color.DarkGray;
         addbtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -192,22 +229,89 @@ partial class ProductTable
         addbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         addbtn.ForeColor = Color.White;
         addbtn.Image = Properties.Resources.add;
-        addbtn.Location = new Point(51, 21);
+        addbtn.Location = new Point(60, 21);
         addbtn.Name = "addbtn";
-        addbtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
-        addbtn.Size = new Size(168, 45);
+        addbtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
+        addbtn.Size = new Size(145, 42);
         addbtn.TabIndex = 0;
         addbtn.Text = "Yangi qo'shish";
         addbtn.Click += addbtn_Click;
         // 
         // panel2
         // 
+        panel2.Controls.Add(ProductCategoryComboBox);
+        panel2.Controls.Add(search_textbox);
+        panel2.Controls.Add(FilterComboBox);
         panel2.Controls.Add(label1);
         panel2.Dock = DockStyle.Top;
         panel2.Location = new Point(0, 0);
         panel2.Name = "panel2";
         panel2.Size = new Size(750, 50);
         panel2.TabIndex = 2;
+        // 
+        // ProductCategoryComboBox
+        // 
+        ProductCategoryComboBox.Anchor = AnchorStyles.Right;
+        ProductCategoryComboBox.BackColor = Color.Transparent;
+        ProductCategoryComboBox.BorderRadius = 5;
+        ProductCategoryComboBox.CustomizableEdges = customizableEdges9;
+        ProductCategoryComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+        ProductCategoryComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        ProductCategoryComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+        ProductCategoryComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+        ProductCategoryComboBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+        ProductCategoryComboBox.ForeColor = Color.FromArgb(68, 88, 112);
+        ProductCategoryComboBox.ItemHeight = 25;
+        ProductCategoryComboBox.Items.AddRange(new object[] { "Barchasi", "Aktiv", "Arxivlangan" });
+        ProductCategoryComboBox.Location = new Point(191, 9);
+        ProductCategoryComboBox.Name = "ProductCategoryComboBox";
+        ProductCategoryComboBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
+        ProductCategoryComboBox.Size = new Size(182, 31);
+        ProductCategoryComboBox.TabIndex = 6;
+        ProductCategoryComboBox.SelectedIndexChanged += ProductCategoryComboBox_SelectedIndexChanged;
+        // 
+        // search_textbox
+        // 
+        search_textbox.Anchor = AnchorStyles.Right;
+        search_textbox.BorderRadius = 7;
+        search_textbox.CustomizableEdges = customizableEdges11;
+        search_textbox.DefaultText = "";
+        search_textbox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+        search_textbox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+        search_textbox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+        search_textbox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+        search_textbox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+        search_textbox.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+        search_textbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+        search_textbox.Location = new Point(567, 9);
+        search_textbox.Margin = new Padding(3, 5, 3, 5);
+        search_textbox.Name = "search_textbox";
+        search_textbox.PasswordChar = '\0';
+        search_textbox.PlaceholderText = "Mahsulot nomini kiriting";
+        search_textbox.SelectedText = "";
+        search_textbox.ShadowDecoration.CustomizableEdges = customizableEdges12;
+        search_textbox.Size = new Size(169, 31);
+        search_textbox.TabIndex = 5;
+        // 
+        // FilterComboBox
+        // 
+        FilterComboBox.Anchor = AnchorStyles.Right;
+        FilterComboBox.BackColor = Color.Transparent;
+        FilterComboBox.BorderRadius = 5;
+        FilterComboBox.CustomizableEdges = customizableEdges13;
+        FilterComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+        FilterComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        FilterComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+        FilterComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+        FilterComboBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+        FilterComboBox.ForeColor = Color.FromArgb(68, 88, 112);
+        FilterComboBox.ItemHeight = 25;
+        FilterComboBox.Location = new Point(379, 9);
+        FilterComboBox.Name = "FilterComboBox";
+        FilterComboBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
+        FilterComboBox.Size = new Size(182, 31);
+        FilterComboBox.TabIndex = 4;
+        FilterComboBox.SelectedIndexChanged += FilterComboBox_SelectedIndexChanged;
         // 
         // label1
         // 
@@ -258,4 +362,8 @@ partial class ProductTable
     private Panel panel2;
     private Label label1;
     private Panel panel3;
+    private Guna.UI2.WinForms.Guna2TextBox search_textbox;
+    private Guna.UI2.WinForms.Guna2ComboBox FilterComboBox;
+    private Guna.UI2.WinForms.Guna2Button ArchiveBtn;
+    private Guna.UI2.WinForms.Guna2ComboBox ProductCategoryComboBox;
 }

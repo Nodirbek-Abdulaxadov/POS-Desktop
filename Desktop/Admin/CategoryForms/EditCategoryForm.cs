@@ -7,7 +7,7 @@ namespace Desktop.Admin.CategoryForms;
 public partial class EditCategoryForm : Form
 {
     private readonly IBusinessUnit _businessUnit;
-    private readonly int id = 0; 
+    private readonly int id = 0;
 
     public EditCategoryForm(int id, IBusinessUnit businessUnit)
     {
@@ -80,5 +80,10 @@ public partial class EditCategoryForm : Form
     private void guna2Button2_Click(object sender, EventArgs e)
     {
         Close();
+    }
+
+    private void CanselBtn_Click(object sender, EventArgs e)
+    {
+        this.Close();
     }
 }
