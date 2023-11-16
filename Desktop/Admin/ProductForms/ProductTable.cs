@@ -16,6 +16,7 @@ public partial class ProductTable : UserControl
     private List<ProductDto> _products;
     private int selectedId = 0;
     private State selected = State.All;
+    private int selectedCategoryId = 0;
 
     public ProductTable(IBusinessUnit businessUnit)
     {
@@ -56,11 +57,11 @@ public partial class ProductTable : UserControl
             {
                 try
                 {
-                    await _businessUnit.ProductService.DeleteAsync(selectedId);
+                    await _businessUnit.ProductService.ActionAsync(selectedId, ActionType.Remove);
                     new Toastr().ShowSuccess("Muvoffaqqiyatli o'chirildi");
                 }
      
-                catch (Exception)
+                catch (Exception ex)
                 {
                     new Toastr().ShowError("Xatolik yuz berdi!");
                 }
@@ -96,8 +97,8 @@ public partial class ProductTable : UserControl
                                  .GetRequiredService<IBusinessUnit>();
         var list = selected switch
         {
-            State.Active => await _businessUnit.ProductService.GetAllActivesAsync(),
-            State.Archive => await _businessUnit.ProductService.GetAllArchivesAsync(),
+            State.Active => await _businessUnit.ProductService.GetAllActivesAsync(selectedCategoryId),
+            State.Archive => await _businessUnit.ProductService.GetAllArchivesAsync(selectedCategoryId),
             State.All => await _businessUnit.ProductService.GetAllAsync()
         };
        
@@ -188,9 +189,12 @@ public partial class ProductTable : UserControl
             if (selectedCategoryName == "Barcha kategoriyalar")
             {
                 await FillProducts(selected);
+                selectedCategoryId = 0;
             }
             else if (!string.IsNullOrEmpty(selectedCategoryName))
             {
+                var category = _categories.FirstOrDefault(c => c.Name == selectedCategoryName);
+                selectedCategoryId = category.Id;
                 await FillProductSelectetCategory(selectedCategoryName);
             }
         }

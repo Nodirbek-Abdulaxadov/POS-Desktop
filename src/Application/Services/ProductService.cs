@@ -84,16 +84,6 @@ public class ProductService : IProductService
 
         return (ProductDto)model;
     }
-    /// <summary>
-    /// Mahsulotni o'chirish
-    /// </summary>
-    /// <param name="selectedId"></param>
-    /// <returns></returns>
-    public async Task DeleteAsync(int selectedId)
-    {
-        var product = await _unitOfWork.Categories.GetByIdAsync(selectedId);
-        await _unitOfWork.Categories.RemoveAsync(product);
-    }
 
     public async Task<string> GenerateBarcodeAsync()
     {
@@ -123,9 +113,14 @@ public class ProductService : IProductService
     /// Activ productlarni olish 
     /// </summary>
     /// <returns></returns>
-    public async Task<IEnumerable<ProductDto>> GetAllActivesAsync()
+    public async Task<IEnumerable<ProductDto>> GetAllActivesAsync(int selectedCategoryId)
     {
-        var list = await _unitOfWork.Products.GetAllAsync();
+        var list = await _unitOfWork.Products.GetAllWithCategories();
+
+        if (selectedCategoryId != 0)
+        {
+            list = list.Where(p => p.CategoryId == selectedCategoryId).ToList();
+        }
 
         var dtoList = list.Where(p => p.IsDeleted == false)
                           .Select(x => (ProductDto)x);
@@ -135,9 +130,14 @@ public class ProductService : IProductService
     /// Arxivlangan productlarni olish 
     /// </summary>
     /// <returns></returns>
-    public async Task<IEnumerable<ProductDto>> GetAllArchivesAsync()
+    public async Task<IEnumerable<ProductDto>> GetAllArchivesAsync(int selectedCategoryId)
     {
-        var list = await _unitOfWork.Products.GetAllAsync();
+        var list = await _unitOfWork.Products.GetAllWithCategories();
+
+        if (selectedCategoryId != 0)
+        {
+            list = list.Where(p => p.CategoryId == selectedCategoryId).ToList();
+        }
 
         var dtoList = list.Where(p => p.IsDeleted == true)
                            .Select(x => (ProductDto)x);

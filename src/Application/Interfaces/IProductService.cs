@@ -10,8 +10,8 @@ public interface IProductService
     Task<PagedList<ProductDto>> GetArchivedProductsAsync(int pageSize, int pageNumber);
 
     Task<IEnumerable<ProductDto>> GetAllAsync();
-    Task<IEnumerable<ProductDto>> GetAllArchivesAsync();
-    Task<IEnumerable<ProductDto>> GetAllActivesAsync();
+    Task<IEnumerable<ProductDto>> GetAllArchivesAsync(int selectedCategoryId);
+    Task<IEnumerable<ProductDto>> GetAllActivesAsync(int selectedCategoryId);
 
     Task<ProductDto> GetByIdAsync(int id);
     Task<ProductDto> AddAsync(AddProductDto dto);
@@ -20,5 +20,4 @@ public interface IProductService
     Task ActionAsync(int id, ActionType action);
 
     Task<string> GenerateBarcodeAsync();
-    Task DeleteAsync(int selectedId);
 }
