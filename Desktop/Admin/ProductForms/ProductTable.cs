@@ -92,6 +92,8 @@ public partial class ProductTable : UserControl
     /// <returns></returns>
     private async Task FillProducts(State selected)
     {
+        _businessUnit = Configuration.GetServiceProvider()
+                                 .GetRequiredService<IBusinessUnit>();
         var list = selected switch
         {
             State.Active => await _businessUnit.ProductService.GetAllActivesAsync(),
