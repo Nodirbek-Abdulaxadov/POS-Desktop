@@ -105,6 +105,7 @@ partial class EditCategoryForm
         guna2Button1.TabIndex = 3;
         guna2Button1.Text = "Saqlash";
         guna2Button1.Click += guna2Button1_Click;
+        guna2Button1.KeyDown += guna2Button1_KeyDown;
         // 
         // guna2Button2
         // 

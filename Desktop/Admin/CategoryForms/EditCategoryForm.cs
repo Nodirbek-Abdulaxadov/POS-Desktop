@@ -2,88 +2,115 @@
 using POS.Application.Common.DataTransferObjects.CategoryDtos;
 using POS.Application.Common.Exceptions;
 using POS.Application.Interfaces;
+using System;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Desktop.Admin.CategoryForms;
-public partial class EditCategoryForm : Form
+namespace Desktop.Admin.CategoryForms
 {
-    private readonly IBusinessUnit _businessUnit;
-    private readonly int id = 0;
-
-    public EditCategoryForm(int id, IBusinessUnit businessUnit)
+    public partial class EditCategoryForm : Form
     {
-        InitializeComponent();
-        _businessUnit = businessUnit;
-        this.id = id;
-    }
+        private readonly IBusinessUnit _businessUnit;
+        private readonly int id = 0;
 
-    /// <summary>
-    /// Add shadow to form
-    /// </summary>
-    protected override CreateParams CreateParams
-    {
-        get
+        public EditCategoryForm(int id, IBusinessUnit businessUnit)
         {
-            const int CS_DROPSHADOW = 0x20000;
-            CreateParams cp = base.CreateParams;
-            cp.ClassStyle |= CS_DROPSHADOW;
-            return cp;
+            InitializeComponent();
+            _businessUnit = businessUnit;
+            this.id = id;
+            this.AcceptButton = guna2Button1;
         }
-    }
 
-    /// <summary>
-    /// Edit button click event - load selected category to form
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private async void EditCategoryForm_Load(object sender, EventArgs e)
-    {
-        var categoryDto = await _businessUnit.CategoryService.GetByIdAsync(id);
-        name_textbox.Text = categoryDto.Name;
-    }
-
-    /// <summary>
-    /// save button click event - save changes
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private async void guna2Button1_Click(object sender, EventArgs e)
-    {
-        try
+        protected override CreateParams CreateParams
         {
-            await Task.Run(async () =>
+            get
             {
-                await _businessUnit.CategoryService
-                                            .UpdateAsync(new UpdateCategoryDto()
-                                            {
-                                                Id = id,
-                                                Name = name_textbox.Text
-                                            });
-            });
-            DialogResult = DialogResult.OK;
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+        /// <summary>
+        /// Edit formasini yuklanishi 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void EditCategoryForm_Load(object sender, EventArgs e)
+        {
+            await LoadCategoryData();
+        }
+
+        private async Task LoadCategoryData()
+        {
+            try
+            {
+                var categoryDto = await _businessUnit.CategoryService.GetByIdAsync(id);
+                name_textbox.Text = categoryDto.Name;
+            }
+            catch (MarketException ex)
+            {
+                new Toastr().ShowError(ex.ErrorMessage);
+            }
+            catch (Exception)
+            {
+                new Toastr().ShowError();
+            }
+        }
+
+        /// <summary>
+        /// Edit formasini ma'limotlarini saqlash
+        /// </summary>
+        /// <returns></returns>
+        private async Task SaveCategory()
+        {
+            try
+            {
+                await _businessUnit.CategoryService.UpdateAsync(new UpdateCategoryDto()
+                {
+                    Id = id,
+                    Name = name_textbox.Text
+                });
+
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (MarketException ex)
+            {
+                new Toastr().ShowError(ex.ErrorMessage);
+            }
+            catch (Exception)
+            {
+                new Toastr().ShowError();
+            }
+        }
+
+        private async void guna2Button1_Click(object sender, EventArgs e)
+        {
+            await SaveCategory();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
             Close();
         }
-        catch (MarketException ex)
-        {
-            new Toastr().ShowError(ex.ErrorMessage);
-        }
-        catch (Exception)
-        {
-            new Toastr().ShowError();
-        }
-    }
 
-    /// <summary>
-    /// close button event - close form
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void guna2Button2_Click(object sender, EventArgs e)
-    {
-        Close();
-    }
-
-    private void CanselBtn_Click(object sender, EventArgs e)
-    {
-        this.Close();
+        private void CanselBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        /// <summary>
+        /// Enter tugmasi orqali boshqarish 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void guna2Button1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                await SaveCategory();
+            }
+        }
     }
 }

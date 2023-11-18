@@ -292,6 +292,7 @@ partial class ProductTable
         search_textbox.ShadowDecoration.CustomizableEdges = customizableEdges12;
         search_textbox.Size = new Size(169, 31);
         search_textbox.TabIndex = 5;
+        search_textbox.TextChanged += search_textbox_TextChanged;
         // 
         // FilterComboBox
         // 
