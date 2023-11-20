@@ -314,16 +314,17 @@ public partial class ProductTable : UserControl
             {
                 var filter = await _businessUnit.ProductService
                                 .FilterByNameAsync(search_textbox.Text, selected, selectedCategoryId);
-    
-                var searchResult = filter.Select(i => new {
-                                                Id = i.Id,
-                                                Kodi = i.Barcode,
-                                                Nomi = i.Name,
-                                                Miqdori = i.Amount,
-                                                OlchovTuri = i.MeasurmentType.ToString(),
-                                                Izoh = i.Description,
-                                                Kategoriyasi = i.Category.Name,
-                                            }).ToList();
+
+                var searchResult = filter.Select(i => new
+                {
+                    Id = i.Id,
+                    Kodi = i.Barcode,
+                    Nomi = i.Name,
+                    Miqdori = i.Amount,
+                    OlchovTuri = i.MeasurmentType.ToString(),
+                    Izoh = i.Description,
+                    Kategoriyasi = i.Category.Name,
+                }).ToList();
 
                 if (searchResult != null && searchResult.Any())
                 {

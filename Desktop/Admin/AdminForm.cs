@@ -16,8 +16,6 @@ public partial class AdminForm : Form
     {
         InitializeComponent();
         _businessUnit = businessUnit;
-        _categoryTable = new(_businessUnit);
-        _productTable = new(_businessUnit);
     }
 
     #region Sidebar
@@ -132,8 +130,14 @@ public partial class AdminForm : Form
 
     private void DisableAll()
     {
-        _productTable.Dispose();
-        _categoryTable.Dispose();
+        //if (_productTable != null)
+        //{
+        //    _productTable.Dispose();
+        //}
+        //if (_categoryTable != null)
+        //{
+        //    _categoryTable.Dispose();
+        //}
         reportBtn.FillColor = Color.White;
         reportBtn.ForeColor = dark;
         reportBtn.Image = Resources.home_dark;
@@ -254,17 +258,23 @@ public partial class AdminForm : Form
 
     private void OpenCategoriesTable()
     {
-        _categoryTable = new(_businessUnit);
-        _categoryTable.Dock = DockStyle.Fill;
         main.Controls.Clear();
+        if (_categoryTable == null)
+        {
+            _categoryTable = new(_businessUnit);
+            _categoryTable.Dock = DockStyle.Fill;
+        }
         main.Controls.Add(_categoryTable);
     }
 
     private void OpenProductsTable()
     {
-        _productTable = new(_businessUnit);
-        _productTable.Dock = DockStyle.Fill;
         main.Controls.Clear();
+        if (_productTable is null)
+        {
+            _productTable = new(_businessUnit);
+            _productTable.Dock = DockStyle.Fill;
+        }
         main.Controls.Add(_productTable);
     }
 }

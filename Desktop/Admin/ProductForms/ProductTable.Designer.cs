@@ -163,7 +163,7 @@ partial class ProductTable
         ArchiveBtn.ForeColor = Color.White;
         ArchiveBtn.Image = (Image)resources.GetObject("ArchiveBtn.Image");
         ArchiveBtn.ImageSize = new Size(24, 24);
-        ArchiveBtn.Location = new Point(564, 21);
+        ArchiveBtn.Location = new Point(565, 21);
         ArchiveBtn.Name = "ArchiveBtn";
         ArchiveBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
         ArchiveBtn.Size = new Size(145, 42);
@@ -185,7 +185,7 @@ partial class ProductTable
         deletebtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         deletebtn.ForeColor = Color.White;
         deletebtn.Image = Properties.Resources.trash;
-        deletebtn.Location = new Point(396, 21);
+        deletebtn.Location = new Point(384, 21);
         deletebtn.Name = "deletebtn";
         deletebtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
         deletebtn.Size = new Size(145, 42);
@@ -207,7 +207,7 @@ partial class ProductTable
         editbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         editbtn.ForeColor = Color.White;
         editbtn.Image = Properties.Resources.edit;
-        editbtn.Location = new Point(228, 21);
+        editbtn.Location = new Point(203, 21);
         editbtn.Name = "editbtn";
         editbtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
         editbtn.Size = new Size(145, 42);
@@ -229,7 +229,7 @@ partial class ProductTable
         addbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         addbtn.ForeColor = Color.White;
         addbtn.Image = Properties.Resources.add;
-        addbtn.Location = new Point(60, 21);
+        addbtn.Location = new Point(22, 21);
         addbtn.Name = "addbtn";
         addbtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
         addbtn.Size = new Size(145, 42);
@@ -273,7 +273,7 @@ partial class ProductTable
         // search_textbox
         // 
         search_textbox.Anchor = AnchorStyles.Right;
-        search_textbox.BorderRadius = 7;
+        search_textbox.BorderRadius = 5;
         search_textbox.CustomizableEdges = customizableEdges11;
         search_textbox.DefaultText = "";
         search_textbox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -283,14 +283,14 @@ partial class ProductTable
         search_textbox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
         search_textbox.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
         search_textbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        search_textbox.Location = new Point(567, 9);
-        search_textbox.Margin = new Padding(3, 5, 3, 5);
+        search_textbox.Location = new Point(567, 7);
+        search_textbox.Margin = new Padding(3, 6, 3, 6);
         search_textbox.Name = "search_textbox";
         search_textbox.PasswordChar = '\0';
         search_textbox.PlaceholderText = "Mahsulot nomini kiriting";
         search_textbox.SelectedText = "";
         search_textbox.ShadowDecoration.CustomizableEdges = customizableEdges12;
-        search_textbox.Size = new Size(169, 31);
+        search_textbox.Size = new Size(169, 35);
         search_textbox.TabIndex = 5;
         search_textbox.TextChanged += search_textbox_TextChanged;
         // 

@@ -160,7 +160,7 @@ partial class CategoryTable
         ArchiveBtn.ForeColor = Color.White;
         ArchiveBtn.Image = (Image)resources.GetObject("ArchiveBtn.Image");
         ArchiveBtn.ImageSize = new Size(24, 24);
-        ArchiveBtn.Location = new Point(566, 21);
+        ArchiveBtn.Location = new Point(565, 21);
         ArchiveBtn.Name = "ArchiveBtn";
         ArchiveBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
         ArchiveBtn.Size = new Size(145, 42);
@@ -182,7 +182,7 @@ partial class CategoryTable
         deletebtn.Font = new Font("Segoe UI", 11.5F, FontStyle.Bold, GraphicsUnit.Point);
         deletebtn.ForeColor = Color.White;
         deletebtn.Image = Properties.Resources.trash;
-        deletebtn.Location = new Point(382, 21);
+        deletebtn.Location = new Point(384, 21);
         deletebtn.Name = "deletebtn";
         deletebtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
         deletebtn.Size = new Size(145, 42);
@@ -204,7 +204,7 @@ partial class CategoryTable
         editbtn.Font = new Font("Segoe UI", 11.5F, FontStyle.Bold, GraphicsUnit.Point);
         editbtn.ForeColor = Color.White;
         editbtn.Image = Properties.Resources.edit;
-        editbtn.Location = new Point(199, 21);
+        editbtn.Location = new Point(203, 21);
         editbtn.Name = "editbtn";
         editbtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
         editbtn.Size = new Size(145, 42);
