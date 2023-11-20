@@ -16,17 +16,22 @@ public partial class AddProductForm : Form
     {
         InitializeComponent();
         _businessUnit = businessUnit;
+        this.AcceptButton = guna2Button1;
     }
 
-    private async void guna2Button1_Click(object sender, EventArgs e)
+    /// <summary>
+    /// Save product
+    /// </summary>
+    /// <returns></returns>
+    private async Task SaveProduct()
     {
         AddProductDto productDto = new()
         {
             Name = name_textbox.Text,
             Barcode = barcode.Text.Trim() ?? "000000000000",
             WarningAmount = int.Parse(
-                            string.IsNullOrEmpty(warningAmount.Text.Trim()) ?
-                            "0" : warningAmount.Text.Trim()),
+                    string.IsNullOrEmpty(warningAmount.Text.Trim()) ?
+                    "0" : warningAmount.Text.Trim()),
             CategoryId = _categories.FirstOrDefault(x => x.Name == category.Text).Id,
             MeasurmentType = (MeasurmentType)mtype.SelectedItem,
             Description = description.Text
@@ -52,6 +57,11 @@ public partial class AddProductForm : Form
         }
     }
 
+    private async void guna2Button1_Click(object sender, EventArgs e)
+    {
+        SaveProduct();
+    }
+
     private async void AddProductForm_Load(object sender, EventArgs e)
     {
         _categories = await _businessUnit.CategoryService
@@ -66,4 +76,17 @@ public partial class AddProductForm : Form
         this.Close();
     }
 
+    /// <summary>
+    /// Enter orqali saqlash
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private async void SaveByEnter(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.Enter)
+        {
+            e.SuppressKeyPress = true; // KeyPress eventni oldini olish
+            await SaveProduct();
+        }
+    }
 }

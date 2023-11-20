@@ -28,7 +28,6 @@ public class Repository<TEntity>
 
     public async Task<TEntity?> GetByIdAsync(int id)
         => await _dbContext.Set<TEntity>()
-                           .AsNoTracking()
                            .FirstOrDefaultAsync(x => x.Id == id);
 
     public async Task RemoveAsync(TEntity entity)

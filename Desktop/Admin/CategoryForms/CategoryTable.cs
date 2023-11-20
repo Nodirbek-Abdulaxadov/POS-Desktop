@@ -274,8 +274,6 @@ public partial class CategoryTable : UserControl
     }
 
 
-
-
     private async void InfoCategory_SelectedIndexChangedAsync(object sender, EventArgs e)
     {
         selected = InfoCategory.Text switch

@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using POS.Application.Common.DataTransferObjects.CategoryDtos;
+﻿
 using POS.Application.Common.DataTransferObjects.ProductDtos;
+using POS.Application.Common.Enums;
 using POS.Application.Common.Exceptions;
 using POS.Application.Common.Models;
 using POS.Application.Common.Validators;
@@ -144,10 +144,6 @@ public class ProductService : IProductService
         return dtoList.ToList();
     }
 
-
-
-
-
     public Task<PagedList<ProductDto>> GetArchivedProductsAsync(int pageSize, int pageNumber)
     {
         throw new NotImplementedException();
@@ -167,5 +163,21 @@ public class ProductService : IProductService
     public Task<ProductDto> UpdateAsync(UpdateProductDto dto)
     {
         throw new NotImplementedException();
+    }
+
+
+
+    public async Task<List<ProductDto>> FilterByNameAsync(string text, State state, int selectedCategoryId)
+    {
+        var list = state switch
+        {
+            State.Active => await GetAllActivesAsync(selectedCategoryId),
+            State.Archive => await GetAllArchivesAsync(selectedCategoryId),
+            _ => await GetAllAsync(),
+        };
+      
+        return list.Where(x => x.Name.ToLower()
+                             .Contains(text.ToLower()))
+                             .ToList();
     }
 }

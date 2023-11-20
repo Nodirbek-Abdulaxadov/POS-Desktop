@@ -60,8 +60,8 @@ public partial class ProductTable : UserControl
                     await _businessUnit.ProductService.ActionAsync(selectedId, ActionType.Remove);
                     new Toastr().ShowSuccess("Muvoffaqqiyatli o'chirildi");
                 }
-     
-                catch (Exception ex)
+
+                catch (Exception)
                 {
                     new Toastr().ShowError("Xatolik yuz berdi!");
                 }
@@ -101,7 +101,7 @@ public partial class ProductTable : UserControl
             State.Archive => await _businessUnit.ProductService.GetAllArchivesAsync(selectedCategoryId),
             State.All => await _businessUnit.ProductService.GetAllAsync()
         };
-       
+
         if (IsHandleCreated)
         {
             table.BeginInvoke(() =>
@@ -133,7 +133,7 @@ public partial class ProductTable : UserControl
         await Task.Run(() => FillProducts(selected));
         _categories = await _businessUnit.CategoryService
                          .GetAllAsync();
-      
+
 
         var AllCategoryOfComboBox = new List<string> { "Barcha kategoriyalar" };
         AllCategoryOfComboBox.AddRange(_categories.Select(c => c.Name));
@@ -304,5 +304,45 @@ public partial class ProductTable : UserControl
         };
         await Task.Run(() => FillProducts(selected));
         UpdateArchiveButton();
+    }
+
+    private async void search_textbox_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            if (!string.IsNullOrEmpty(search_textbox.Text))
+            {
+                var filter = await _businessUnit.ProductService
+                                .FilterByNameAsync(search_textbox.Text, selected, selectedCategoryId);
+    
+                var searchResult = filter.Select(i => new {
+                                                Id = i.Id,
+                                                Kodi = i.Barcode,
+                                                Nomi = i.Name,
+                                                Miqdori = i.Amount,
+                                                OlchovTuri = i.MeasurmentType.ToString(),
+                                                Izoh = i.Description,
+                                                Kategoriyasi = i.Category.Name,
+                                            }).ToList();
+
+                if (searchResult != null && searchResult.Any())
+                {
+                    table.DataSource = searchResult;
+                }
+                else
+                {
+                    table.DataSource = new List<ProductDto>();
+                    new Toastr().ShowWarning("Bunday mahsulot mavjud emas");
+                }
+            }
+            else
+            {
+                await Task.Run(() => FillProducts(selected));
+            }
+        }
+        catch (Exception)
+        {
+            new Toastr().ShowError("Xatolik yuz berdi");
+        }
     }
 }

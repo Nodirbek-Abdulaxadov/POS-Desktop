@@ -1,4 +1,5 @@
 ﻿using POS.Application.Common.DataTransferObjects.WarehouseItemDtos;
+using POS.Application.Common.Enums;
 using POS.Application.Common.Models;
 
 namespace POS.Application.Interfaces;
@@ -14,4 +15,5 @@ public interface IProductItemService
 
     Task<ProductItemDto> Update(UpdateWarehouseItemDto dto);
     Task ActionAsync(int id, ActionType action);
+   
 }
