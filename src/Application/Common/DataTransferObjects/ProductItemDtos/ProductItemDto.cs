@@ -10,10 +10,11 @@ public class ProductItemDto : BaseModel
     public decimal BuyingPrice { get; set; }
     public decimal SellingPrice { get; set; }
     public int ProductId { get; set; }
-    public string AdminId { get; set; } = string.Empty;
+    public string ProductName { get; set; } = string.Empty;
+    public int AdminId { get; set; }
 
     public static explicit operator ProductItemDto(ProductItem v)
-        => new()
+        => new ProductItemDto()
         {
             Id = v.Id,
             Amount = v.Amount,
@@ -21,6 +22,7 @@ public class ProductItemDto : BaseModel
             ProductId = v.ProductId,
             AdminId = v.AdminId,
             AddedDate = v.AddedDate,
-            BuyingPrice = v.BuyingPrice
+            BuyingPrice = v.BuyingPrice,
+            ProductName = v.Product.Name
         };
 }

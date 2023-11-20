@@ -2,6 +2,7 @@
 using POS.Domain.Entities.Selling;
 using POS.Domain.Entities;
 using POS.Domain.Entities.Auth;
+using POS.Domain.Enums;
 
 namespace POS.Domain.DataContext;
 
@@ -15,6 +16,7 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }
+    public DbSet<ProductItem> ProductItems { get; set; }
     public DbSet<Receipt> Receipts { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<User> Users { get; set; }
@@ -32,6 +34,16 @@ public class ApplicationDbContext : DbContext
                .WithOne(p => p.Product)
                .HasForeignKey(p => p.ProductId)
                .OnDelete(DeleteBehavior.NoAction);
+
+
+        builder.Entity<Category>()
+            .HasData(new Category()
+            {
+                Id = 1,
+                Name = "Default Category",
+                IsDeleted = false,
+                LastModifiedDate = DateTime.Now
+            });
 
         builder.Entity<User>()
                .HasData(new List<User>()

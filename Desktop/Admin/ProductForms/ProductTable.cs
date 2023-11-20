@@ -114,7 +114,6 @@ public partial class ProductTable : UserControl
                     Nomi = i.Name,
                     Miqdori = i.Amount,
                     OlchovTuri = i.MeasurmentType.ToString(),
-                    Izoh = i.Description,
                     Kategoriyasi = i.Category.Name
                 }).ToList();
             });

@@ -12,7 +12,7 @@ public class AddProductItemDto
     public decimal SellingPrice { get; set; }
     public int ProductId { get; set; }
     [Required]
-    public string AdminId { get; set; } = string.Empty;
+    public int AdminId { get; set; }
 
     public static explicit operator ProductItem(AddProductItemDto v)
         => new()

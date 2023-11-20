@@ -8,7 +8,7 @@ public interface IProductItemService
 {
     Task<PagedList<ProductItemDto>> GetPagedAsync(int pageSize, int pageNumber, int warehouseId);
     Task<PagedList<ProductItemDto>> GetArchivedAsync(int pageSize, int pageNumber);
-    Task<IEnumerable<ProductItemDto>> GetAllAsync();
+    Task<List<ProductItemDto>> GetAllAsync();
 
     Task<ProductItemDto> GetByIdAsync(int id);
     Task<ProductItemDto> AddAsync(AddProductItemDto dto);

@@ -1,4 +1,5 @@
 ﻿using POS.Domain.Common;
+using POS.Domain.Entities.Auth;
 
 namespace POS.Domain.Entities;
 public class ProductItem : BaseEntity
@@ -11,5 +12,6 @@ public class ProductItem : BaseEntity
     public int ProductId { get; set; }
     public Product Product = new();
 
-    public string AdminId { get; set; } = string.Empty;
+    public int AdminId { get; set; }
+    public User Admin = new();
 }
