@@ -1,8 +1,8 @@
 ﻿using Desktop.Extended;
-using Microsoft.Extensions.DependencyInjection;
 using POS.Application.Common.DataTransferObjects.CategoryDtos;
 using POS.Application.Common.DataTransferObjects.ProductDtos;
 using POS.Application.Common.Exceptions;
+using POS.Application.Common.Models;
 using POS.Application.Interfaces;
 using POS.Domain.Enums;
 
@@ -32,7 +32,7 @@ public partial class AddProductForm : Form
             WarningAmount = int.Parse(
                     string.IsNullOrEmpty(warningAmount.Text.Trim()) ?
                     "0" : warningAmount.Text.Trim()),
-            CategoryId = _categories.FirstOrDefault(x => x.Name == category.Text).Id,
+            CategoryId = _categories.FirstOrDefault(x => x.Name == categoryComboBox.Text).Id,
             MeasurmentType = (MeasurmentType)mtype.SelectedItem,
             Description = description.Text
         };
@@ -59,14 +59,14 @@ public partial class AddProductForm : Form
 
     private async void guna2Button1_Click(object sender, EventArgs e)
     {
-        SaveProduct();
+        await SaveProduct();
     }
 
     private async void AddProductForm_Load(object sender, EventArgs e)
     {
         _categories = await _businessUnit.CategoryService
                                          .GetAllAsync();
-        category.DataSource = _categories.Select(x => x.Name)
+        categoryComboBox.DataSource = _categories.Select(x => x.Name)
                                          .ToArray();
         mtype.DataSource = Enum.GetValues(typeof(MeasurmentType));
     }
@@ -87,6 +87,65 @@ public partial class AddProductForm : Form
         {
             e.SuppressKeyPress = true; // KeyPress eventni oldini olish
             await SaveProduct();
+        }
+    }
+
+    /// <summary>
+    /// Yangi barcodeni olish
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    /// 
+
+    private async void NewBarcodeBtn_Click(object sender, EventArgs e)
+    {
+
+        barcode.Text = await _businessUnit.ProductService.GenerateBarcodeAsync();
+    }
+    /// <summary>
+    /// Scaner orqali barcodeni olish 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ScanerBtn_Click(object sender, EventArgs e)
+    {
+        if(barcode.Text != string.Empty)
+        {
+            barcode.Text = string.Empty;
+            barcode.Focus();
+        }
+        else
+        {
+            barcode.Focus();
+        }
+    }
+
+    private void name_textbox_TextChanged(object sender, EventArgs e)
+    {
+        ValidateInput();
+    }
+
+    /// <summary>
+    /// Enga kamida nechta o'z kiritish kerakligi 
+    /// </summary>
+    private void ValidateInput()
+    {
+        if (name_textbox.Text.Length < 3)
+        {
+            errorMessage.Text = "Kamida 3 ta belgi kiriting";
+            errorMessage.Visible = true;
+            guna2Button1.Enabled = false;
+        }
+        else if (name_textbox.Text.Length > 50)
+        {
+            errorMessage.Text = "Maxsimum 50 ta belgi kiriting";
+            errorMessage.Visible = true;
+            guna2Button1.Enabled = false;
+        }
+        else
+        {
+            errorMessage.Visible = false;
+            guna2Button1.Enabled = true;
         }
     }
 }

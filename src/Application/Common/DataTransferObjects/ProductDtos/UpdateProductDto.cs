@@ -1,10 +1,13 @@
-﻿using POS.Application.Common.Models;
+﻿using POS.Application.Common.DataTransferObjects.CategoryDtos;
+using POS.Application.Common.Models;
 using POS.Domain.Entities;
 using POS.Domain.Enums;
 
 namespace POS.Application.Common.DataTransferObjects.ProductDtos;
 public class UpdateProductDto : BaseModel
 {
+    public CategoryDto Category;
+
     public string Name { get; set; } = string.Empty;
     public decimal WarningAmount { get; set; }
     public string Description { get; set; } = string.Empty;
