@@ -113,11 +113,11 @@ partial class AddCategoryForm
         // 
         errorMessage.Anchor = AnchorStyles.None;
         errorMessage.AutoSize = true;
-        errorMessage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+        errorMessage.Font = new Font("Segoe UI", 10.25F, FontStyle.Regular, GraphicsUnit.Point);
         errorMessage.ForeColor = Color.Red;
         errorMessage.Location = new Point(31, 155);
         errorMessage.Name = "errorMessage";
-        errorMessage.Size = new Size(58, 25);
+        errorMessage.Size = new Size(42, 19);
         errorMessage.TabIndex = 4;
         errorMessage.Text = "Nomi";
         errorMessage.Visible = false;

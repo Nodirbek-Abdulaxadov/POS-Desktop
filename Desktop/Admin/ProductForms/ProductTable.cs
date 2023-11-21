@@ -36,10 +36,9 @@ public partial class ProductTable : UserControl
         }
     }
 
-    private void editbtn_Click(object sender, EventArgs e)
-    {
 
-    }
+
+
 
     /// <summary>
     /// Mahsulotlarni o'chirish 
@@ -81,8 +80,6 @@ public partial class ProductTable : UserControl
     private void table_CellClick(object sender, DataGridViewCellEventArgs e)
     {
         selectedId = int.Parse(table.SelectedRows[0].Cells[0].Value.ToString());
-
-
     }
 
 

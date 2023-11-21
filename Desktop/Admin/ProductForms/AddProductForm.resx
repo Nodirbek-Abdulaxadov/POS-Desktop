@@ -117,4 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ScanerBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DgAACw4BQL7hQQAAAWRJREFUSEu9lkFOwzAQRSNFqqA7egCKWHCQgto992k5B5cAiYrjAItSWBTOYP5L
+        JiKO7DgtNV96iscz49+kiZPiX+ScK8W3iGllpUEpf1eXBfUlSopGVejctbgMcGLrBUW+U9/AemjUNrmy
+        vqOI9eplAyY6Xohn8XIA9E2HmFD4IObiZg+op289xORdLBh3pXmu/xlHm/JEn9jYuNdkK+aMu9L8G4XS
+        q0150jxns7Xxr4lNLEX163TsM5kI7pyJTXmiTzQmnPWySnRFEcUWEs/EfQ8zK/VMekURxRYSc51Dize0
+        a+MmSowFfyh8ittWvA/00d/EY7OoTEjk0IdZZD2TU7PwpUT07kqJPvotjCubiRIrkXxOUqKPfhvznNSv
+        CQ0GP/Ep0Ue/jQ/bu1KiTwzau/6yCz+KQbvwVKxF6H2R4kmcJ02OJdarl/VNsr7j+VrhqyKm8HZtUp7b
+        P6adKK00p4riB9WAq1JOI9bMAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

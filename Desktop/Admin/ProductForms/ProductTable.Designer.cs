@@ -213,7 +213,6 @@ partial class ProductTable
         editbtn.Size = new Size(145, 42);
         editbtn.TabIndex = 1;
         editbtn.Text = "Tahrirlash";
-        editbtn.Click += editbtn_Click;
         // 
         // addbtn
         // 
