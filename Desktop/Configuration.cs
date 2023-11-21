@@ -23,7 +23,10 @@ public static class Configuration
     {
         const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=PosDB;";
         services.AddDbContext<POS.Domain.DataContext.ApplicationDbContext>(options =>
-            options.UseSqlServer(connectionString, o => o.EnableRetryOnFailure()), ServiceLifetime.Transient, ServiceLifetime.Transient);
+            {
+                options.UseSqlServer(connectionString, o => o.EnableRetryOnFailure());
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            }, ServiceLifetime.Transient, ServiceLifetime.Transient);
 
         services.AddTransient<ICategoryInterface, CategoryRepository>();
         services.AddTransient<IProductInterface, ProductRepository>();
