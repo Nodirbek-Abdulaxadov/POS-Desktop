@@ -32,18 +32,14 @@ public partial class EditProductForm : Form
         this.Close();
     }
 
-    private async Task guna2Button1_ClickAsync(object sender, EventArgs e)
-    {
-        await SaveProduct();
-    }
-
     private async Task SaveProduct()
     {
-        AddProductDto productDto = new()
+        UpdateProductDto productDto = new()
         {
+            Id = _Id,
             Name = name_textbox.Text,
             Barcode = barcode.Text.Trim() ?? "000000000000",
-            WarningAmount = int.Parse(
+            WarningAmount = decimal.Parse(
                     string.IsNullOrEmpty(warningAmount.Text.Trim()) ?
                     "0" : warningAmount.Text.Trim()),
             CategoryId = _categories.FirstOrDefault(x => x.Name == categoryComboBox.Text).Id,
@@ -55,8 +51,7 @@ public partial class EditProductForm : Form
         {
             await Task.Run(async () =>
             {
-                await _businessUnit.ProductService
-                                   .AddAsync(productDto);
+                await _businessUnit.ProductService.UpdateAsync(productDto);
             });
             DialogResult = DialogResult.OK;
             Close();
@@ -96,5 +91,10 @@ public partial class EditProductForm : Form
         {
             new Toastr().ShowError();
         }
+    }
+
+    private async void guna2Button1_Click(object sender, EventArgs e)
+    {
+        await SaveProduct();
     }
 }

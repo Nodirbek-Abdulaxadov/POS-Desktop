@@ -335,6 +335,7 @@ partial class EditProductForm
         guna2Button1.Size = new Size(230, 70);
         guna2Button1.TabIndex = 26;
         guna2Button1.Text = "Saqlash";
+        guna2Button1.Click += guna2Button1_Click;
         // 
         // label2
         // 

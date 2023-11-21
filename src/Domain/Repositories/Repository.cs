@@ -36,9 +36,10 @@ public class Repository<TEntity>
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task UpdateAsync(TEntity entity)
+    public async Task<TEntity> UpdateAsync(TEntity entity)
     {
-        _dbContext.Set<TEntity>().Update(entity);
+        var model = _dbContext.Set<TEntity>().Update(entity);
         await _dbContext.SaveChangesAsync();
+        return model.Entity;
     }
 }
