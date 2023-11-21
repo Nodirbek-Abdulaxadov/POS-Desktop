@@ -109,7 +109,15 @@ public partial class AddProductForm : Form
     /// <param name="e"></param>
     private void ScanerBtn_Click(object sender, EventArgs e)
     {
-        barcode.Focus();
+        if(barcode.Text != string.Empty)
+        {
+            barcode.Text = string.Empty;
+            barcode.Focus();
+        }
+        else
+        {
+            barcode.Focus();
+        }
     }
 
     private void name_textbox_TextChanged(object sender, EventArgs e)
