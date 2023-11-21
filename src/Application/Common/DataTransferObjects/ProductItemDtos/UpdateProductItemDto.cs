@@ -12,7 +12,7 @@ public class UpdateWarehouseItemDto
     public decimal SellingPrice { get; set; }
 
     public int ProductId { get; set; }
-    public string AdminId { get; set; } = string.Empty;
+    public int AdminId { get; set; }
 
     public static explicit operator ProductItem(UpdateWarehouseItemDto v)
          => new()

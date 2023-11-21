@@ -91,9 +91,11 @@ public class ProductItemService : IProductItemService
         return (ProductItemDto)model;
     }
 
-    public Task<IEnumerable<ProductItemDto>> GetAllAsync()
+    public async Task<List<ProductItemDto>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var list = await _unitOfWork.ProductItems.GetAllWithProductAsync();
+        return list.Select(i => (ProductItemDto)i)
+                   .ToList();
     }
 
     public Task<PagedList<ProductItemDto>> GetArchivedAsync(int pageSize, int pageNumber)

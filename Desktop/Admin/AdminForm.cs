@@ -1,5 +1,6 @@
 ﻿using Desktop.Admin.CategoryForms;
 using Desktop.Admin.ProductForms;
+using Desktop.Admin.ProductItemForms;
 using Desktop.Properties;
 using Guna.UI2.WinForms;
 using POS.Application.Interfaces;
@@ -11,13 +12,12 @@ public partial class AdminForm : Form
     private readonly IBusinessUnit _businessUnit;
     private CategoryTable _categoryTable;
     private ProductTable _productTable;
+    private ProductItemTable _productItemTable;
 
     public AdminForm(IBusinessUnit businessUnit)
     {
         InitializeComponent();
         _businessUnit = businessUnit;
-        _categoryTable = new(_businessUnit);
-        _productTable = new(_businessUnit);
     }
 
     #region Sidebar
@@ -26,8 +26,8 @@ public partial class AdminForm : Form
     private readonly int targetCollapsedButtonWidth = 50;
     private readonly int targetExpandedSidebarWidth = 270;
     private readonly int targetExpandedButtonWidth = 230;
-    private Timer? collapseAnimationTimer;
-    private Timer? expandAnimationTimer;
+    private Timer collapseAnimationTimer;
+    private Timer expandAnimationTimer;
     private readonly int sidebarIncrement = 10;
     private readonly int buttonIncrement = 10;
     private readonly Color dark = Color.FromArgb(176, 203, 224);
@@ -127,13 +127,19 @@ public partial class AdminForm : Form
     private void productItemBtn_Click(object sender, EventArgs e)
     {
         EnableButton((Guna2Button)sender);
-        OpenCategoriesTable();
+        OpenProductItemsTable();
     }
 
     private void DisableAll()
     {
-        _productTable.Dispose();
-        _categoryTable.Dispose();
+        //if (_productTable != null)
+        //{
+        //    _productTable.Dispose();
+        //}
+        //if (_categoryTable != null)
+        //{
+        //    _categoryTable.Dispose();
+        //}
         reportBtn.FillColor = Color.White;
         reportBtn.ForeColor = dark;
         reportBtn.Image = Resources.home_dark;
@@ -254,17 +260,34 @@ public partial class AdminForm : Form
 
     private void OpenCategoriesTable()
     {
-        _categoryTable = new(_businessUnit);
-        _categoryTable.Dock = DockStyle.Fill;
         main.Controls.Clear();
+        if (_categoryTable == null)
+        {
+            _categoryTable = new(_businessUnit);
+            _categoryTable.Dock = DockStyle.Fill;
+        }
         main.Controls.Add(_categoryTable);
     }
 
     private void OpenProductsTable()
     {
-        _productTable = new(_businessUnit);
-        _productTable.Dock = DockStyle.Fill;
         main.Controls.Clear();
+        if (_productTable is null)
+        {
+            _productTable = new(_businessUnit);
+            _productTable.Dock = DockStyle.Fill;
+        }
         main.Controls.Add(_productTable);
+    }
+
+    private void OpenProductItemsTable()
+    {
+        main.Controls.Clear();
+        if (_productItemTable is null)
+        {
+            _productItemTable = new(_businessUnit);
+            _productItemTable.Dock = DockStyle.Fill;
+        }
+        main.Controls.Add(_productItemTable);
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace Desktop.Admin.CategoryForms;
+﻿using Desktop.Admin.ProductForms;
 
-partial class CategoryTable
+namespace Desktop.Admin.ProductItemForms;
+
+partial class ProductItemTable
 {
     /// <summary> 
     /// Required designer variable.
@@ -33,7 +35,6 @@ partial class CategoryTable
         DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
         DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryTable));
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -41,10 +42,6 @@ partial class CategoryTable
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         table = new Guna.UI2.WinForms.Guna2DataGridView();
         panel1 = new Panel();
         ArchiveBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -52,8 +49,6 @@ partial class CategoryTable
         editbtn = new Guna.UI2.WinForms.Guna2Button();
         addbtn = new Guna.UI2.WinForms.Guna2Button();
         panel2 = new Panel();
-        InfoCategory = new Guna.UI2.WinForms.Guna2ComboBox();
-        search_textbox = new Guna.UI2.WinForms.Guna2TextBox();
         label1 = new Label();
         panel3 = new Panel();
         ((System.ComponentModel.ISupportInitialize)table).BeginInit();
@@ -131,7 +126,6 @@ partial class CategoryTable
         table.ThemeStyle.RowsStyle.Height = 25;
         table.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
         table.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-        table.CellClick += table_CellClick;
         // 
         // panel1
         // 
@@ -158,15 +152,13 @@ partial class CategoryTable
         ArchiveBtn.FillColor = Color.FromArgb(243, 182, 100);
         ArchiveBtn.Font = new Font("Segoe UI", 11.5F, FontStyle.Bold, GraphicsUnit.Point);
         ArchiveBtn.ForeColor = Color.White;
-        ArchiveBtn.Image = (Image)resources.GetObject("ArchiveBtn.Image");
         ArchiveBtn.ImageSize = new Size(24, 24);
         ArchiveBtn.Location = new Point(565, 21);
         ArchiveBtn.Name = "ArchiveBtn";
         ArchiveBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
         ArchiveBtn.Size = new Size(145, 42);
-        ArchiveBtn.TabIndex = 3;
+        ArchiveBtn.TabIndex = 4;
         ArchiveBtn.Text = "Archivlash";
-        ArchiveBtn.Click += ArchiveBtn_Click;
         // 
         // deletebtn
         // 
@@ -179,7 +171,7 @@ partial class CategoryTable
         deletebtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
         deletebtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
         deletebtn.FillColor = Color.FromArgb(220, 38, 38);
-        deletebtn.Font = new Font("Segoe UI", 11.5F, FontStyle.Bold, GraphicsUnit.Point);
+        deletebtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         deletebtn.ForeColor = Color.White;
         deletebtn.Image = Properties.Resources.trash;
         deletebtn.Location = new Point(384, 21);
@@ -188,7 +180,6 @@ partial class CategoryTable
         deletebtn.Size = new Size(145, 42);
         deletebtn.TabIndex = 2;
         deletebtn.Text = "O'chirish";
-        deletebtn.Click += deletebtn_Click;
         // 
         // editbtn
         // 
@@ -201,7 +192,7 @@ partial class CategoryTable
         editbtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
         editbtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
         editbtn.FillColor = Color.FromArgb(6, 182, 212);
-        editbtn.Font = new Font("Segoe UI", 11.5F, FontStyle.Bold, GraphicsUnit.Point);
+        editbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         editbtn.ForeColor = Color.White;
         editbtn.Image = Properties.Resources.edit;
         editbtn.Location = new Point(203, 21);
@@ -210,7 +201,6 @@ partial class CategoryTable
         editbtn.Size = new Size(145, 42);
         editbtn.TabIndex = 1;
         editbtn.Text = "Tahrirlash";
-        editbtn.Click += editbtn_Click;
         // 
         // addbtn
         // 
@@ -223,22 +213,18 @@ partial class CategoryTable
         addbtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
         addbtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
         addbtn.FillColor = Color.FromArgb(34, 197, 94);
-        addbtn.Font = new Font("Segoe UI", 11.5F, FontStyle.Bold, GraphicsUnit.Point);
+        addbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         addbtn.ForeColor = Color.White;
-        addbtn.Image = (Image)resources.GetObject("addbtn.Image");
+        addbtn.Image = Properties.Resources.add;
         addbtn.Location = new Point(22, 21);
         addbtn.Name = "addbtn";
         addbtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
         addbtn.Size = new Size(145, 42);
         addbtn.TabIndex = 0;
         addbtn.Text = "Yangi qo'shish";
-        addbtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-        addbtn.Click += addbtn_Click;
         // 
         // panel2
         // 
-        panel2.Controls.Add(InfoCategory);
-        panel2.Controls.Add(search_textbox);
         panel2.Controls.Add(label1);
         panel2.Dock = DockStyle.Top;
         panel2.Location = new Point(0, 0);
@@ -246,60 +232,15 @@ partial class CategoryTable
         panel2.Size = new Size(750, 50);
         panel2.TabIndex = 2;
         // 
-        // InfoCategory
-        // 
-        InfoCategory.Anchor = AnchorStyles.Right;
-        InfoCategory.BackColor = Color.Transparent;
-        InfoCategory.BorderRadius = 5;
-        InfoCategory.CustomizableEdges = customizableEdges9;
-        InfoCategory.DrawMode = DrawMode.OwnerDrawFixed;
-        InfoCategory.DropDownStyle = ComboBoxStyle.DropDownList;
-        InfoCategory.FocusedColor = Color.FromArgb(94, 148, 255);
-        InfoCategory.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-        InfoCategory.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-        InfoCategory.ForeColor = Color.FromArgb(68, 88, 112);
-        InfoCategory.ItemHeight = 30;
-        InfoCategory.Items.AddRange(new object[] { "Barchasi", "Aktiv", "Arxivlangan" });
-        InfoCategory.Location = new Point(319, 8);
-        InfoCategory.Name = "InfoCategory";
-        InfoCategory.ShadowDecoration.CustomizableEdges = customizableEdges10;
-        InfoCategory.Size = new Size(200, 36);
-        InfoCategory.TabIndex = 18;
-        InfoCategory.SelectedIndexChanged += InfoCategory_SelectedIndexChangedAsync;
-        // 
-        // search_textbox
-        // 
-        search_textbox.Anchor = AnchorStyles.Right;
-        search_textbox.BorderRadius = 7;
-        search_textbox.CustomizableEdges = customizableEdges11;
-        search_textbox.DefaultText = "";
-        search_textbox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-        search_textbox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-        search_textbox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-        search_textbox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-        search_textbox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-        search_textbox.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-        search_textbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        search_textbox.Location = new Point(537, 9);
-        search_textbox.Margin = new Padding(3, 4, 3, 4);
-        search_textbox.Name = "search_textbox";
-        search_textbox.PasswordChar = '\0';
-        search_textbox.PlaceholderText = "Kategoriyani kiriting";
-        search_textbox.SelectedText = "";
-        search_textbox.ShadowDecoration.CustomizableEdges = customizableEdges12;
-        search_textbox.Size = new Size(184, 34);
-        search_textbox.TabIndex = 4;
-        search_textbox.TextChanged += search_textbox_TextChanged;
-        // 
         // label1
         // 
         label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
         label1.Location = new Point(-3, 9);
         label1.Name = "label1";
-        label1.Size = new Size(193, 25);
+        label1.Size = new Size(144, 25);
         label1.TabIndex = 0;
-        label1.Text = "Kategoriyalar jadvali";
+        label1.Text = "Kirimlar jadvali";
         // 
         // panel3
         // 
@@ -310,7 +251,7 @@ partial class CategoryTable
         panel3.Size = new Size(750, 295);
         panel3.TabIndex = 3;
         // 
-        // CategoryTable
+        // ProductItemTable
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
@@ -320,9 +261,9 @@ partial class CategoryTable
         Controls.Add(panel2);
         Controls.Add(panel1);
         Margin = new Padding(30);
-        Name = "CategoryTable";
+        Name = "ProductItemTable";
         Size = new Size(750, 436);
-        Load += CategoryTable_Load;
+        Load += ProductItemTable_Load;
         ((System.ComponentModel.ISupportInitialize)table).EndInit();
         panel1.ResumeLayout(false);
         panel2.ResumeLayout(false);
@@ -340,7 +281,5 @@ partial class CategoryTable
     private Panel panel2;
     private Label label1;
     private Panel panel3;
-    private Guna.UI2.WinForms.Guna2TextBox search_textbox;
     private Guna.UI2.WinForms.Guna2Button ArchiveBtn;
-    private Guna.UI2.WinForms.Guna2ComboBox InfoCategory;
 }

@@ -1,4 +1,6 @@
-﻿using POS.Application.Common.DataTransferObjects.ProductDtos;
+﻿
+using POS.Application.Common.DataTransferObjects.ProductDtos;
+using POS.Application.Common.Enums;
 using POS.Application.Common.Exceptions;
 using POS.Application.Common.Models;
 using POS.Application.Common.Validators;
@@ -83,11 +85,6 @@ public class ProductService : IProductService
         return (ProductDto)model;
     }
 
-    public Task DeleteAsync(int selectedId)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task<string> GenerateBarcodeAsync()
     {
         var products = await _unitOfWork.Products.GetAllAsync();
@@ -102,10 +99,49 @@ public class ProductService : IProductService
         return randomBarcode.ToString();
     }
 
+    /// <summary>
+    /// Barcha productlarni olish
+    /// </summary>
+    /// <returns></returns>
     public async Task<IEnumerable<ProductDto>> GetAllAsync()
     {
         var list = await _unitOfWork.Products.GetAllWithCategories();
         return list.Select(p => (ProductDto)p);
+    }
+
+    /// <summary>
+    /// Activ productlarni olish 
+    /// </summary>
+    /// <returns></returns>
+    public async Task<IEnumerable<ProductDto>> GetAllActivesAsync(int selectedCategoryId)
+    {
+        var list = await _unitOfWork.Products.GetAllWithCategories();
+
+        if (selectedCategoryId != 0)
+        {
+            list = list.Where(p => p.CategoryId == selectedCategoryId).ToList();
+        }
+
+        var dtoList = list.Where(p => p.IsDeleted == false)
+                          .Select(x => (ProductDto)x);
+        return dtoList.ToList();
+    }
+    /// <summary>
+    /// Arxivlangan productlarni olish 
+    /// </summary>
+    /// <returns></returns>
+    public async Task<IEnumerable<ProductDto>> GetAllArchivesAsync(int selectedCategoryId)
+    {
+        var list = await _unitOfWork.Products.GetAllWithCategories();
+
+        if (selectedCategoryId != 0)
+        {
+            list = list.Where(p => p.CategoryId == selectedCategoryId).ToList();
+        }
+
+        var dtoList = list.Where(p => p.IsDeleted == true)
+                           .Select(x => (ProductDto)x);
+        return dtoList.ToList();
     }
 
     public Task<PagedList<ProductDto>> GetArchivedProductsAsync(int pageSize, int pageNumber)
@@ -123,8 +159,25 @@ public class ProductService : IProductService
         throw new NotImplementedException();
     }
 
+
     public Task<ProductDto> UpdateAsync(UpdateProductDto dto)
     {
         throw new NotImplementedException();
+    }
+
+
+
+    public async Task<List<ProductDto>> FilterByNameAsync(string text, State state, int selectedCategoryId)
+    {
+        var list = state switch
+        {
+            State.Active => await GetAllActivesAsync(selectedCategoryId),
+            State.Archive => await GetAllArchivesAsync(selectedCategoryId),
+            _ => await GetAllAsync(),
+        };
+      
+        return list.Where(x => x.Name.ToLower()
+                             .Contains(text.ToLower()))
+                             .ToList();
     }
 }

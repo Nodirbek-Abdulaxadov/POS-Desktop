@@ -13,6 +13,25 @@ public partial class AddCategoryForm : Form
     {
         InitializeComponent();
         _businessUnit = businessUnit;
+        this.AcceptButton = guna2Button1;
+    }
+    private async void guna2Button1_Click(object sender, EventArgs e)
+    {
+        await SaveCategory();
+    }
+
+    private void name_textbox_TextChanged(object sender, EventArgs e)
+    {
+        ValidateInput();
+    }
+
+    private async void guna2Button1_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.Enter)
+        {
+            e.SuppressKeyPress = true; // KeyPress eventni oldini olish
+            await SaveCategory();
+        }
     }
 
     /// <summary>
@@ -20,7 +39,7 @@ public partial class AddCategoryForm : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private async void guna2Button1_Click(object sender, EventArgs e)
+    private async Task SaveCategory()
     {
         try
         {
@@ -45,5 +64,31 @@ public partial class AddCategoryForm : Form
         {
             new Toastr().ShowError();
         }
+    }
+
+    private void ValidateInput()
+    {
+        if (name_textbox.Text.Length < 3)
+        {
+            errorMessage.Text = "Kamida 3 ta belgi kiriting";
+            errorMessage.Visible = true;
+            guna2Button1.Enabled = false;
+        }
+        else if (name_textbox.Text.Length > 50)
+        {
+            errorMessage.Text = "Maxsimum 50 ta belgi kiriting";
+            errorMessage.Visible = true;
+            guna2Button1.Enabled = false;
+        }
+        else
+        {
+            errorMessage.Visible = false;
+            guna2Button1.Enabled = true;
+        }
+    }
+
+    private void CanselBtn_Click(object sender, EventArgs e)
+    {
+        this.Close();
     }
 }

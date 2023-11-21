@@ -42,6 +42,8 @@ partial class AddProductForm
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         name_textbox = new Guna.UI2.WinForms.Guna2TextBox();
         label1 = new Label();
         label2 = new Label();
@@ -56,6 +58,7 @@ partial class AddProductForm
         description = new Guna.UI2.WinForms.Guna2TextBox();
         category = new Guna.UI2.WinForms.Guna2ComboBox();
         mtype = new Guna.UI2.WinForms.Guna2ComboBox();
+        CanselBtn = new Guna.UI2.WinForms.Guna2Button();
         SuspendLayout();
         // 
         // name_textbox
@@ -117,13 +120,14 @@ partial class AddProductForm
         guna2Button1.FillColor = Color.FromArgb(75, 73, 172);
         guna2Button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         guna2Button1.ForeColor = Color.White;
-        guna2Button1.Location = new Point(294, 343);
+        guna2Button1.Location = new Point(477, 343);
         guna2Button1.Name = "guna2Button1";
         guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
         guna2Button1.Size = new Size(179, 50);
         guna2Button1.TabIndex = 3;
         guna2Button1.Text = "Saqlash";
         guna2Button1.Click += guna2Button1_Click;
+        guna2Button1.KeyDown += SaveByEnter;
         // 
         // label3
         // 
@@ -290,12 +294,34 @@ partial class AddProductForm
         mtype.Size = new Size(314, 36);
         mtype.TabIndex = 18;
         // 
+        // CanselBtn
+        // 
+        CanselBtn.Anchor = AnchorStyles.None;
+        CanselBtn.BorderRadius = 7;
+        CanselBtn.Cursor = Cursors.Hand;
+        CanselBtn.CustomizableEdges = customizableEdges15;
+        CanselBtn.DisabledState.BorderColor = Color.DarkGray;
+        CanselBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+        CanselBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        CanselBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        CanselBtn.FillColor = Color.FromArgb(192, 0, 0);
+        CanselBtn.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+        CanselBtn.ForeColor = Color.White;
+        CanselBtn.Location = new Point(117, 343);
+        CanselBtn.Name = "CanselBtn";
+        CanselBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
+        CanselBtn.Size = new Size(179, 50);
+        CanselBtn.TabIndex = 19;
+        CanselBtn.Text = "Bekor qilish";
+        CanselBtn.Click += CanselBtn_Click;
+        // 
         // AddProductForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(220, 229, 253);
         ClientSize = new Size(770, 427);
+        Controls.Add(CanselBtn);
         Controls.Add(mtype);
         Controls.Add(category);
         Controls.Add(label5);
@@ -336,4 +362,5 @@ partial class AddProductForm
     private Guna.UI2.WinForms.Guna2TextBox description;
     private Guna.UI2.WinForms.Guna2ComboBox category;
     private Guna.UI2.WinForms.Guna2ComboBox mtype;
+    private Guna.UI2.WinForms.Guna2Button CanselBtn;
 }

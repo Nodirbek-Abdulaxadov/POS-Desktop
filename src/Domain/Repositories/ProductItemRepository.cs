@@ -1,4 +1,5 @@
 ﻿using DataLayer.Repositories;
+using Microsoft.EntityFrameworkCore;
 using POS.Domain.DataContext;
 using POS.Domain.Entities;
 using POS.Domain.Interfaces;
@@ -9,4 +10,9 @@ public class ProductItemRepository : Repository<ProductItem>, IProductItemInterf
     public ProductItemRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
     }
+
+    public async Task<IEnumerable<ProductItem>> GetAllWithProductAsync()
+        => await _dbContext.ProductItems
+                           .Include(p => p.Product)
+                           .ToListAsync();
 }
