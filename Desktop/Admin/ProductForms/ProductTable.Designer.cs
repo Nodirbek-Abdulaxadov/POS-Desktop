@@ -96,8 +96,8 @@ partial class ProductTable
         table.DefaultCellStyle = dataGridViewCellStyle3;
         table.Dock = DockStyle.Fill;
         table.GridColor = Color.FromArgb(231, 229, 255);
-        table.Location = new Point(0, 50);
-        table.Margin = new Padding(30);
+        table.Location = new Point(0, 70);
+        table.Margin = new Padding(39, 42, 39, 42);
         table.Name = "table";
         table.ReadOnly = true;
         table.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -111,7 +111,7 @@ partial class ProductTable
         table.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
         table.RowHeadersVisible = false;
         table.RowTemplate.Height = 25;
-        table.Size = new Size(750, 295);
+        table.Size = new Size(964, 413);
         table.TabIndex = 0;
         table.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
         table.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -143,9 +143,10 @@ partial class ProductTable
         panel1.Controls.Add(editbtn);
         panel1.Controls.Add(addbtn);
         panel1.Dock = DockStyle.Bottom;
-        panel1.Location = new Point(0, 345);
+        panel1.Location = new Point(0, 483);
+        panel1.Margin = new Padding(4, 4, 4, 4);
         panel1.Name = "panel1";
-        panel1.Size = new Size(750, 91);
+        panel1.Size = new Size(964, 127);
         panel1.TabIndex = 1;
         // 
         // ArchiveBtn
@@ -163,10 +164,11 @@ partial class ProductTable
         ArchiveBtn.ForeColor = Color.White;
         ArchiveBtn.Image = (Image)resources.GetObject("ArchiveBtn.Image");
         ArchiveBtn.ImageSize = new Size(24, 24);
-        ArchiveBtn.Location = new Point(565, 21);
+        ArchiveBtn.Location = new Point(726, 29);
+        ArchiveBtn.Margin = new Padding(4, 4, 4, 4);
         ArchiveBtn.Name = "ArchiveBtn";
         ArchiveBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-        ArchiveBtn.Size = new Size(145, 42);
+        ArchiveBtn.Size = new Size(186, 59);
         ArchiveBtn.TabIndex = 4;
         ArchiveBtn.Text = "Archivlash";
         ArchiveBtn.Click += ArchiveBtn_Click;
@@ -185,10 +187,11 @@ partial class ProductTable
         deletebtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         deletebtn.ForeColor = Color.White;
         deletebtn.Image = Properties.Resources.trash;
-        deletebtn.Location = new Point(384, 21);
+        deletebtn.Location = new Point(494, 29);
+        deletebtn.Margin = new Padding(4, 4, 4, 4);
         deletebtn.Name = "deletebtn";
         deletebtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
-        deletebtn.Size = new Size(145, 42);
+        deletebtn.Size = new Size(186, 59);
         deletebtn.TabIndex = 2;
         deletebtn.Text = "O'chirish";
         deletebtn.Click += deletebtn_Click;
@@ -207,12 +210,14 @@ partial class ProductTable
         editbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         editbtn.ForeColor = Color.White;
         editbtn.Image = Properties.Resources.edit;
-        editbtn.Location = new Point(203, 21);
+        editbtn.Location = new Point(261, 29);
+        editbtn.Margin = new Padding(4, 4, 4, 4);
         editbtn.Name = "editbtn";
         editbtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
-        editbtn.Size = new Size(145, 42);
+        editbtn.Size = new Size(186, 59);
         editbtn.TabIndex = 1;
         editbtn.Text = "Tahrirlash";
+        editbtn.Click += editbtn_Click;
         // 
         // addbtn
         // 
@@ -228,10 +233,11 @@ partial class ProductTable
         addbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         addbtn.ForeColor = Color.White;
         addbtn.Image = Properties.Resources.add;
-        addbtn.Location = new Point(22, 21);
+        addbtn.Location = new Point(28, 29);
+        addbtn.Margin = new Padding(4, 4, 4, 4);
         addbtn.Name = "addbtn";
         addbtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
-        addbtn.Size = new Size(145, 42);
+        addbtn.Size = new Size(186, 59);
         addbtn.TabIndex = 0;
         addbtn.Text = "Yangi qo'shish";
         addbtn.Click += addbtn_Click;
@@ -244,8 +250,9 @@ partial class ProductTable
         panel2.Controls.Add(label1);
         panel2.Dock = DockStyle.Top;
         panel2.Location = new Point(0, 0);
+        panel2.Margin = new Padding(4, 4, 4, 4);
         panel2.Name = "panel2";
-        panel2.Size = new Size(750, 50);
+        panel2.Size = new Size(964, 70);
         panel2.TabIndex = 2;
         // 
         // ProductCategoryComboBox
@@ -262,10 +269,11 @@ partial class ProductTable
         ProductCategoryComboBox.ForeColor = Color.FromArgb(68, 88, 112);
         ProductCategoryComboBox.ItemHeight = 25;
         ProductCategoryComboBox.Items.AddRange(new object[] { "Barchasi", "Aktiv", "Arxivlangan" });
-        ProductCategoryComboBox.Location = new Point(191, 9);
+        ProductCategoryComboBox.Location = new Point(246, 13);
+        ProductCategoryComboBox.Margin = new Padding(4, 4, 4, 4);
         ProductCategoryComboBox.Name = "ProductCategoryComboBox";
         ProductCategoryComboBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
-        ProductCategoryComboBox.Size = new Size(182, 31);
+        ProductCategoryComboBox.Size = new Size(233, 31);
         ProductCategoryComboBox.TabIndex = 6;
         ProductCategoryComboBox.SelectedIndexChanged += ProductCategoryComboBox_SelectedIndexChanged;
         // 
@@ -282,14 +290,14 @@ partial class ProductTable
         search_textbox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
         search_textbox.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
         search_textbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        search_textbox.Location = new Point(567, 7);
-        search_textbox.Margin = new Padding(3, 6, 3, 6);
+        search_textbox.Location = new Point(729, 10);
+        search_textbox.Margin = new Padding(4, 8, 4, 8);
         search_textbox.Name = "search_textbox";
         search_textbox.PasswordChar = '\0';
         search_textbox.PlaceholderText = "Mahsulot nomini kiriting";
         search_textbox.SelectedText = "";
         search_textbox.ShadowDecoration.CustomizableEdges = customizableEdges12;
-        search_textbox.Size = new Size(169, 35);
+        search_textbox.Size = new Size(217, 49);
         search_textbox.TabIndex = 5;
         search_textbox.TextChanged += search_textbox_TextChanged;
         // 
@@ -306,10 +314,11 @@ partial class ProductTable
         FilterComboBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
         FilterComboBox.ForeColor = Color.FromArgb(68, 88, 112);
         FilterComboBox.ItemHeight = 25;
-        FilterComboBox.Location = new Point(379, 9);
+        FilterComboBox.Location = new Point(487, 13);
+        FilterComboBox.Margin = new Padding(4, 4, 4, 4);
         FilterComboBox.Name = "FilterComboBox";
         FilterComboBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
-        FilterComboBox.Size = new Size(182, 31);
+        FilterComboBox.Size = new Size(233, 31);
         FilterComboBox.TabIndex = 4;
         FilterComboBox.SelectedIndexChanged += FilterComboBox_SelectedIndexChanged;
         // 
@@ -317,7 +326,8 @@ partial class ProductTable
         // 
         label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-        label1.Location = new Point(-3, 9);
+        label1.Location = new Point(-4, 13);
+        label1.Margin = new Padding(4, 0, 4, 0);
         label1.Name = "label1";
         label1.Size = new Size(180, 25);
         label1.TabIndex = 0;
@@ -326,24 +336,25 @@ partial class ProductTable
         // panel3
         // 
         panel3.Dock = DockStyle.Fill;
-        panel3.Location = new Point(0, 50);
+        panel3.Location = new Point(0, 70);
+        panel3.Margin = new Padding(4, 4, 4, 4);
         panel3.Name = "panel3";
-        panel3.Padding = new Padding(30, 0, 30, 0);
-        panel3.Size = new Size(750, 295);
+        panel3.Padding = new Padding(39, 0, 39, 0);
+        panel3.Size = new Size(964, 413);
         panel3.TabIndex = 3;
         // 
         // ProductTable
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 21F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(220, 229, 253);
         Controls.Add(table);
         Controls.Add(panel3);
         Controls.Add(panel2);
         Controls.Add(panel1);
-        Margin = new Padding(30);
+        Margin = new Padding(39, 42, 39, 42);
         Name = "ProductTable";
-        Size = new Size(750, 436);
+        Size = new Size(964, 610);
         Load += ProductTable_Load;
         ((System.ComponentModel.ISupportInitialize)table).EndInit();
         panel1.ResumeLayout(false);

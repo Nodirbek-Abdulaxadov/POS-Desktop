@@ -52,4 +52,9 @@ public partial class ProductItemTable : UserControl
             });
         }
     }
+
+    private void editbtn_Click(object sender, EventArgs e)
+    {
+
+    }
 }

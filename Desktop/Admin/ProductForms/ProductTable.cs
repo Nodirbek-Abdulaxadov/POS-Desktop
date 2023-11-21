@@ -342,4 +342,23 @@ public partial class ProductTable : UserControl
             new Toastr().ShowError("Xatolik yuz berdi");
         }
     }
+
+    private async void editbtn_Click(object sender, EventArgs e)
+    {
+        if (selectedId != 0)
+        {
+            EditProductForm form = new(selectedId, _businessUnit);
+            var result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                new Toastr().ShowSuccess("O'zgarishlar saqlandi!");
+                await Task.Run(() => FillProducts(selected));
+                selectedId = 0;
+            }
+        }
+        else
+        {
+            new Toastr().ShowWarning("Kategoriyalardan birini tanlang!");
+        }
+    }
 }
