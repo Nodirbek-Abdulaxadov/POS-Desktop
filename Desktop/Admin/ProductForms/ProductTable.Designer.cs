@@ -28,16 +28,16 @@ partial class ProductTable
     /// </summary>
     private void InitializeComponent()
     {
-        DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         table = new Guna.UI2.WinForms.Guna2DataGridView();
         panel1 = new Panel();
         deletebtn = new Guna.UI2.WinForms.Guna2Button();
@@ -56,49 +56,49 @@ partial class ProductTable
         table.AllowUserToAddRows = false;
         table.AllowUserToDeleteRows = false;
         table.AllowUserToResizeRows = false;
-        dataGridViewCellStyle5.BackColor = Color.White;
-        dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-        dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(231, 229, 255);
-        dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(71, 69, 94);
-        table.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+        dataGridViewCellStyle1.BackColor = Color.White;
+        dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+        dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(231, 229, 255);
+        dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
+        table.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
         table.BorderStyle = BorderStyle.Fixed3D;
-        dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        dataGridViewCellStyle6.BackColor = Color.FromArgb(75, 73, 172);
-        dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-        dataGridViewCellStyle6.ForeColor = Color.White;
-        dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(75, 73, 172);
-        dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-        table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+        dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        dataGridViewCellStyle2.BackColor = Color.FromArgb(75, 73, 172);
+        dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+        dataGridViewCellStyle2.ForeColor = Color.White;
+        dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(75, 73, 172);
+        dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+        table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
         table.ColumnHeadersHeight = 28;
         table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-        dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        dataGridViewCellStyle7.BackColor = Color.White;
-        dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
-        dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(231, 229, 255);
-        dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
-        dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-        table.DefaultCellStyle = dataGridViewCellStyle7;
+        dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        dataGridViewCellStyle3.BackColor = Color.White;
+        dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+        dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+        dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+        table.DefaultCellStyle = dataGridViewCellStyle3;
         table.Dock = DockStyle.Fill;
         table.GridColor = Color.FromArgb(231, 229, 255);
-        table.Location = new Point(0, 50);
-        table.Margin = new Padding(30);
+        table.Location = new Point(0, 70);
+        table.Margin = new Padding(39, 42, 39, 42);
         table.Name = "table";
         table.ReadOnly = true;
         table.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-        dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-        dataGridViewCellStyle8.BackColor = Color.White;
-        dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-        dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-        dataGridViewCellStyle8.SelectionBackColor = Color.White;
-        dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-        dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-        table.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+        dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        dataGridViewCellStyle4.BackColor = Color.White;
+        dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+        dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+        dataGridViewCellStyle4.SelectionBackColor = Color.White;
+        dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+        dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+        table.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
         table.RowHeadersVisible = false;
         table.RowTemplate.Height = 25;
-        table.Size = new Size(750, 295);
+        table.Size = new Size(964, 413);
         table.TabIndex = 0;
         table.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
         table.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -129,9 +129,10 @@ partial class ProductTable
         panel1.Controls.Add(editbtn);
         panel1.Controls.Add(addbtn);
         panel1.Dock = DockStyle.Bottom;
-        panel1.Location = new Point(0, 345);
+        panel1.Location = new Point(0, 483);
+        panel1.Margin = new Padding(4, 4, 4, 4);
         panel1.Name = "panel1";
-        panel1.Size = new Size(750, 91);
+        panel1.Size = new Size(964, 127);
         panel1.TabIndex = 1;
         // 
         // deletebtn
@@ -139,7 +140,7 @@ partial class ProductTable
         deletebtn.Anchor = AnchorStyles.None;
         deletebtn.BorderRadius = 5;
         deletebtn.Cursor = Cursors.Hand;
-        deletebtn.CustomizableEdges = customizableEdges7;
+        deletebtn.CustomizableEdges = customizableEdges1;
         deletebtn.DisabledState.BorderColor = Color.DarkGray;
         deletebtn.DisabledState.CustomBorderColor = Color.DarkGray;
         deletebtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -148,10 +149,11 @@ partial class ProductTable
         deletebtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         deletebtn.ForeColor = Color.White;
         deletebtn.Image = Properties.Resources.trash;
-        deletebtn.Location = new Point(525, 21);
+        deletebtn.Location = new Point(675, 29);
+        deletebtn.Margin = new Padding(4, 4, 4, 4);
         deletebtn.Name = "deletebtn";
-        deletebtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
-        deletebtn.Size = new Size(168, 45);
+        deletebtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+        deletebtn.Size = new Size(216, 63);
         deletebtn.TabIndex = 2;
         deletebtn.Text = "O'chirish";
         deletebtn.Click += deletebtn_Click;
@@ -161,7 +163,7 @@ partial class ProductTable
         editbtn.Anchor = AnchorStyles.None;
         editbtn.BorderRadius = 5;
         editbtn.Cursor = Cursors.Hand;
-        editbtn.CustomizableEdges = customizableEdges9;
+        editbtn.CustomizableEdges = customizableEdges3;
         editbtn.DisabledState.BorderColor = Color.DarkGray;
         editbtn.DisabledState.CustomBorderColor = Color.DarkGray;
         editbtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -170,10 +172,11 @@ partial class ProductTable
         editbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         editbtn.ForeColor = Color.White;
         editbtn.Image = Properties.Resources.edit;
-        editbtn.Location = new Point(288, 21);
+        editbtn.Location = new Point(370, 29);
+        editbtn.Margin = new Padding(4, 4, 4, 4);
         editbtn.Name = "editbtn";
-        editbtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
-        editbtn.Size = new Size(168, 45);
+        editbtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
+        editbtn.Size = new Size(216, 63);
         editbtn.TabIndex = 1;
         editbtn.Text = "Tahrirlash";
         editbtn.Click += editbtn_Click;
@@ -183,7 +186,7 @@ partial class ProductTable
         addbtn.Anchor = AnchorStyles.None;
         addbtn.BorderRadius = 5;
         addbtn.Cursor = Cursors.Hand;
-        addbtn.CustomizableEdges = customizableEdges11;
+        addbtn.CustomizableEdges = customizableEdges5;
         addbtn.DisabledState.BorderColor = Color.DarkGray;
         addbtn.DisabledState.CustomBorderColor = Color.DarkGray;
         addbtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -192,10 +195,11 @@ partial class ProductTable
         addbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
         addbtn.ForeColor = Color.White;
         addbtn.Image = Properties.Resources.add;
-        addbtn.Location = new Point(51, 21);
+        addbtn.Location = new Point(66, 29);
+        addbtn.Margin = new Padding(4, 4, 4, 4);
         addbtn.Name = "addbtn";
-        addbtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
-        addbtn.Size = new Size(168, 45);
+        addbtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+        addbtn.Size = new Size(216, 63);
         addbtn.TabIndex = 0;
         addbtn.Text = "Yangi qo'shish";
         addbtn.Click += addbtn_Click;
@@ -205,15 +209,17 @@ partial class ProductTable
         panel2.Controls.Add(label1);
         panel2.Dock = DockStyle.Top;
         panel2.Location = new Point(0, 0);
+        panel2.Margin = new Padding(4, 4, 4, 4);
         panel2.Name = "panel2";
-        panel2.Size = new Size(750, 50);
+        panel2.Size = new Size(964, 70);
         panel2.TabIndex = 2;
         // 
         // label1
         // 
         label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-        label1.Location = new Point(-3, 9);
+        label1.Location = new Point(-4, 13);
+        label1.Margin = new Padding(4, 0, 4, 0);
         label1.Name = "label1";
         label1.Size = new Size(180, 25);
         label1.TabIndex = 0;
@@ -222,24 +228,25 @@ partial class ProductTable
         // panel3
         // 
         panel3.Dock = DockStyle.Fill;
-        panel3.Location = new Point(0, 50);
+        panel3.Location = new Point(0, 70);
+        panel3.Margin = new Padding(4, 4, 4, 4);
         panel3.Name = "panel3";
-        panel3.Padding = new Padding(30, 0, 30, 0);
-        panel3.Size = new Size(750, 295);
+        panel3.Padding = new Padding(39, 0, 39, 0);
+        panel3.Size = new Size(964, 413);
         panel3.TabIndex = 3;
         // 
         // ProductTable
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 21F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(220, 229, 253);
         Controls.Add(table);
         Controls.Add(panel3);
         Controls.Add(panel2);
         Controls.Add(panel1);
-        Margin = new Padding(30);
+        Margin = new Padding(39, 42, 39, 42);
         Name = "ProductTable";
-        Size = new Size(750, 436);
+        Size = new Size(964, 610);
         Load += ProductTable_Load;
         ((System.ComponentModel.ISupportInitialize)table).EndInit();
         panel1.ResumeLayout(false);
