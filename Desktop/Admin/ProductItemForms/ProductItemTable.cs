@@ -57,4 +57,10 @@ public partial class ProductItemTable : UserControl
     {
 
     }
+
+    private void addbtn_Click(object sender, EventArgs e)
+    {
+        AddProductItemForm AddProductItemForm = new AddProductItemForm(_businessUnit);
+        AddProductItemForm.ShowDialog();
+    }
 }
