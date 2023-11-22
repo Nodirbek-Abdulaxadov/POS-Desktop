@@ -28,7 +28,8 @@ public class UpdateProductDto : BaseModel
              Barcode = product.Barcode,
              Amount = product.Amount,
              MeasurmentType = product.MeasurmentType,
-             CategoryId = product.CategoryId
+             CategoryId = product.CategoryId,
+             Category = null
          };
 
     public static implicit operator ProductDto(UpdateProductDto product)
