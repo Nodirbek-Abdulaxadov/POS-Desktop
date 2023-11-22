@@ -28,20 +28,22 @@ partial class AddProductItemForm
     /// </summary>
     private void InitializeComponent()
     {
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         label5 = new Label();
         label6 = new Label();
         Outcame_price = new Guna.UI2.WinForms.Guna2TextBox();
@@ -51,10 +53,11 @@ partial class AddProductItemForm
         label1 = new Label();
         Income_price = new Guna.UI2.WinForms.Guna2TextBox();
         Income_date = new Guna.UI2.WinForms.Guna2DateTimePicker();
-        mahsulotlar = new Guna.UI2.WinForms.Guna2ComboBox();
         label4 = new Label();
         CanselBtn = new Guna.UI2.WinForms.Guna2Button();
         Save_btn = new Guna.UI2.WinForms.Guna2Button();
+        search_textBox = new Guna.UI2.WinForms.Guna2TextBox();
+        mahsulotlar = new Guna.UI2.WinForms.Guna2ComboBox();
         SuspendLayout();
         // 
         // label5
@@ -83,7 +86,7 @@ partial class AddProductItemForm
         // 
         Outcame_price.Anchor = AnchorStyles.None;
         Outcame_price.BorderRadius = 5;
-        Outcame_price.CustomizableEdges = customizableEdges1;
+        Outcame_price.CustomizableEdges = customizableEdges17;
         Outcame_price.DefaultText = "";
         Outcame_price.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
         Outcame_price.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -99,7 +102,7 @@ partial class AddProductItemForm
         Outcame_price.PasswordChar = '\0';
         Outcame_price.PlaceholderText = "";
         Outcame_price.SelectedText = "";
-        Outcame_price.ShadowDecoration.CustomizableEdges = customizableEdges2;
+        Outcame_price.ShadowDecoration.CustomizableEdges = customizableEdges18;
         Outcame_price.Size = new Size(314, 36);
         Outcame_price.TabIndex = 28;
         // 
@@ -118,7 +121,7 @@ partial class AddProductItemForm
         // 
         Miqdori.Anchor = AnchorStyles.None;
         Miqdori.BorderRadius = 5;
-        Miqdori.CustomizableEdges = customizableEdges3;
+        Miqdori.CustomizableEdges = customizableEdges19;
         Miqdori.DefaultText = "";
         Miqdori.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
         Miqdori.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -134,7 +137,7 @@ partial class AddProductItemForm
         Miqdori.PasswordChar = '\0';
         Miqdori.PlaceholderText = "";
         Miqdori.SelectedText = "";
-        Miqdori.ShadowDecoration.CustomizableEdges = customizableEdges4;
+        Miqdori.ShadowDecoration.CustomizableEdges = customizableEdges20;
         Miqdori.Size = new Size(314, 36);
         Miqdori.TabIndex = 26;
         // 
@@ -164,7 +167,7 @@ partial class AddProductItemForm
         // 
         Income_price.Anchor = AnchorStyles.None;
         Income_price.BorderRadius = 5;
-        Income_price.CustomizableEdges = customizableEdges5;
+        Income_price.CustomizableEdges = customizableEdges21;
         Income_price.DefaultText = "";
         Income_price.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
         Income_price.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -180,7 +183,7 @@ partial class AddProductItemForm
         Income_price.PasswordChar = '\0';
         Income_price.PlaceholderText = "";
         Income_price.SelectedText = "";
-        Income_price.ShadowDecoration.CustomizableEdges = customizableEdges6;
+        Income_price.ShadowDecoration.CustomizableEdges = customizableEdges22;
         Income_price.Size = new Size(314, 36);
         Income_price.TabIndex = 23;
         // 
@@ -188,7 +191,7 @@ partial class AddProductItemForm
         // 
         Income_date.BorderRadius = 5;
         Income_date.Checked = true;
-        Income_date.CustomizableEdges = customizableEdges7;
+        Income_date.CustomizableEdges = customizableEdges23;
         Income_date.FillColor = Color.White;
         Income_date.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
         Income_date.Format = DateTimePickerFormat.Long;
@@ -196,36 +199,17 @@ partial class AddProductItemForm
         Income_date.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
         Income_date.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
         Income_date.Name = "Income_date";
-        Income_date.ShadowDecoration.CustomizableEdges = customizableEdges8;
+        Income_date.ShadowDecoration.CustomizableEdges = customizableEdges24;
         Income_date.Size = new Size(314, 36);
         Income_date.TabIndex = 33;
         Income_date.Value = new DateTime(2023, 11, 22, 14, 12, 8, 775);
-        // 
-        // mahsulotlar
-        // 
-        mahsulotlar.Anchor = AnchorStyles.None;
-        mahsulotlar.BackColor = Color.Transparent;
-        mahsulotlar.BorderRadius = 5;
-        mahsulotlar.CustomizableEdges = customizableEdges9;
-        mahsulotlar.DrawMode = DrawMode.OwnerDrawFixed;
-        mahsulotlar.DropDownStyle = ComboBoxStyle.DropDownList;
-        mahsulotlar.FocusedColor = Color.FromArgb(94, 148, 255);
-        mahsulotlar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-        mahsulotlar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-        mahsulotlar.ForeColor = Color.FromArgb(68, 88, 112);
-        mahsulotlar.ItemHeight = 30;
-        mahsulotlar.Location = new Point(31, 134);
-        mahsulotlar.Name = "mahsulotlar";
-        mahsulotlar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-        mahsulotlar.Size = new Size(314, 36);
-        mahsulotlar.TabIndex = 34;
         // 
         // label4
         // 
         label4.Anchor = AnchorStyles.None;
         label4.AutoSize = true;
         label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        label4.Location = new Point(31, 106);
+        label4.Location = new Point(31, 97);
         label4.Name = "label4";
         label4.Size = new Size(91, 25);
         label4.TabIndex = 35;
@@ -236,7 +220,7 @@ partial class AddProductItemForm
         CanselBtn.Anchor = AnchorStyles.None;
         CanselBtn.BorderRadius = 7;
         CanselBtn.Cursor = Cursors.Hand;
-        CanselBtn.CustomizableEdges = customizableEdges11;
+        CanselBtn.CustomizableEdges = customizableEdges25;
         CanselBtn.DisabledState.BorderColor = Color.DarkGray;
         CanselBtn.DisabledState.CustomBorderColor = Color.DarkGray;
         CanselBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -246,7 +230,7 @@ partial class AddProductItemForm
         CanselBtn.ForeColor = Color.White;
         CanselBtn.Location = new Point(111, 297);
         CanselBtn.Name = "CanselBtn";
-        CanselBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+        CanselBtn.ShadowDecoration.CustomizableEdges = customizableEdges26;
         CanselBtn.Size = new Size(179, 45);
         CanselBtn.TabIndex = 37;
         CanselBtn.Text = "Bekor qilish";
@@ -257,7 +241,7 @@ partial class AddProductItemForm
         Save_btn.Anchor = AnchorStyles.None;
         Save_btn.BorderRadius = 7;
         Save_btn.Cursor = Cursors.Hand;
-        Save_btn.CustomizableEdges = customizableEdges13;
+        Save_btn.CustomizableEdges = customizableEdges27;
         Save_btn.DisabledState.BorderColor = Color.DarkGray;
         Save_btn.DisabledState.CustomBorderColor = Color.DarkGray;
         Save_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -267,11 +251,50 @@ partial class AddProductItemForm
         Save_btn.ForeColor = Color.White;
         Save_btn.Location = new Point(471, 297);
         Save_btn.Name = "Save_btn";
-        Save_btn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+        Save_btn.ShadowDecoration.CustomizableEdges = customizableEdges28;
         Save_btn.Size = new Size(179, 45);
         Save_btn.TabIndex = 36;
         Save_btn.Text = "Saqlash";
         Save_btn.Click += Save_btn_Click_1;
+        // 
+        // search_textBox
+        // 
+        search_textBox.BorderRadius = 5;
+        search_textBox.CustomizableEdges = customizableEdges29;
+        search_textBox.DefaultText = "";
+        search_textBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+        search_textBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+        search_textBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+        search_textBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+        search_textBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+        search_textBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+        search_textBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+        search_textBox.Location = new Point(129, 89);
+        search_textBox.Margin = new Padding(4);
+        search_textBox.Name = "search_textBox";
+        search_textBox.PasswordChar = '\0';
+        search_textBox.PlaceholderText = "Mahsulot nomini kiriting";
+        search_textBox.SelectedText = "";
+        search_textBox.ShadowDecoration.CustomizableEdges = customizableEdges30;
+        search_textBox.Size = new Size(216, 38);
+        search_textBox.TabIndex = 38;
+        // 
+        // mahsulotlar
+        // 
+        mahsulotlar.BackColor = Color.Transparent;
+        mahsulotlar.CustomizableEdges = customizableEdges31;
+        mahsulotlar.DrawMode = DrawMode.OwnerDrawFixed;
+        mahsulotlar.DropDownStyle = ComboBoxStyle.DropDownList;
+        mahsulotlar.FocusedColor = Color.FromArgb(94, 148, 255);
+        mahsulotlar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+        mahsulotlar.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+        mahsulotlar.ForeColor = Color.FromArgb(68, 88, 112);
+        mahsulotlar.ItemHeight = 30;
+        mahsulotlar.Location = new Point(31, 134);
+        mahsulotlar.Name = "mahsulotlar";
+        mahsulotlar.ShadowDecoration.CustomizableEdges = customizableEdges32;
+        mahsulotlar.Size = new Size(314, 36);
+        mahsulotlar.TabIndex = 39;
         // 
         // AddProductItemForm
         // 
@@ -279,10 +302,11 @@ partial class AddProductItemForm
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(220, 229, 253);
         ClientSize = new Size(770, 368);
+        Controls.Add(mahsulotlar);
+        Controls.Add(search_textBox);
         Controls.Add(CanselBtn);
         Controls.Add(Save_btn);
         Controls.Add(label4);
-        Controls.Add(mahsulotlar);
         Controls.Add(label2);
         Controls.Add(Income_date);
         Controls.Add(label5);
@@ -311,8 +335,9 @@ partial class AddProductItemForm
     private Label label1;
     private Guna.UI2.WinForms.Guna2TextBox Income_price;
     private Guna.UI2.WinForms.Guna2DateTimePicker Income_date;
-    private Guna.UI2.WinForms.Guna2ComboBox mahsulotlar;
     private Label label4;
     private Guna.UI2.WinForms.Guna2Button CanselBtn;
     private Guna.UI2.WinForms.Guna2Button Save_btn;
+    private Guna.UI2.WinForms.Guna2TextBox search_textBox;
+    private Guna.UI2.WinForms.Guna2ComboBox mahsulotlar;
 }
