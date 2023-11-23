@@ -52,4 +52,15 @@ public partial class ProductItemTable : UserControl
             });
         }
     }
+
+    private void editbtn_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void addbtn_Click(object sender, EventArgs e)
+    {
+        AddProductItemForm AddProductItemForm = new AddProductItemForm(_businessUnit);
+        AddProductItemForm.ShowDialog();
+    }
 }

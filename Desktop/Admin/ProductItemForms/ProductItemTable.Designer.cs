@@ -89,7 +89,7 @@ partial class ProductItemTable
         table.Dock = DockStyle.Fill;
         table.GridColor = Color.FromArgb(231, 229, 255);
         table.Location = new Point(0, 50);
-        table.Margin = new Padding(30);
+        table.Margin = new Padding(30, 30, 30, 30);
         table.Name = "table";
         table.ReadOnly = true;
         table.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -201,6 +201,7 @@ partial class ProductItemTable
         editbtn.Size = new Size(145, 42);
         editbtn.TabIndex = 1;
         editbtn.Text = "Tahrirlash";
+        editbtn.Click += editbtn_Click;
         // 
         // addbtn
         // 
@@ -222,6 +223,7 @@ partial class ProductItemTable
         addbtn.Size = new Size(145, 42);
         addbtn.TabIndex = 0;
         addbtn.Text = "Yangi qo'shish";
+        addbtn.Click += addbtn_Click;
         // 
         // panel2
         // 
@@ -260,7 +262,7 @@ partial class ProductItemTable
         Controls.Add(panel3);
         Controls.Add(panel2);
         Controls.Add(panel1);
-        Margin = new Padding(30);
+        Margin = new Padding(30, 30, 30, 30);
         Name = "ProductItemTable";
         Size = new Size(750, 436);
         Load += ProductItemTable_Load;

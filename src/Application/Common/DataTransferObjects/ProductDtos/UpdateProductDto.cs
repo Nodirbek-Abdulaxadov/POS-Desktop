@@ -28,6 +28,20 @@ public class UpdateProductDto : BaseModel
              Barcode = product.Barcode,
              Amount = product.Amount,
              MeasurmentType = product.MeasurmentType,
+             CategoryId = product.CategoryId,
+             Category = null
+         };
+
+    public static implicit operator ProductDto(UpdateProductDto product)
+         => new()
+         {
+             Id = product.Id,
+             Name = product.Name,
+             WarningAmount = product.WarningAmount,
+             Description = product.Description,
+             Barcode = product.Barcode,
+             Amount = product.Amount,
+             MeasurmentType = product.MeasurmentType,
              CategoryId = product.CategoryId
          };
 }

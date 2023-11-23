@@ -149,9 +149,10 @@ public class ProductService : IProductService
         throw new NotImplementedException();
     }
 
-    public Task<ProductDto> GetByIdAsync(int id)
+    public async Task<ProductDto> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var productDto = await _unitOfWork.Products.GetByIdAsync(id);
+        return (ProductDto)productDto;
     }
 
     public Task<PagedList<ProductDto>> GetProductsAsync(int pageSize, int pageNumber)
@@ -160,9 +161,10 @@ public class ProductService : IProductService
     }
 
 
-    public Task<ProductDto> UpdateAsync(UpdateProductDto dto)
+    public async Task<ProductDto> UpdateAsync(UpdateProductDto dto)
     {
-        throw new NotImplementedException();
+        var productDto = await _unitOfWork.Products.UpdateAsync((Product)dto);
+        return (ProductDto)productDto;
     }
 
 
