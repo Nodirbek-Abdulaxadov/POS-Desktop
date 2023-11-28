@@ -100,7 +100,7 @@ namespace Desktop.Admin.CategoryForms
             Close();
         }
         /// <summary>
-        /// Enter tugmasi orqali boshqarish 
+        /// Enter tugmasi orqali boshqarish;
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
