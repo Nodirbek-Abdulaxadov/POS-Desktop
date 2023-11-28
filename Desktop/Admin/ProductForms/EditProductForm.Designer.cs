@@ -75,10 +75,10 @@ partial class EditProductForm
         errorMessage.AutoSize = true;
         errorMessage.Font = new Font("Segoe UI", 10.25F, FontStyle.Regular, GraphicsUnit.Point);
         errorMessage.ForeColor = Color.Red;
-        errorMessage.Location = new Point(55, 191);
+        errorMessage.Location = new Point(49, 182);
         errorMessage.Margin = new Padding(4, 0, 4, 0);
         errorMessage.Name = "errorMessage";
-        errorMessage.Size = new Size(42, 19);
+        errorMessage.Size = new Size(56, 25);
         errorMessage.TabIndex = 40;
         errorMessage.Text = "Nomi";
         errorMessage.Visible = false;
@@ -94,11 +94,11 @@ partial class EditProductForm
         ScanerBtn.Font = new Font("Segoe UI Semibold", 10.75F, FontStyle.Bold, GraphicsUnit.Point);
         ScanerBtn.ForeColor = Color.White;
         ScanerBtn.Image = (Image)resources.GetObject("ScanerBtn.Image");
-        ScanerBtn.Location = new Point(266, 341);
+        ScanerBtn.Location = new Point(236, 325);
         ScanerBtn.Margin = new Padding(4);
         ScanerBtn.Name = "ScanerBtn";
         ScanerBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-        ScanerBtn.Size = new Size(193, 42);
+        ScanerBtn.Size = new Size(172, 40);
         ScanerBtn.TabIndex = 39;
         ScanerBtn.Text = "Scanerlash";
         // 
@@ -113,11 +113,11 @@ partial class EditProductForm
         NewBarcodeBtn.FillColor = Color.FromArgb(79, 111, 82);
         NewBarcodeBtn.Font = new Font("Segoe UI Semibold", 8.75F, FontStyle.Bold, GraphicsUnit.Point);
         NewBarcodeBtn.ForeColor = Color.White;
-        NewBarcodeBtn.Location = new Point(55, 341);
+        NewBarcodeBtn.Location = new Point(49, 325);
         NewBarcodeBtn.Margin = new Padding(4);
         NewBarcodeBtn.Name = "NewBarcodeBtn";
         NewBarcodeBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
-        NewBarcodeBtn.Size = new Size(203, 42);
+        NewBarcodeBtn.Size = new Size(180, 40);
         NewBarcodeBtn.TabIndex = 38;
         NewBarcodeBtn.Text = "Yangi Shtrix kod yaratish";
         // 
@@ -134,11 +134,11 @@ partial class EditProductForm
         CanselBtn.FillColor = Color.FromArgb(192, 0, 0);
         CanselBtn.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
         CanselBtn.ForeColor = Color.White;
-        CanselBtn.Location = new Point(164, 496);
+        CanselBtn.Location = new Point(146, 472);
         CanselBtn.Margin = new Padding(4);
         CanselBtn.Name = "CanselBtn";
         CanselBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
-        CanselBtn.Size = new Size(230, 70);
+        CanselBtn.Size = new Size(204, 67);
         CanselBtn.TabIndex = 37;
         CanselBtn.Text = "Bekor qilish";
         CanselBtn.Click += CanselBtn_Click;
@@ -156,11 +156,11 @@ partial class EditProductForm
         mtype.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         mtype.ForeColor = Color.FromArgb(68, 88, 112);
         mtype.ItemHeight = 30;
-        mtype.Location = new Point(55, 433);
+        mtype.Location = new Point(49, 412);
         mtype.Margin = new Padding(4);
         mtype.Name = "mtype";
         mtype.ShadowDecoration.CustomizableEdges = customizableEdges8;
-        mtype.Size = new Size(403, 36);
+        mtype.Size = new Size(359, 36);
         mtype.TabIndex = 36;
         // 
         // categoryComboBox
@@ -176,11 +176,11 @@ partial class EditProductForm
         categoryComboBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         categoryComboBox.ForeColor = Color.FromArgb(68, 88, 112);
         categoryComboBox.ItemHeight = 30;
-        categoryComboBox.Location = new Point(558, 433);
+        categoryComboBox.Location = new Point(496, 412);
         categoryComboBox.Margin = new Padding(4);
         categoryComboBox.Name = "categoryComboBox";
         categoryComboBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
-        categoryComboBox.Size = new Size(403, 36);
+        categoryComboBox.Size = new Size(359, 36);
         categoryComboBox.TabIndex = 35;
         // 
         // label5
@@ -188,10 +188,10 @@ partial class EditProductForm
         label5.Anchor = AnchorStyles.None;
         label5.AutoSize = true;
         label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        label5.Location = new Point(558, 244);
+        label5.Location = new Point(496, 232);
         label5.Margin = new Padding(4, 0, 4, 0);
         label5.Name = "label5";
-        label5.Size = new Size(48, 25);
+        label5.Size = new Size(59, 32);
         label5.TabIndex = 34;
         label5.Text = "Izoh";
         // 
@@ -209,14 +209,14 @@ partial class EditProductForm
         description.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         description.ForeColor = Color.Black;
         description.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        description.Location = new Point(558, 285);
-        description.Margin = new Padding(5, 6, 5, 6);
+        description.Location = new Point(496, 271);
+        description.Margin = new Padding(4, 6, 4, 6);
         description.Name = "description";
         description.PasswordChar = '\0';
         description.PlaceholderText = "";
         description.SelectedText = "";
         description.ShadowDecoration.CustomizableEdges = customizableEdges12;
-        description.Size = new Size(404, 63);
+        description.Size = new Size(359, 60);
         description.TabIndex = 33;
         // 
         // label7
@@ -224,10 +224,10 @@ partial class EditProductForm
         label7.Anchor = AnchorStyles.None;
         label7.AutoSize = true;
         label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        label7.Location = new Point(558, 394);
+        label7.Location = new Point(496, 375);
         label7.Margin = new Padding(4, 0, 4, 0);
         label7.Name = "label7";
-        label7.Size = new Size(115, 25);
+        label7.Size = new Size(143, 32);
         label7.TabIndex = 32;
         label7.Text = "Kategoriyasi";
         // 
@@ -236,10 +236,10 @@ partial class EditProductForm
         label6.Anchor = AnchorStyles.None;
         label6.AutoSize = true;
         label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        label6.Location = new Point(558, 87);
+        label6.Location = new Point(496, 83);
         label6.Margin = new Padding(4, 0, 4, 0);
         label6.Name = "label6";
-        label6.Size = new Size(198, 25);
+        label6.Size = new Size(248, 32);
         label6.TabIndex = 31;
         label6.Text = "Ogohlantirish miqdori";
         // 
@@ -257,14 +257,14 @@ partial class EditProductForm
         warningAmount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         warningAmount.ForeColor = Color.Black;
         warningAmount.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        warningAmount.Location = new Point(558, 122);
-        warningAmount.Margin = new Padding(5, 6, 5, 6);
+        warningAmount.Location = new Point(496, 116);
+        warningAmount.Margin = new Padding(4, 6, 4, 6);
         warningAmount.Name = "warningAmount";
         warningAmount.PasswordChar = '\0';
         warningAmount.PlaceholderText = "";
         warningAmount.SelectedText = "";
         warningAmount.ShadowDecoration.CustomizableEdges = customizableEdges14;
-        warningAmount.Size = new Size(404, 63);
+        warningAmount.Size = new Size(359, 60);
         warningAmount.TabIndex = 30;
         // 
         // label4
@@ -272,10 +272,10 @@ partial class EditProductForm
         label4.Anchor = AnchorStyles.None;
         label4.AutoSize = true;
         label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        label4.Location = new Point(55, 394);
+        label4.Location = new Point(49, 375);
         label4.Margin = new Padding(4, 0, 4, 0);
         label4.Name = "label4";
-        label4.Size = new Size(109, 25);
+        label4.Size = new Size(138, 32);
         label4.TabIndex = 29;
         label4.Text = "O'lchov turi";
         // 
@@ -284,10 +284,10 @@ partial class EditProductForm
         label3.Anchor = AnchorStyles.None;
         label3.AutoSize = true;
         label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        label3.Location = new Point(55, 233);
+        label3.Location = new Point(49, 222);
         label3.Margin = new Padding(4, 0, 4, 0);
         label3.Name = "label3";
-        label3.Size = new Size(101, 25);
+        label3.Size = new Size(127, 32);
         label3.TabIndex = 28;
         label3.Text = "Shtrix kodi";
         // 
@@ -305,14 +305,14 @@ partial class EditProductForm
         barcode.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         barcode.ForeColor = Color.Black;
         barcode.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        barcode.Location = new Point(55, 268);
-        barcode.Margin = new Padding(5, 6, 5, 6);
+        barcode.Location = new Point(49, 255);
+        barcode.Margin = new Padding(4, 6, 4, 6);
         barcode.Name = "barcode";
         barcode.PasswordChar = '\0';
         barcode.PlaceholderText = "";
         barcode.SelectedText = "";
         barcode.ShadowDecoration.CustomizableEdges = customizableEdges16;
-        barcode.Size = new Size(404, 63);
+        barcode.Size = new Size(359, 60);
         barcode.TabIndex = 27;
         // 
         // guna2Button1
@@ -328,11 +328,11 @@ partial class EditProductForm
         guna2Button1.FillColor = Color.FromArgb(75, 73, 172);
         guna2Button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
         guna2Button1.ForeColor = Color.White;
-        guna2Button1.Location = new Point(627, 496);
+        guna2Button1.Location = new Point(557, 472);
         guna2Button1.Margin = new Padding(4);
         guna2Button1.Name = "guna2Button1";
         guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-        guna2Button1.Size = new Size(230, 70);
+        guna2Button1.Size = new Size(204, 67);
         guna2Button1.TabIndex = 26;
         guna2Button1.Text = "Saqlash";
         guna2Button1.Click += guna2Button1_Click;
@@ -342,10 +342,10 @@ partial class EditProductForm
         label2.Anchor = AnchorStyles.None;
         label2.AutoSize = true;
         label2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-        label2.Location = new Point(29, 33);
+        label2.Location = new Point(26, 31);
         label2.Margin = new Padding(4, 0, 4, 0);
         label2.Name = "label2";
-        label2.Size = new Size(214, 30);
+        label2.Size = new Size(279, 37);
         label2.TabIndex = 25;
         label2.Text = "Mahsulotni yangilash";
         // 
@@ -354,10 +354,10 @@ partial class EditProductForm
         label1.Anchor = AnchorStyles.None;
         label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-        label1.Location = new Point(55, 87);
+        label1.Location = new Point(49, 83);
         label1.Margin = new Padding(4, 0, 4, 0);
         label1.Name = "label1";
-        label1.Size = new Size(58, 25);
+        label1.Size = new Size(73, 32);
         label1.TabIndex = 24;
         label1.Text = "Nomi";
         // 
@@ -375,22 +375,23 @@ partial class EditProductForm
         name_textbox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
         name_textbox.ForeColor = Color.Black;
         name_textbox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-        name_textbox.Location = new Point(55, 122);
-        name_textbox.Margin = new Padding(5, 6, 5, 6);
+        name_textbox.Location = new Point(49, 116);
+        name_textbox.Margin = new Padding(4, 6, 4, 6);
         name_textbox.Name = "name_textbox";
         name_textbox.PasswordChar = '\0';
         name_textbox.PlaceholderText = "";
         name_textbox.SelectedText = "";
         name_textbox.ShadowDecoration.CustomizableEdges = customizableEdges20;
-        name_textbox.Size = new Size(404, 63);
+        name_textbox.Size = new Size(359, 60);
         name_textbox.TabIndex = 23;
+        name_textbox.TextChanged += name_textbox_TextChanged;
         // 
         // EditProductForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 21F);
+        AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(220, 229, 253);
-        ClientSize = new Size(990, 598);
+        ClientSize = new Size(880, 570);
         Controls.Add(errorMessage);
         Controls.Add(ScanerBtn);
         Controls.Add(NewBarcodeBtn);

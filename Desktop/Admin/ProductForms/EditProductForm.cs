@@ -97,4 +97,29 @@ public partial class EditProductForm : Form
     {
         await SaveProduct();
     }
+
+    private void name_textbox_TextChanged(object sender, EventArgs e)
+    {
+        ValidateInput();
+    }
+    private void ValidateInput()
+    {
+        if (name_textbox.Text.Length < 3)
+        {
+            errorMessage.Text = "Kamida 3 ta belgi kiriting";
+            errorMessage.Visible = true;
+            guna2Button1.Enabled = false;
+        }
+        else if (name_textbox.Text.Length > 50)
+        {
+            errorMessage.Text = "Maxsimum 50 ta belgi kiriting";
+            errorMessage.Visible = true;
+            guna2Button1.Enabled = false;
+        }
+        else
+        {
+            errorMessage.Visible = false;
+            guna2Button1.Enabled = true;
+        }
+    }
 }
