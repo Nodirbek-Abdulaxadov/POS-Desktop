@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -74,15 +75,17 @@ public partial class EditProductForm : Form
                                          .GetAllAsync();
             categoryComboBox.DataSource = _categories.Select(x => x.Name)
                                              .ToArray();
-            mtype.DataSource = Enum.GetValues(typeof(MeasurmentType));
+            mtype.DataSource = Enum.GetValues (typeof(MeasurmentType));
 
             var productDto = await _businessUnit.ProductService.GetByIdAsync(_Id);
             name_textbox.Text = productDto.Name;
             barcode.Text = productDto.Barcode;
             warningAmount.Text = productDto.WarningAmount.ToString();
             description.Text = productDto.Description;
-
+            categoryComboBox.SelectedIndex = productDto.CategoryId;
+            mtype.SelectedItem = productDto.MeasurmentType;
         }
+
         catch (MarketException ex)
         {
             new Toastr().ShowError(ex.ErrorMessage);

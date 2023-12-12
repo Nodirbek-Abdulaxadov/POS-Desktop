@@ -56,5 +56,4 @@ internal static class Program
         services.AddScoped<AdminForm>();
         services.AddScoped<AddCategoryForm>();
     }
-
 }
