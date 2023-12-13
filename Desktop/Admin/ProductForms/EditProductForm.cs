@@ -82,7 +82,14 @@ public partial class EditProductForm : Form
             barcode.Text = productDto.Barcode;
             warningAmount.Text = productDto.WarningAmount.ToString();
             description.Text = productDto.Description;
-            categoryComboBox.SelectedIndex = productDto.CategoryId;
+            foreach (var category in _categories)
+            {
+                if (category.Id == productDto.CategoryId)
+                {
+                    categoryComboBox.SelectedIndex = _categories.IndexOf(category);
+                }
+            }
+            categoryComboBox.SelectedItem = productDto.CategoryId;
             mtype.SelectedItem = productDto.MeasurmentType;
         }
 
