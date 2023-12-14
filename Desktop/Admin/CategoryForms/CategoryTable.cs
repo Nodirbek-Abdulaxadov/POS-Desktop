@@ -21,6 +21,7 @@ public partial class CategoryTable : UserControl
         InfoCategory.SelectedIndex = 0;
     }
 
+
     /// <summary>
     /// CategoryTable load event - fill table with categories
     /// </summary>
@@ -190,7 +191,6 @@ public partial class CategoryTable : UserControl
     /// <param name="e"></param>
     /// 
     private async void ArchiveBtn_Click(object sender, EventArgs e)
-
     {
         if (selectedId != 0)
         {
@@ -205,7 +205,7 @@ public partial class CategoryTable : UserControl
                     {
                         await _businessUnit.CategoryService.ActionAsync(selectedId, ActionType.Archive);
                         await Task.Run(() => FillCategories(selected));
-                        new Toastr().ShowSuccess("Muvoffaqqiyatli arxivelandi");
+                        new Toastr().ShowSuccess("Muvoffaqqiyatli arxivlandi");
                     }
                 }
                 else
@@ -219,6 +219,7 @@ public partial class CategoryTable : UserControl
                             await _businessUnit.CategoryService.ActionAsync(selectedId, ActionType.Recover);
                             await Task.Run(() => FillCategories(selected));
                             new Toastr().ShowSuccess("Muvoffaqqiyatli arxivdan chiqarildi");
+                            
                         }
                     }
                     else

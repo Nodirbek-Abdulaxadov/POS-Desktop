@@ -279,7 +279,6 @@ public partial class AdminForm : Form
         }
         main.Controls.Add(_productTable);
     }
-
     private void OpenProductItemsTable()
     {
         main.Controls.Clear();
@@ -289,5 +288,12 @@ public partial class AdminForm : Form
             _productItemTable.Dock = DockStyle.Fill;
         }
         main.Controls.Add(_productItemTable);
+    }
+
+    private void logOutBtn_Click(object sender, EventArgs e)
+    {
+        this.Close();
+        StartForm startForm = new(_businessUnit);
+        startForm.ShowDialog();
     }
 }

@@ -46,6 +46,8 @@ partial class AdminForm
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         reportBtn = new Guna.UI2.WinForms.Guna2Button();
         pictureBox1 = new PictureBox();
         label1 = new Label();
@@ -56,6 +58,7 @@ partial class AdminForm
         guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
         guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
         sidebar = new Guna.UI2.WinForms.Guna2ShadowPanel();
+        logOutBtn = new Guna.UI2.WinForms.Guna2Button();
         itemsBtn = new Guna.UI2.WinForms.Guna2Button();
         productBtn = new Guna.UI2.WinForms.Guna2Button();
         categoryBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -82,11 +85,12 @@ partial class AdminForm
         reportBtn.Image = Properties.Resources.home_light;
         reportBtn.ImageAlign = HorizontalAlignment.Left;
         reportBtn.ImageSize = new Size(25, 25);
-        reportBtn.Location = new Point(20, 21);
+        reportBtn.Location = new Point(23, 28);
+        reportBtn.Margin = new Padding(3, 4, 3, 4);
         reportBtn.Name = "reportBtn";
-        reportBtn.Padding = new Padding(10, 0, 0, 0);
+        reportBtn.Padding = new Padding(11, 0, 0, 0);
         reportBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-        reportBtn.Size = new Size(228, 50);
+        reportBtn.Size = new Size(261, 67);
         reportBtn.TabIndex = 6;
         reportBtn.Text = "Hisobotlar";
         reportBtn.TextAlign = HorizontalAlignment.Left;
@@ -96,9 +100,10 @@ partial class AdminForm
         // pictureBox1
         // 
         pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-        pictureBox1.Location = new Point(12, 11);
+        pictureBox1.Location = new Point(14, 15);
+        pictureBox1.Margin = new Padding(3, 4, 3, 4);
         pictureBox1.Name = "pictureBox1";
-        pictureBox1.Size = new Size(73, 54);
+        pictureBox1.Size = new Size(83, 72);
         pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         pictureBox1.TabIndex = 1;
         pictureBox1.TabStop = false;
@@ -110,9 +115,9 @@ partial class AdminForm
         // 
         label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-        label1.Location = new Point(85, 18);
+        label1.Location = new Point(97, 24);
         label1.Name = "label1";
-        label1.Size = new Size(182, 37);
+        label1.Size = new Size(227, 46);
         label1.TabIndex = 2;
         label1.Text = "Point Of Sale";
         label1.MouseDown += guna2ShadowPanel1_MouseDown;
@@ -129,11 +134,12 @@ partial class AdminForm
         guna2ShadowPanel1.Dock = DockStyle.Top;
         guna2ShadowPanel1.FillColor = Color.White;
         guna2ShadowPanel1.Location = new Point(0, 0);
+        guna2ShadowPanel1.Margin = new Padding(3, 4, 3, 4);
         guna2ShadowPanel1.Name = "guna2ShadowPanel1";
         guna2ShadowPanel1.ShadowColor = Color.Black;
         guna2ShadowPanel1.ShadowShift = 3;
         guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
-        guna2ShadowPanel1.Size = new Size(1000, 84);
+        guna2ShadowPanel1.Size = new Size(1143, 112);
         guna2ShadowPanel1.TabIndex = 3;
         guna2ShadowPanel1.DoubleClick += guna2Button3_Click;
         guna2ShadowPanel1.MouseDown += guna2ShadowPanel1_MouseDown;
@@ -146,9 +152,10 @@ partial class AdminForm
         panel1.Controls.Add(guna2Button4);
         panel1.Controls.Add(guna2Button3);
         panel1.Controls.Add(guna2Button1);
-        panel1.Location = new Point(849, 0);
+        panel1.Location = new Point(970, 0);
+        panel1.Margin = new Padding(3, 4, 3, 4);
         panel1.Name = "panel1";
-        panel1.Size = new Size(150, 25);
+        panel1.Size = new Size(171, 33);
         panel1.TabIndex = 5;
         // 
         // guna2Button4
@@ -164,9 +171,10 @@ partial class AdminForm
         guna2Button4.ForeColor = Color.White;
         guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");
         guna2Button4.Location = new Point(1, 0);
+        guna2Button4.Margin = new Padding(3, 4, 3, 4);
         guna2Button4.Name = "guna2Button4";
         guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges4;
-        guna2Button4.Size = new Size(50, 25);
+        guna2Button4.Size = new Size(57, 33);
         guna2Button4.TabIndex = 6;
         guna2Button4.Click += guna2Button4_Click;
         // 
@@ -182,10 +190,11 @@ partial class AdminForm
         guna2Button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
         guna2Button3.ForeColor = Color.White;
         guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
-        guna2Button3.Location = new Point(50, 0);
+        guna2Button3.Location = new Point(57, 0);
+        guna2Button3.Margin = new Padding(3, 4, 3, 4);
         guna2Button3.Name = "guna2Button3";
         guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges6;
-        guna2Button3.Size = new Size(50, 25);
+        guna2Button3.Size = new Size(57, 33);
         guna2Button3.TabIndex = 5;
         guna2Button3.Click += guna2Button3_Click;
         // 
@@ -200,10 +209,11 @@ partial class AdminForm
         guna2Button1.FillColor = Color.Red;
         guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
         guna2Button1.ForeColor = Color.White;
-        guna2Button1.Location = new Point(100, 0);
+        guna2Button1.Location = new Point(114, 0);
+        guna2Button1.Margin = new Padding(3, 4, 3, 4);
         guna2Button1.Name = "guna2Button1";
         guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-        guna2Button1.Size = new Size(50, 25);
+        guna2Button1.Size = new Size(57, 33);
         guna2Button1.TabIndex = 4;
         guna2Button1.Text = "X";
         guna2Button1.Click += guna2Button1_Click;
@@ -223,35 +233,65 @@ partial class AdminForm
         guna2Button2.ForeColor = Color.White;
         guna2Button2.Image = (Image)resources.GetObject("guna2Button2.Image");
         guna2Button2.ImageSize = new Size(30, 30);
-        guna2Button2.Location = new Point(282, 17);
+        guna2Button2.Location = new Point(322, 23);
+        guna2Button2.Margin = new Padding(3, 4, 3, 4);
         guna2Button2.Name = "guna2Button2";
         guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges10;
-        guna2Button2.Size = new Size(48, 46);
+        guna2Button2.Size = new Size(55, 61);
         guna2Button2.TabIndex = 3;
         guna2Button2.Click += guna2Button2_Click;
         // 
         // sidebar
         // 
         sidebar.BackColor = Color.Transparent;
+        sidebar.Controls.Add(logOutBtn);
         sidebar.Controls.Add(itemsBtn);
         sidebar.Controls.Add(productBtn);
         sidebar.Controls.Add(categoryBtn);
         sidebar.Controls.Add(reportBtn);
         sidebar.Dock = DockStyle.Left;
         sidebar.FillColor = Color.White;
-        sidebar.Location = new Point(0, 84);
+        sidebar.Location = new Point(0, 112);
+        sidebar.Margin = new Padding(3, 4, 3, 4);
         sidebar.Name = "sidebar";
         sidebar.ShadowColor = Color.Black;
         sidebar.ShadowShift = 1;
         sidebar.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-        sidebar.Size = new Size(267, 466);
+        sidebar.Size = new Size(305, 621);
         sidebar.TabIndex = 7;
+        // 
+        // logOutBtn
+        // 
+        logOutBtn.BorderRadius = 8;
+        logOutBtn.Cursor = Cursors.Hand;
+        logOutBtn.CustomizableEdges = customizableEdges11;
+        logOutBtn.DisabledState.BorderColor = Color.DarkGray;
+        logOutBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+        logOutBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        logOutBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        logOutBtn.Dock = DockStyle.Bottom;
+        logOutBtn.FillColor = Color.White;
+        logOutBtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+        logOutBtn.ForeColor = Color.FromArgb(176, 203, 224);
+        logOutBtn.Image = (Image)resources.GetObject("logOutBtn.Image");
+        logOutBtn.ImageAlign = HorizontalAlignment.Left;
+        logOutBtn.ImageSize = new Size(25, 25);
+        logOutBtn.Location = new Point(0, 554);
+        logOutBtn.Margin = new Padding(3, 4, 3, 4);
+        logOutBtn.Name = "logOutBtn";
+        logOutBtn.Padding = new Padding(11, 0, 0, 0);
+        logOutBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+        logOutBtn.Size = new Size(305, 67);
+        logOutBtn.TabIndex = 10;
+        logOutBtn.Text = "Chiqish";
+        logOutBtn.TextAlign = HorizontalAlignment.Left;
+        logOutBtn.Click += logOutBtn_Click;
         // 
         // itemsBtn
         // 
         itemsBtn.BorderRadius = 8;
         itemsBtn.Cursor = Cursors.Hand;
-        itemsBtn.CustomizableEdges = customizableEdges11;
+        itemsBtn.CustomizableEdges = customizableEdges13;
         itemsBtn.DisabledState.BorderColor = Color.DarkGray;
         itemsBtn.DisabledState.CustomBorderColor = Color.DarkGray;
         itemsBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -262,11 +302,12 @@ partial class AdminForm
         itemsBtn.Image = Properties.Resources.item_dark;
         itemsBtn.ImageAlign = HorizontalAlignment.Left;
         itemsBtn.ImageSize = new Size(25, 25);
-        itemsBtn.Location = new Point(20, 225);
+        itemsBtn.Location = new Point(23, 300);
+        itemsBtn.Margin = new Padding(3, 4, 3, 4);
         itemsBtn.Name = "itemsBtn";
-        itemsBtn.Padding = new Padding(10, 0, 0, 0);
-        itemsBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
-        itemsBtn.Size = new Size(228, 50);
+        itemsBtn.Padding = new Padding(11, 0, 0, 0);
+        itemsBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+        itemsBtn.Size = new Size(261, 67);
         itemsBtn.TabIndex = 9;
         itemsBtn.Text = "Kirimlar";
         itemsBtn.TextAlign = HorizontalAlignment.Left;
@@ -276,7 +317,7 @@ partial class AdminForm
         // 
         productBtn.BorderRadius = 8;
         productBtn.Cursor = Cursors.Hand;
-        productBtn.CustomizableEdges = customizableEdges13;
+        productBtn.CustomizableEdges = customizableEdges15;
         productBtn.DisabledState.BorderColor = Color.DarkGray;
         productBtn.DisabledState.CustomBorderColor = Color.DarkGray;
         productBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -287,11 +328,12 @@ partial class AdminForm
         productBtn.Image = Properties.Resources.cart_dark;
         productBtn.ImageAlign = HorizontalAlignment.Left;
         productBtn.ImageSize = new Size(25, 25);
-        productBtn.Location = new Point(20, 157);
+        productBtn.Location = new Point(23, 209);
+        productBtn.Margin = new Padding(3, 4, 3, 4);
         productBtn.Name = "productBtn";
-        productBtn.Padding = new Padding(10, 0, 0, 0);
-        productBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
-        productBtn.Size = new Size(228, 50);
+        productBtn.Padding = new Padding(11, 0, 0, 0);
+        productBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
+        productBtn.Size = new Size(261, 67);
         productBtn.TabIndex = 8;
         productBtn.Text = "Mahsulotlar";
         productBtn.TextAlign = HorizontalAlignment.Left;
@@ -301,7 +343,7 @@ partial class AdminForm
         // 
         categoryBtn.BorderRadius = 8;
         categoryBtn.Cursor = Cursors.Hand;
-        categoryBtn.CustomizableEdges = customizableEdges15;
+        categoryBtn.CustomizableEdges = customizableEdges17;
         categoryBtn.DisabledState.BorderColor = Color.DarkGray;
         categoryBtn.DisabledState.CustomBorderColor = Color.DarkGray;
         categoryBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -312,11 +354,12 @@ partial class AdminForm
         categoryBtn.Image = Properties.Resources.category_dark;
         categoryBtn.ImageAlign = HorizontalAlignment.Left;
         categoryBtn.ImageSize = new Size(25, 25);
-        categoryBtn.Location = new Point(20, 89);
+        categoryBtn.Location = new Point(23, 119);
+        categoryBtn.Margin = new Padding(3, 4, 3, 4);
         categoryBtn.Name = "categoryBtn";
-        categoryBtn.Padding = new Padding(10, 0, 0, 0);
-        categoryBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
-        categoryBtn.Size = new Size(228, 50);
+        categoryBtn.Padding = new Padding(11, 0, 0, 0);
+        categoryBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
+        categoryBtn.Size = new Size(261, 67);
         categoryBtn.TabIndex = 7;
         categoryBtn.Text = "Kategoriyalar";
         categoryBtn.TextAlign = HorizontalAlignment.Left;
@@ -330,23 +373,25 @@ partial class AdminForm
         // 
         main.BackColor = Color.FromArgb(220, 229, 253);
         main.Dock = DockStyle.Fill;
-        main.Location = new Point(267, 84);
+        main.Location = new Point(305, 112);
+        main.Margin = new Padding(3, 4, 3, 4);
         main.Name = "main";
-        main.Padding = new Padding(30, 5, 30, 15);
-        main.Size = new Size(733, 466);
+        main.Padding = new Padding(34, 7, 34, 20);
+        main.Size = new Size(838, 621);
         main.TabIndex = 8;
         // 
         // AdminForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(220, 229, 253);
-        ClientSize = new Size(1000, 550);
+        ClientSize = new Size(1143, 733);
         Controls.Add(main);
         Controls.Add(sidebar);
         Controls.Add(guna2ShadowPanel1);
         FormBorderStyle = FormBorderStyle.None;
-        MinimumSize = new Size(1000, 550);
+        Margin = new Padding(3, 4, 3, 4);
+        MinimumSize = new Size(1143, 733);
         Name = "AdminForm";
         StartPosition = FormStartPosition.WindowsDefaultBounds;
         Text = "AdminForm";
@@ -376,4 +421,5 @@ partial class AdminForm
     private Guna.UI2.WinForms.Guna2Button guna2Button3;
     private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     private Panel main;
+    private Guna.UI2.WinForms.Guna2Button logOutBtn;
 }
